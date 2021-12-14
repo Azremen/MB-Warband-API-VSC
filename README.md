@@ -7,7 +7,7 @@ To install, do this following:
 3. Copy "mbap" folder that you have downloaded
 4. Paste it in your extension folder
 
-That is it! You have successfully installed MB Warbands Syntax Helper. Now you may enjoy developing in Mount & Blade: Warband's Module System
+That is it! You have successfully installed Mount & Blade: Warband's Syntax Helper. Now you may enjoy developing in Mount & Blade: Warband's Module System
 
 Q: What is snippet.py and how does it works?
 
