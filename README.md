@@ -10,15 +10,19 @@ To install, do this following:
 That is it! You have successfully installed MB Warbands Syntax Helper. Now you may enjoy developing in Mount & Blade: Warband's Module System
 
 Q: What is snippet.py and how does it works?
+
 A: It is porting codes for Shcherbyna's Sublime Text Version to Microsoft Visual Code Version.
 
 Q: Is there any new operation helper that exists in this version?
+
 A: Sadly there is not much but yes there is. These are try operator blocks.
 
 Q: Is there any bugfixes?
+
 A: Yes. There is bugfixes on comments.
 
 Q: I found a bug. Where can I report?
+
 A: We have a forum thread on taleworlds which we will provide the link at the end of the file, you may post there or you may try and solve it yourself and publish it on your own. We don't have a limiter on license if you read and understand. So enjoy developing!
 
 For any of your questions and problems, feel free to ask them under the forum thread!
