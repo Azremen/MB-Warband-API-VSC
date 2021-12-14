@@ -1,7 +1,7 @@
 # MB-Warband-API-VSC
 This is Azremen (a.k.a. Revan) and Sart's Warband Syntax helper. (Ported version of Shcherbyna's Sublime Text Version)
 
-To install, do this following:
+To install, do these following:
 1. Terminate your Microsoft Visual Stduio Code
 2. Go to your Microsoft Visual Code's extension folder. (It is usually under this location on Microsoft Windows 10: "C:\Users\yourusername\.vscode\extensions") -"yourusername" should be your current user name of windows account-
 3. Copy "mbap" folder that you have downloaded
