@@ -1,0 +1,29 @@
+{
+    "name": "mbap",
+    "displayName": "M&B: Warband API",
+    "description": "Mount & Blade: Warband language support for Microsoft Visual Studio Code",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.62.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "python",
+            "aliases": ["Python", "python"],
+            "extensions": [".py"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "python",
+            "scopeName": "source.py",
+            "path": "./syntaxes/mbap.tmLanguage.json"
+        }],
+        "snippets": [{
+                "language": "python",
+                "path": "./snippets/mbap.code-snippets"
+        }]
+    }
+}
