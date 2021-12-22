@@ -1,13 +1,13 @@
-# MB-Warband-API-VC
+# MB-Warband-API-VSC
 This is Azremen (a.k.a. Revan) and Sart's Warband Syntax helper. (Ported version of Shcherbyna's Sublime Text Version)
 
-To install, do this following:
-1. Terminate your Microsoft Visual Code
+To install, do these following:
+1. Terminate your Microsoft Visual Stduio Code
 2. Go to your Microsoft Visual Code's extension folder. (It is usually under this location on Microsoft Windows 10: "C:\Users\yourusername\.vscode\extensions") -"yourusername" should be your current user name of windows account-
 3. Copy "mbap" folder that you have downloaded
 4. Paste it in your extension folder
 
-That is it! You have successfully installed MB Warbands Syntax Helper. Now you may enjoy developing in Mount & Blade: Warband's Module System
+That is it! You have successfully installed Mount & Blade: Warband's Syntax Helper for Microsoft Visual Studio Code. Now you may enjoy developing in Mount & Blade: Warband's Module System
 
 Q: What is snippet.py and how does it works?
 
