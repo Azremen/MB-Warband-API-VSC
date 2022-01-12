@@ -31,9 +31,9 @@ for file_name in os.listdir("."):
     for char in old_data:
         if char == "\"":
             if start_end_bool:
-                new_data += "$LINE_COMMENT"#start
+                new_data += " \""#start
             else:
-                new_data += "$LINE_COMMENT"#end
+                new_data += "\"" #end
             start_end_bool = not start_end_bool
         elif char == "\\":
             new_data += "\\\\"

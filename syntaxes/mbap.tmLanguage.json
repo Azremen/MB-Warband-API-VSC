@@ -1,6 +1,6 @@
 {
 	"name": "Mount & Blade: Warband API",
-	"publisher": "Shcherbyna, Revan & Sart",
+	"publisher": "Shcherbyna, Azremen & Sart",
 	"patterns": [
 		{
 			"include": "#keywords"
