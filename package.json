@@ -31,7 +31,7 @@
         ],
         "grammars": [
             {
-                "language": "warbandsl",
+                "language": "python",
                 "scopeName": "source.py",
                 "path": "./syntaxes/mbap.tmLanguage.json"
             }
