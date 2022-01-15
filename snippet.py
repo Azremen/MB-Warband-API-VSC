@@ -55,7 +55,7 @@ for file_name in os.listdir("."):
 
     replaced = [ 
         " " * 4 + "\"{}\": ".format(file_name) + "{",
-        " " * 8 + "\"body\": \"{},\",".format(newFirstLine),
+        " " * 8 + "\"body\": \"{}\",".format(newFirstLine),
         " " * 8 + "\"prefix\": \"{}\",".format(file_name),
         " " * 8 + "\"scope\": \"python\"",
         " " * 4 + "},"
