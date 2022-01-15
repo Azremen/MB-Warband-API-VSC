@@ -38,7 +38,7 @@
         ],
         "snippets": [
             {
-                "language": "warbandsl",
+                "language": "python",
                 "path": "./snippets/mbap.code-snippets"
             }
         ]
