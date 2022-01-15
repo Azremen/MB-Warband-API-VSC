@@ -31,9 +31,9 @@ for file_name in os.listdir("."):
     for char in old_data:
         if char == "\"":
             if start_end_bool:
-                new_data += " \""#start
+                new_data += " $LINE_COMMENT"#start
             else:
-                new_data += "\"" #end
+                new_data += "$LINE_COMMENT" #end
             start_end_bool = not start_end_bool
         elif char == "\\":
             new_data += "\\\\"
@@ -55,7 +55,7 @@ for file_name in os.listdir("."):
 
     replaced = [ 
         " " * 4 + "\"{}\": ".format(file_name) + "{",
-        " " * 8 + "\"body\": \"{}\",".format(newFirstLine),
+        " " * 8 + "\"body\": \"{},\",".format(newFirstLine),
         " " * 8 + "\"prefix\": \"{}\",".format(file_name),
         " " * 8 + "\"scope\": \"python\"",
         " " * 4 + "},"

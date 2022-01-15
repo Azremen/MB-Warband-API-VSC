@@ -18,10 +18,10 @@
     "contributes": {
         "languages": [
             {
-                "id": "python",
+                "id": "warbandsl",
                 "aliases": [
-                    "Python",
-                    "python"
+                    "Warband Script Language",
+                    "warbandsl"
                 ],
                 "extensions": [
                     ".py"
@@ -31,14 +31,14 @@
         ],
         "grammars": [
             {
-                "language": "python",
+                "language": "warbandsl",
                 "scopeName": "source.py",
                 "path": "./syntaxes/mbap.tmLanguage.json"
             }
         ],
         "snippets": [
             {
-                "language": "python",
+                "language": "warbandsl",
                 "path": "./snippets/mbap.code-snippets"
             }
         ]
