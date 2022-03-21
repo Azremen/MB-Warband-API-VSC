@@ -6149,9 +6149,15 @@
         "scope": "python"
     },
 
-    "try-end": {
+    "try_begin_end": {
         "body": "(try_begin),(try_end),",
         "prefix": "try-end",
+        "scope": "python"
+    },
+
+    "try_begin": {
+        "body": "(try_begin),",
+        "prefix": "try_begin",
         "scope": "python"
     },
 
