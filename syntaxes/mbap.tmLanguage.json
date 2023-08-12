@@ -11,10 +11,62 @@
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.python",
-				"match": "\\b(if|while|for|return|import|from|def|try|except)\\b"
-			}]
+			"patterns": [
+				{
+					"match": "\\b(import|from|def|try|except)\\b",
+					"name": "keyword.mb_warband_api",
+					"comment": "Python keywords"
+				},
+				{
+					"match": "(\\)\\s*#)|[^]](\\)\\s*$)|(\\),?\\s*[^#(]\\w+)|(]\\s+\\[)",
+					"name": "source.mb_warband_api",
+					"captures": {
+						"1": {
+							"name": "invalid.illegal.unclosed-string.mb_warband_api"
+						},
+						"2": {
+							"name": "invalid.illegal.unclosed-string.mb_warband_api"
+						},
+						"3": {
+							"name": "invalid.illegal.unclosed-string.mb_warband_api"
+						},
+						"4": {
+							"name": "invalid.illegal.unclosed-string.mb_warband_api"
+						}
+					},
+					"comment": "incorrect finish without comma"
+				},
+				{
+					"match": "\\(((?:\\w+\\|){0,2}\\w+)",
+					"name": "source.mb_warband_api",
+					"captures": {
+						"1": {
+							"name": "constant.numeric.source.mb_warband_api"
+						}
+					},
+					"comment": "Keywords: (assign, '$g_var', 1), => assign or (this_or_next|eq,.. => this_or_next|eq"
+				},
+				{
+					"match": "\\$[A-Za-z][A-Za-z0-9_]+|\\{?reg\\d+\\}?|s\\d+|pos\\d+",
+					"name": "support.variable.mb_warband_api",
+					"comment": "Global vars: $g_var, reg1 or {reg1}, s2, pos3"
+				},
+				{
+					"match": "\u0022\\:[\\w]+\u0022",
+					"name": "variable.other.mb_warband_api",
+					"comment": ":Local_vars"
+				},
+				{
+					"match": "\\#.+",
+					"name": "string.source.mb_warband_api",
+					"comment": "# Comments"
+				},
+				{
+					"match": "\u0022\\@[\\w\\t !#$%&'()*+,./:;<=>?\\[\\\\\\]\\`\\{\\|\\}\\~\\^\\-]+?\u0022",
+					"name": "storage.type.method.mb_warband_api",
+					"comment": "@ Strings"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.python",
