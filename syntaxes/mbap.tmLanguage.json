@@ -13,7 +13,7 @@
 		"keywords": {
 			"patterns": [
 				{
-					"match": "\\b(import|from|def|try|except)\\b",
+					"match": "\\b(if|while|for|return|import|from|def|try|except)\\b",
 					"name": "keyword.mb_warband_api",
 					"comment": "Python keywords"
 				},
