@@ -1,7 +1,7 @@
 import os
 
 tags = ["<snippet>", "<content>", "</content>",
-"<tabTrigger>", "<scope>", "<description>", "</snippet>"]
+        "<tabTrigger>", "<scope>", "<description>", "</snippet>"]
 
 betweens = ["<content>", "<![CDATA[", "]]>"]
 
@@ -16,7 +16,8 @@ for file_name in os.listdir("."):
 
     with open(old_name, "rt+") as f:
         old_data = f.read().split("\n")
-        old_data = "\n".join([x.replace("\t", "").replace(" ", "") for x in old_data if x])
+        old_data = "\n".join([x.replace("\t", "").replace(" ", "")
+                             for x in old_data if x])
 
         f.seek(0)
         f.truncate()
@@ -25,15 +26,15 @@ for file_name in os.listdir("."):
     with open(old_name, "rt") as f:
         old_data = f.read()
         f.close()
-    
+
     new_data = ""
-    start_end_bool = True #1: Start, 0: End
+    start_end_bool = True  # 1: Start, 0: End
     for char in old_data:
         if char == "\"":
             if start_end_bool:
-                new_data += " $LINE_COMMENT"#start
+                new_data += " $LINE_COMMENT"  # start
             else:
-                new_data += "$LINE_COMMENT" #end
+                new_data += "$LINE_COMMENT"  # end
             start_end_bool = not start_end_bool
         elif char == "\\":
             new_data += "\\\\"
@@ -42,18 +43,18 @@ for file_name in os.listdir("."):
 
     for line in new_data.split("\n"):
         if line.startswith(betweens[0]):
-#            print("line startswith: {}".format(betweens[0]))
+            #            print("line startswith: {}".format(betweens[0]))
             exact = line
             exact = exact.split("".join(betweens[0:2]))
             newFirstLine = "".join(exact)
         elif line.endswith(betweens[2]):
-#            print("line endswith: {}".format(betweens[2]))
+            #            print("line endswith: {}".format(betweens[2]))
             exact = line
             exact = exact.split(betweens[2])
             exact = "".join(exact)
             newFirstLine += exact
 
-    replaced = [ 
+    replaced = [
         " " * 4 + "\"{}\": ".format(file_name) + "{",
         " " * 8 + "\"body\": \"{}\",".format(newFirstLine),
         " " * 8 + "\"prefix\": \"{}\",".format(file_name),

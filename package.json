@@ -3,7 +3,7 @@
     "displayName": "M&B: Warband API",
     "description": "Mount & Blade: Warband language support for Microsoft Visual Studio Code by Azremen and Sart",
     "publisher": "Azremen",
-    "version": "0.1.15",
+    "version": "0.1",
     "homepage": "https://github.com/Azremen/MB-Warband-API-VSC/blob/main/README.md",
     "engines": {
         "vscode": "^1.62.0"
@@ -20,20 +20,17 @@
             {
                 "id": "warbandsl",
                 "aliases": [
-                    "Warband Script Language",
-                    "warbandsl"
+                    "Warband Script Language"
                 ],
                 "extensions": [
                     ".py"
-                ],
-                "configuration": "./language-configuration.json"
+                ]
             }
         ],
-        "grammars": [
+        "commands": [
             {
-                "language": "warbandsl",
-                "scopeName": "source.py",
-                "path": "./syntaxes/mbap.tmLanguage.json"
+                "command": "warbandsl.formatWarbandScript",
+                "title": "Format Warband Script Language Code"
             }
         ],
         "snippets": [
@@ -41,6 +38,44 @@
                 "language": "warbandsl",
                 "path": "./snippets/mbap.code-snippets"
             }
+        ],
+        "keybindings": [
+            {
+                "command": "warbandsl.formatWarbandScript",
+                "key": "ctrl+shift+f",
+                "when": "editorTextFocus && resourceLangId == warbandsl"
+            }
         ]
+    },
+    "configuration": {
+        "title": "Warband Script Language Formatter",
+        "properties": {
+            "warbandsl.format.indentation": {
+                "type": "string",
+                "enum": [
+                    "tabs",
+                    "spaces"
+                ],
+                "default": "spaces",
+                "description": "Indentation style for Warband Script Language Formatter."
+            },
+            "warbandsl.format.tabSize": {
+                "type": "number",
+                "default": 4,
+                "description": "Number of spaces or tabs to use for indentation."
+            }
+        }
+    },
+    "scripts": {
+        "test": "echo \"No tests specified\"",
+        "format": "node format-script.js"
+    },
+    "dependencies": {
+        "acorn": "^8.0.1",
+        "escodegen": "^2.0.0"
+    },
+    "devDependencies": {
+        "chai": "^4.3.7",
+        "mocha": "^10.2.0"
     }
 }

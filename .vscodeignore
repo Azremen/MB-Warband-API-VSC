@@ -2,3 +2,6 @@
 .vscode-test/**
 .gitignore
 vsc-extension-quickstart.md
+expected_module_scripts.py
+unformatted_module_scripts.py
+snippet.py
