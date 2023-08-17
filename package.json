@@ -15,6 +15,7 @@
     "categories": [
         "Programming Languages"
     ],
+    "main": "./extension.js",
     "contributes": {
         "languages": [
             {
@@ -24,7 +25,8 @@
                 ],
                 "extensions": [
                     ".py"
-                ]
+                ],
+                "configuration": "./language-configuration.json"
             }
         ],
         "commands": [
@@ -50,7 +52,7 @@
     "configuration": {
         "title": "Warband Script Language Formatter",
         "properties": {
-            "format.indentation": {
+            "warbandsl.indentation": {
                 "type": "string",
                 "enum": [
                     "tabs",
@@ -59,118 +61,12 @@
                 "default": "spaces",
                 "description": "Indentation style for Warband Script Language Formatter."
             },
-            "format.tabSize": {
+            "warbandsl.tabSize": {
                 "type": "number",
                 "default": 4,
                 "description": "Number of spaces or tabs to use for indentation."
-            },
-            "patterns": [
-                {
-                    "include": "#keywords"
-                },
-                {
-                    "include": "#strings"
-                }
-            ],
-            "comments": {
-                "lineComment": "\"",
-                "blockComment": [ "\"\"\"", "\"\"\"" ]
-            },
-            "brackets": [
-                ["{", "}"],
-                ["[", "]"],
-                ["(", ")"]
-            ],
-            "autoClosingPairs": [
-                ["{", "}"],
-                ["[", "]"],
-                ["(", ")"],
-                ["\"", "\""],
-                ["'", "'"]
-            ],
-            "surroundingPairs": [
-                ["{", "}"],
-                ["[", "]"],
-                ["(", ")"],
-                ["\"", "\""],
-                ["'", "'"]
-            ],
-            "repository": {
-                "keywords": {
-                    "patterns": [
-                        {
-                            "match": "\\b(if|while|for|return|import|from|def|try|except)\\b",
-                            "name": "keyword.mbap",
-                            "comment": "Python keywords"
-                        },
-                        {
-                            "match": "(\\)\\s*#)|[^]](\\)\\s*$)|(\\),?\\s*[^#(]\\w+)|(]\\s+\\[)",
-                            "name": "source.mbap",
-                            "captures": {
-                                "1": {
-                                    "name": "invalid.illegal.unclosed-string.mbap"
-                                },
-                                "2": {
-                                    "name": "invalid.illegal.unclosed-string.mbap"
-                                },
-                                "3": {
-                                    "name": "invalid.illegal.unclosed-string.mbap"
-                                },
-                                "4": {
-                                    "name": "invalid.illegal.unclosed-string.mbap"
-                                }
-                            },
-                            "comment": "incorrect finish without comma"
-                        },
-                        {
-                            "match": "\\(((?:\\w+\\|){0,2}\\w+)",
-                            "name": "source.mbap",
-                            "captures": {
-                                "1": {
-                                    "name": "constant.numeric.source.mbap"
-                                }
-                            },
-                            "comment": "Keywords: (assign, '$g_var', 1), => assign or (this_or_next|eq,.. => this_or_next|eq"
-                        },
-                        {
-                            "match": "\\$[A-Za-z][A-Za-z0-9_]+|\\{?reg\\d+\\}?|s\\d+|pos\\d+",
-                            "name": "support.variable.mbap",
-                            "comment": "Global vars: $g_var, reg1 or {reg1}, s2, pos3"
-                        },
-                        {
-                            "match": "\u0022\\:[\\w]+\u0022",
-                            "name": "variable.other.mbap",
-                            "comment": ":Local_vars"
-                        },
-                        {
-                            "match": "\\#.+",
-                            "name": "string.source.mbap",
-                            "comment": "# Comments"
-                        },
-                        {
-                            "match": "\u0022\\@[\\w\\t !#$%&'()*+,./:;<=>?\\[\\\\\\]\\`\\{\\|\\}\\~\\^\\-]+?\u0022",
-                            "name": "storage.type.method.mbap",
-                            "comment": "@ Strings"
-                        }
-                    ]
-                },
-                "strings": {
-                    "name": "string.quoted.double.python",
-                    "begin": "\"",
-                    "end": "\"",
-                    "patterns": [
-                        {
-                            "name": "constant.character.escape.python",
-                            "match": "\\\\."
-                        }
-                    ]
-                }
             }
         }
-    },
-    "scripts": {
-        "test": "echo \"No tests specified\"",
-        "format": "node format-script.js"
     },
     "dependencies": {
         "acorn": "^8.0.1",

@@ -1,30 +1,144 @@
 {
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        }
+    ],
     "comments": {
-        // symbol used for single line comment. Remove this entry if your language does not support line comments
         "lineComment": "\"",
-        // symbols used for start and end a block comment. Remove this entry if your language does not support block comments
-        "blockComment": [ "\"\"\"", "\"\"\"" ]
+        "blockComment": [
+            "\"\"\"",
+            "\"\"\""
+        ]
     },
-    // symbols used as brackets
     "brackets": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"]
+        [
+            "{",
+            "}"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "(",
+            ")"
+        ]
     ],
-    // symbols that are auto closed when typing
     "autoClosingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
+        [
+            "{",
+            "}"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "(",
+            ")"
+        ],
+        [
+            "\"",
+            "\""
+        ],
+        [
+            "'",
+            "'"
+        ]
     ],
-    // symbols that can be used to surround a selection
     "surroundingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
-    ]
+        [
+            "{",
+            "}"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "(",
+            ")"
+        ],
+        [
+            "\"",
+            "\""
+        ],
+        [
+            "'",
+            "'"
+        ]
+    ],
+    "keywords": {
+        "patterns": [
+            {
+                "match": "\\b(if|while|for|return|import|from|def|try|except)\\b",
+                "name": "keyword.mbap",
+                "comment": "Python keywords"
+            },
+            {
+                "match": "(\\)\\s*#)|[^]](\\)\\s*$)|(\\),?\\s*[^#(]\\w+)|(]\\s+\\[)",
+                "name": "source.mbap",
+                "captures": {
+                    "1": {
+                        "name": "invalid.illegal.unclosed-string.mbap"
+                    },
+                    "2": {
+                        "name": "invalid.illegal.unclosed-string.mbap"
+                    },
+                    "3": {
+                        "name": "invalid.illegal.unclosed-string.mbap"
+                    },
+                    "4": {
+                        "name": "invalid.illegal.unclosed-string.mbap"
+                    }
+                },
+                "comment": "incorrect finish without comma"
+            },
+            {
+                "match": "\\(((?:\\w+\\|){0,2}\\w+)",
+                "name": "source.mbap",
+                "captures": {
+                    "1": {
+                        "name": "constant.numeric.source.mbap"
+                    }
+                },
+                "comment": "Keywords: (assign, '$g_var', 1), => assign or (this_or_next|eq,.. => this_or_next|eq"
+            },
+            {
+                "match": "\\$[A-Za-z][A-Za-z0-9_]+|\\{?reg\\d+\\}?|s\\d+|pos\\d+",
+                "name": "support.variable.mbap",
+                "comment": "Global vars: $g_var, reg1 or {reg1}, s2, pos3"
+            },
+            {
+                "match": "\u0022\\:[\\w]+\u0022",
+                "name": "variable.other.mbap",
+                "comment": ":Local_vars"
+            },
+            {
+                "match": "\\#.+",
+                "name": "string.source.mbap",
+                "comment": "# Comments"
+            },
+            {
+                "match": "\u0022\\@[\\w\\t !#$%&'()*+,./:;<=>?\\[\\\\\\]\\`\\{\\|\\}\\~\\^\\-]+?\u0022",
+                "name": "storage.type.method.mbap",
+                "comment": "@ Strings"
+            }
+        ]
+    },
+    "strings": {
+        "name": "string.quoted.double.python",
+        "begin": "\"",
+        "end": "\"",
+        "patterns": [
+            {
+                "name": "constant.character.escape.python",
+                "match": "\\\\."
+            }
+        ]
+    }
 }

@@ -1,5 +1,6 @@
 const acorn = require('acorn');
 const escodegen = require('escodegen');
+const vscode = require('vscode');
 
 function formatWarbandScriptLanguageCode(code) {
     const parsedAst = acorn.parse(code, { ecmaVersion: 5 });
@@ -67,15 +68,11 @@ function formatWarbandScriptLanguageCode(code) {
     return formattedCode;
 }
 
-
-module.exports = {
-    formatWarbandScriptLanguageCode,
-};
-
 function activate(context) {
+    console.log('M&B Warband API extension is now active.');
     // ... other activation code ...
 
-    let disposable = vscode.commands.registerCommand('warbandsl.formatWarbandScript', () => {
+    let disposable = vscode.commands.registerCommand('mbap.formatWarbandScript', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
             return;
@@ -101,4 +98,12 @@ function activate(context) {
     context.subscriptions.push(disposable);
 }
 
-exports.activate = activate;
+// This method is called when your extension is deactivated
+function deactivate() {
+    console.log('M&B Warband API extension is now deactivated.');
+}
+
+module.exports = {
+    activate,
+    deactivate
+};
