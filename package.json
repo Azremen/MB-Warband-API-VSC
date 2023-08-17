@@ -175,9 +175,5 @@
     "dependencies": {
         "acorn": "^8.0.1",
         "escodegen": "^2.0.0"
-    },
-    "devDependencies": {
-        "chai": "^4.3.7",
-        "mocha": "^10.2.0"
     }
 }
