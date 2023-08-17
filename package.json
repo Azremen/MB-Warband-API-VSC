@@ -42,7 +42,7 @@
         "keybindings": [
             {
                 "command": "mbap.formatWarbandScript",
-                "key": "ctrl+shift+f",
+                "key": "alt+shift+f",
                 "when": "editorTextFocus && resourceLangId == warbandsl"
             }
         ]
