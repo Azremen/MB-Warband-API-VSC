@@ -2,14 +2,46 @@ const acorn = require('acorn');
 const escodegen = require('escodegen');
 const vscode = require('vscode');
 
+// Implementation of the traverse function
+function traverse(node, visitors) {
+    function visit(node, parent) {
+        const visitor = visitors[node.type];
+
+        if (visitor && visitor.enter) {
+            visitor.enter(node, parent);
+        }
+
+        for (const key in node) {
+            if (node.hasOwnProperty(key)) {
+                const child = node[key];
+
+                if (typeof child === 'object' && child !== null) {
+                    if (Array.isArray(child)) {
+                        child.forEach(grandchild => visit(grandchild, node));
+                    } else {
+                        visit(child, node);
+                    }
+                }
+            }
+        }
+
+        if (visitor && visitor.leave) {
+            visitor.leave(node, parent);
+        }
+    }
+
+    visit(node, null);
+}
+
 function formatWarbandScriptLanguageCode(code) {
-    const parsedAst = acorn.parse(code, { ecmaVersion: 5 });
+    const parsedAst = acorn.parse(code, { ecmaVersion: 'latest' });
 
     let indentationLevel = 0;
 
-    traverse(parsedAst, {
-        enter(node, parent) {
-            if (node.type === 'CallExpression') {
+    // Define your visitors object
+    const visitors = {
+        CallExpression: {
+            enter(node, parent) {
                 const operationNames = [
                     'try_begin',
                     'try_for_range',
@@ -42,10 +74,8 @@ function formatWarbandScriptLanguageCode(code) {
 
                     indentationLevel++;
                 }
-            }
-        },
-        leave(node) {
-            if (node.type === 'CallExpression') {
+            },
+            leave(node) {
                 const operationNames = [
                     'try_begin',
                     'try_for_range',
@@ -60,9 +90,12 @@ function formatWarbandScriptLanguageCode(code) {
                 if (operationNames.includes(node.callee.name)) {
                     indentationLevel--;
                 }
-            }
+            },
         },
-    });
+        // Define other node types you want to visit
+    };
+
+    traverse(parsedAst, visitors);
 
     const formattedCode = escodegen.generate(parsedAst);
     return formattedCode;

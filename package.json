@@ -72,7 +72,8 @@
         }
     },
     "dependencies": {
-        "acorn": "^8.0.1",
-        "escodegen": "^2.0.0"
+        "acorn": "^8.10.0",
+        "escodegen": "^2.1.0",
+        "vscode": "^1.1.37"
     }
 }
