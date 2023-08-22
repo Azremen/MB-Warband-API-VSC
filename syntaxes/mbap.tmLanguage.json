@@ -1,0 +1,17 @@
+{
+  "name": "MB Warband API",
+  "scopeName": "source.mbap",
+  "fileTypes": [
+    "py"
+  ],
+  "patterns": [
+    {
+      "match": "\\b(import|from|def|try|except)\\b",
+      "name": "keyword.control.mbap"
+    },
+    {
+      "match": "\"[^\"]*\"",
+      "name": "string.quoted.double.mbap"
+    }
+  ]
+}

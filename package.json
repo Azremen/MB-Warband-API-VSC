@@ -3,7 +3,7 @@
     "displayName": "M&B: Warband API",
     "description": "Mount & Blade: Warband language support for Microsoft Visual Studio Code by Azremen and Sart",
     "publisher": "Azremen",
-    "version": "0.1.19",
+    "version": "0.1.20",
     "homepage": "https://github.com/Azremen/MB-Warband-API-VSC/blob/main/README.md",
     "engines": {
         "vscode": "^1.62.0"
@@ -22,14 +22,14 @@
     "contributes": {
         "languages": [
             {
-                "id": "warbandsl",
+                "id": "mbap",
                 "aliases": [
                     "Warband Script Language"
                 ],
                 "extensions": [
                     ".py"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./syntaxes/mbap.tmLanguage.json"
             }
         ],
         "commands": [
@@ -40,7 +40,7 @@
         ],
         "snippets": [
             {
-                "language": "warbandsl",
+                "language": "mbap",
                 "path": "./snippets/mbap.code-snippets"
             }
         ],
@@ -48,14 +48,14 @@
             {
                 "command": "mbap.formatWarbandScript",
                 "key": "alt+shift+f",
-                "when": "editorTextFocus && resourceLangId == warbandsl"
+                "when": "editorTextFocus && resourceLangId == mbap"
             }
         ]
     },
     "configuration": {
         "title": "Warband Script Language Formatter",
         "properties": {
-            "warbandsl.indentation": {
+            "mbap.indentation": {
                 "type": "string",
                 "enum": [
                     "tabs",
@@ -64,7 +64,7 @@
                 "default": "spaces",
                 "description": "Indentation style for Warband Script Language Formatter."
             },
-            "warbandsl.tabSize": {
+            "mbap.tabSize": {
                 "type": "number",
                 "default": 4,
                 "description": "Number of spaces or tabs to use for indentation."
