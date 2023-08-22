@@ -17,6 +17,7 @@ function formatAndSaveDocument() {
             "try_for_prop_instances",
             "try_for_players",
             "try_for_dict_keys",
+            "else_try",
         ];
 
         const originalContent = document.getText();
@@ -44,18 +45,16 @@ function formatAndSaveDocument() {
 
         for (const line of blackFormattedCode.split('\n')) {
             const trimmedLine = line.trim();
-            let customIndentation = '\t'.repeat(currentIndentationLevel);
 
-            if (operationNames.some(op => trimmedLine.includes(op))) {
-                customIndentation = '\t'.repeat(currentIndentationLevel + 1);
+            if (trimmedLine.includes("try_end") || trimmedLine.includes("else_try")) {
+                currentIndentationLevel--;
             }
 
+            const customIndentation = '\t'.repeat(Math.max(0, currentIndentationLevel));
             const customFormattedLine = customIndentation + line;
             customFormattedLines.push(customFormattedLine);
 
-            if (trimmedLine.includes("try_end") || trimmedLine.includes("else_try")) {
-                currentIndentationLevel = Math.max(0, currentIndentationLevel - 1);
-            } else if (operationNames.some(op => trimmedLine.includes(op))) {
+            if (operationNames.some(op => trimmedLine.includes(op))) {
                 currentIndentationLevel++;
             }
         }
