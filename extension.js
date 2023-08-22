@@ -1,4 +1,7 @@
 const vscode = require('vscode');
+const { execFileSync } = require('child_process');
+const os = require('os');
+const fs = require('fs');
 
 function formatAndSaveDocument() {
     const activeEditor = vscode.window.activeTextEditor;
@@ -14,33 +17,53 @@ function formatAndSaveDocument() {
             "try_for_prop_instances",
             "try_for_players",
             "try_for_dict_keys",
-            "[",
         ];
 
-        const formattedLines = [];
-        let indentationLevel = 0;
+        const originalContent = document.getText();
 
-        for (let lineIndex = 0; lineIndex < document.lineCount; lineIndex++) {
-            const line = document.lineAt(lineIndex).text.trim();
+        // Create a temporary file to store the original content
+        const tempFilePath = `${os.tmpdir()}/temp_mbap_script.py`;
+        fs.writeFileSync(tempFilePath, originalContent, 'utf-8');
 
-            if (operationNames.some(op => line.includes(op))) {
-                formattedLines.push('\t'.repeat(indentationLevel) + line);
-                indentationLevel++;
-                if (line.includes("[") && line.includes("]")) {
-                    indentationLevel--;
-                }
-            } else if (line.includes("try_end") || line.includes("]")) {
-                indentationLevel = Math.max(0, indentationLevel - 1);
-                formattedLines.push('\t'.repeat(indentationLevel) + line);
-            } else {
-                formattedLines.push('\t'.repeat(indentationLevel) + line);
+        // Use black command-line tool to format the content and get the formatted code
+        const blackCmd = `black --quiet ${tempFilePath}`;
+        execFileSync(blackCmd, {
+            encoding: 'utf-8',
+            shell: true
+        });
+
+        // Read the black-formatted content from the temporary file
+        const blackFormattedCode = fs.readFileSync(tempFilePath, 'utf-8');
+
+        // Delete the temporary file
+        fs.unlinkSync(tempFilePath);
+
+        // Apply your custom formatting with adjusted indentation levels for specific operation names
+        const customFormattedLines = [];
+        let currentIndentationLevel = 0;
+
+        for (const line of blackFormattedCode.split('\n')) {
+            const trimmedLine = line.trim();
+            let customIndentation = '\t'.repeat(currentIndentationLevel);
+
+            if (operationNames.some(op => trimmedLine.includes(op))) {
+                customIndentation = '\t'.repeat(currentIndentationLevel + 1);
+            }
+
+            const customFormattedLine = customIndentation + line;
+            customFormattedLines.push(customFormattedLine);
+
+            if (trimmedLine.includes("try_end") || trimmedLine.includes("else_try")) {
+                currentIndentationLevel = Math.max(0, currentIndentationLevel - 1);
+            } else if (operationNames.some(op => trimmedLine.includes(op))) {
+                currentIndentationLevel++;
             }
         }
 
-        const formattedContent = formattedLines.join('\n');
+        const customFormattedCode = customFormattedLines.join('\n');
 
         const edit = new vscode.WorkspaceEdit();
-        edit.replace(document.uri, new vscode.Range(0, 0, document.lineCount, 0), formattedContent);
+        edit.replace(document.uri, new vscode.Range(0, 0, document.lineCount, 0), customFormattedCode);
 
         vscode.workspace.applyEdit(edit).then(success => {
             if (success) {
@@ -52,5 +75,25 @@ function formatAndSaveDocument() {
     }
 }
 
-// Register a command to format and save the active document
-vscode.commands.registerCommand('mbap.formatWarbandScript', formatAndSaveDocument);
+function checkAndInstallBlack() {
+    const terminal = vscode.window.createTerminal('Install Black');
+    terminal.sendText('pip show black', true);
+
+    terminal.processId.then(pid => {
+        terminal.show();
+        terminal.dispose();
+    });
+}
+
+function activate(context) {
+    // Register the formatAndSaveDocument command
+    const disposable = vscode.commands.registerCommand('mbap.formatWarbandScript', formatAndSaveDocument);
+
+    // Run the checkAndInstallBlack function when the extension is activated
+    checkAndInstallBlack();
+
+    // Add the disposable to the context for cleanup
+    context.subscriptions.push(disposable);
+}
+
+exports.activate = activate;
