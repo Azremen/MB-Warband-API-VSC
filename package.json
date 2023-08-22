@@ -16,6 +16,9 @@
         "Programming Languages"
     ],
     "main": "./extension.js",
+    "activationEvents": [
+        "onCommand:mbap.formatWarbandScript"
+    ],
     "contributes": {
         "languages": [
             {
