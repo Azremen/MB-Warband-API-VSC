@@ -76,12 +76,22 @@ function formatAndSaveDocument() {
 
 function checkAndInstallBlack() {
     const terminal = vscode.window.createTerminal('Install Black');
+
+    // Check if Black is installed
     terminal.sendText('pip show black', true);
 
-    terminal.processId.then(pid => {
-        terminal.show();
+    // When the terminal output is ready, check if Black is installed
+    terminal.onDidWriteData(data => {
+        if (data.includes("Package(s) not found: black")) {
+            // Black is not installed, so install it
+            terminal.sendText('pip install black', true);
+        }
+
+        // Dispose of the terminal
         terminal.dispose();
     });
+
+    terminal.show();
 }
 
 function activate(context) {
