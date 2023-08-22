@@ -3,7 +3,7 @@
     "displayName": "M&B: Warband API",
     "description": "Mount & Blade: Warband language support for Microsoft Visual Studio Code by Azremen and Sart",
     "publisher": "Azremen",
-    "version": "0.1.30",
+    "version": "0.1.31",
     "homepage": "https://github.com/Azremen/MB-Warband-API-VSC/blob/main/README.md",
     "engines": {
         "vscode": "^1.62.0"
