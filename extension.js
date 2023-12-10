@@ -50,8 +50,15 @@ function formatAndSaveDocument() {
                 currentIndentationLevel--;
             }
 
+            let customFormattedLine = line;
+
+            if (line.includes("(") && line.includes(")") && !line.includes(",") && !line.includes("try")) {
+                // Tuple without commas, format as per your preference
+                customFormattedLine = line.replace(/^\s*\(/, '').replace(/\)\s*,$/, '');
+            }
+
             const customIndentation = '\t'.repeat(Math.max(0, currentIndentationLevel));
-            const customFormattedLine = customIndentation + line;
+            customFormattedLine = customIndentation + customFormattedLine;
             customFormattedLines.push(customFormattedLine);
 
             if (operationNames.some(op => trimmedLine.includes(op))) {
