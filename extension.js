@@ -27,7 +27,7 @@ function formatAndSaveDocument() {
         fs.writeFileSync(tempFilePath, originalContent, 'utf-8');
 
         // Use black command-line tool to format the content and get the formatted code
-        const blackCmd = `black --quiet ${tempFilePath}`;
+        const blackCmd = `black --line-length 1000 --skip-string-normalization --quiet ${tempFilePath}`;
         execFileSync(blackCmd, {
             encoding: 'utf-8',
             shell: true
