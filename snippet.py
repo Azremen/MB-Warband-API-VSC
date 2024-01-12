@@ -1,69 +1,59 @@
 import os
 
-tags = ["<snippet>", "<content>", "</content>",
-        "<tabTrigger>", "<scope>", "<description>", "</snippet>"]
-
+tags = ["<snippet>", "<content>", "</content>", "<tabTrigger>", "<scope>", "<description>", "</snippet>"]
 betweens = ["<content>", "<![CDATA[", "]]>"]
 
-with open("mbap.code-snippets", "w") as f:
+script_directory = os.path.dirname(os.path.abspath(__file__))
+input_directory = os.path.join(script_directory, "snippets/")  # Adjust the relative path
+output_file = os.path.join(script_directory, "snippets/mbap.code-snippets")  # Adjust the relative path
+
+with open(output_file, "w") as f:
     f.write("{\n")
 
-for file_name in os.listdir("."):
-    newFirstLine = ""
-    if file_name.endswith(".sublime-snippet"):
-        old_name = file_name
+for file_name in os.listdir(input_directory):
+    if file_name.endswith(".sublime-snippet") and os.path.isfile(os.path.join(input_directory, file_name)):
+        old_name = os.path.join(input_directory, file_name)
         file_name = os.path.splitext(file_name)[0]
 
-    with open(old_name, "rt+") as f:
-        old_data = f.read().split("\n")
-        old_data = "\n".join([x.replace("\t", "").replace(" ", "")
-                             for x in old_data if x])
+        with open(old_name, "rt+") as f:
+            old_data = f.read().split("\n")
+            old_data = "\n".join([x.replace("\t", "").replace(" ", "") for x in old_data if x])
 
-        f.seek(0)
-        f.truncate()
-        f.write(old_data)
+            f.seek(0)
+            f.truncate()
+            f.write(old_data)
 
-    with open(old_name, "rt") as f:
-        old_data = f.read()
-        f.close()
+        with open(old_name, "rt") as f:
+            old_data = f.read()
 
-    new_data = ""
-    start_end_bool = True  # 1: Start, 0: End
-    for char in old_data:
-        if char == "\"":
-            if start_end_bool:
-                new_data += " $LINE_COMMENT"  # start
+        new_data = ""
+        start_end_bool = True  # 1: Start, 0: End
+        for char in old_data:
+            if char == "\"":
+                new_data += '"'
+                start_end_bool = not start_end_bool
+            elif char == "\\":
+                new_data += "\\\\"
             else:
-                new_data += "$LINE_COMMENT"  # end
-            start_end_bool = not start_end_bool
-        elif char == "\\":
-            new_data += "\\\\"
-        else:
-            new_data += char
+                new_data += char
 
-    for line in new_data.split("\n"):
-        if line.startswith(betweens[0]):
-            #            print("line startswith: {}".format(betweens[0]))
-            exact = line
-            exact = exact.split("".join(betweens[0:2]))
-            newFirstLine = "".join(exact)
-        elif line.endswith(betweens[2]):
-            #            print("line endswith: {}".format(betweens[2]))
-            exact = line
-            exact = exact.split(betweens[2])
-            exact = "".join(exact)
-            newFirstLine += exact
+        newFirstLine = ""
+        for line in new_data.split("\n"):
+            if line.startswith(betweens[0]):
+                exact = line.split("".join(betweens[0:2]))
+                newFirstLine = "".join(exact)
+            elif line.endswith(betweens[2]):
+                exact = line.split(betweens[2])
+                newFirstLine += "".join(exact)
 
-    replaced = [
-        " " * 4 + "\"{}\": ".format(file_name) + "{",
-        " " * 8 + "\"body\": \"{}\",".format(newFirstLine),
-        " " * 8 + "\"prefix\": \"{}\",".format(file_name),
-        " " * 8 + "\"scope\": \"python\"",
-        " " * 4 + "},"
-    ]
+        replaced = [" " * 4 + "\"{}\": ".format(file_name) + "{",
+                    " " * 8 + "\"body\": \"{}\",".format(newFirstLine),
+                    " " * 8 + "\"prefix\": \"{}\",".format(file_name),
+                    " " * 8 + "\"scope\": \"python\"",
+                    " " * 4 + "},"]
 
-    with open("mbap.code-snippets", "a") as f:
-        f.write("\n".join(replaced) + "\n\n")
+        with open(output_file, "a") as f:
+            f.write("\n".join(replaced) + "\n\n")
 
-with open("mbap.code-snippets", "a") as f:
+with open(output_file, "a") as f:
     f.write("\n}")

@@ -82,7 +82,7 @@ function formatAndSaveDocument() {
 }
 
 function checkAndInstallBlack() {
-    const terminal = vscode.window.createTerminal('Install Black');
+    const terminal = vscode.window.createTerminal('Check Black Installation');
 
     // Check if Black is installed
     terminal.sendText('pip show black', true);
@@ -90,8 +90,18 @@ function checkAndInstallBlack() {
     // When the terminal output is ready, check if Black is installed
     terminal.onDidWriteData(data => {
         if (data.includes("Package(s) not found: black")) {
-            // Black is not installed, so install it
-            terminal.sendText('pip install black', true);
+            // Black is not installed, ask the user if they want to install it
+            const installOption = 'Install Black';
+            const message = 'The Black formatter is not installed. Would you like to install it?';
+            vscode.window.showInformationMessage(message, installOption).then((choice) => {
+                if (choice === installOption) {
+                    // User chose to install Black
+                    vscode.window.showInformationMessage('Installing Black...');
+                    terminal.sendText('pip install black', true);
+                } else {
+                    vscode.window.showInformationMessage('Black is not installed. The extension may not work as expected.');
+                }
+            });
         }
 
         // Dispose of the terminal
