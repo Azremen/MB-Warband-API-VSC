@@ -1,3 +1,6129 @@
 {
+    "add_companion_party": {
+        "body": "(add_companion_party,"${1:troop_id_hero}"),$2",
+        "prefix": "add_companion_party",
+        "scope": "python"
+    },
+
+    "add_faction_note_from_dialog": {
+        "body": "(add_faction_note_from_dialog,"${1:faction_id}",${2:note_slot_no},${3:value}),$4",
+        "prefix": "add_faction_note_from_dialog",
+        "scope": "python"
+    },
+
+    "add_faction_note_from_sreg": {
+        "body": "(add_faction_note_from_sreg,"${1:faction_id}",${2:note_slot_no},"${3:str_id}",${4:value}),$5",
+        "prefix": "add_faction_note_from_sreg",
+        "scope": "python"
+    },
+
+    "add_faction_note_tableau_mesh": {
+        "body": "(add_faction_note_tableau_mesh,"${1:faction_id}","${2:tableau_material_id}"),$3",
+        "prefix": "add_faction_note_tableau_mesh",
+        "scope": "python"
+    },
+
+    "add_gold_as_xp": {
+        "body": "(add_gold_as_xp,${1:value},"${2:troop_id}"),$3",
+        "prefix": "add_gold_as_xp",
+        "scope": "python"
+    },
+
+    "add_gold_to_party": {
+        "body": "(add_gold_to_party,${1:value},"${2:party_id}"),$3",
+        "prefix": "add_gold_to_party",
+        "scope": "python"
+    },
+
+    "add_info_page_note_from_dialog": {
+        "body": "(add_info_page_note_from_dialog,"${1:info_page_id}",${2:note_slot_no},${3:value}),$4",
+        "prefix": "add_info_page_note_from_dialog",
+        "scope": "python"
+    },
+
+    "add_info_page_note_from_sreg": {
+        "body": "(add_info_page_note_from_sreg,"${1:info_page_id}",${2:note_slot_no},"${3:str_id}",${4:value}),$5",
+        "prefix": "add_info_page_note_from_sreg",
+        "scope": "python"
+    },
+
+    "add_info_page_note_tableau_mesh": {
+        "body": "(add_info_page_note_tableau_mesh,"${1:info_page_id}","${2:tableau_material_id}"),$3",
+        "prefix": "add_info_page_note_tableau_mesh",
+        "scope": "python"
+    },
+
+    "add_missile": {
+        "body": "(add_missile,"${1:agent_id}",${2:starting_position},${3:starting_speed_fixed_point},${4:weapon_item_id},${5:weapon_item_modifier},${6:missile_item_id},${7:missile_item_modifier}),$8",
+        "prefix": "add_missile",
+        "scope": "python"
+    },
+
+    "add_party_note_from_dialog": {
+        "body": "(add_party_note_from_dialog,"${1:party_id}",${2:note_slot_no},${3:value}),$4",
+        "prefix": "add_party_note_from_dialog",
+        "scope": "python"
+    },
+
+    "add_party_note_from_sreg": {
+        "body": "(add_party_note_from_sreg,"${1:party_id}",${2:note_slot_no},"${3:str_id}",${4:value}),$5",
+        "prefix": "add_party_note_from_sreg",
+        "scope": "python"
+    },
+
+    "add_party_note_tableau_mesh": {
+        "body": "(add_party_note_tableau_mesh,"${1:party_id}","${2:tableau_material_id}"),$3",
+        "prefix": "add_party_note_tableau_mesh",
+        "scope": "python"
+    },
+
+    "add_point_light": {
+        "body": "(add_point_light${1:,[flicker_magnitude]}${2:,[flicker_interval]}),$3",
+        "prefix": "add_point_light",
+        "scope": "python"
+    },
+
+    "add_point_light_to_entity": {
+        "body": "(add_point_light_to_entity${1:,[flicker_magnitude]}${2:,[flicker_interval]}),$3",
+        "prefix": "add_point_light_to_entity",
+        "scope": "python"
+    },
+
+    "add_quest_note_from_dialog": {
+        "body": "(add_quest_note_from_dialog,"${1:quest_id}",${2:note_slot_no},${3:value}),$4",
+        "prefix": "add_quest_note_from_dialog",
+        "scope": "python"
+    },
+
+    "add_quest_note_from_sreg": {
+        "body": "(add_quest_note_from_sreg,"${1:quest_id}",${2:note_slot_no},"${3:str_id}",${4:value}),$5",
+        "prefix": "add_quest_note_from_sreg",
+        "scope": "python"
+    },
+
+    "add_quest_note_tableau_mesh": {
+        "body": "(add_quest_note_tableau_mesh,"${1:quest_id}","${2:tableau_material_id}"),$3",
+        "prefix": "add_quest_note_tableau_mesh",
+        "scope": "python"
+    },
+
+    "add_reinforcements_to_entry": {
+        "body": "(add_reinforcements_to_entry,${1:entry_no},${2:value}),$3",
+        "prefix": "add_reinforcements_to_entry",
+        "scope": "python"
+    },
+
+    "add_troop_note_from_dialog": {
+        "body": "(add_troop_note_from_dialog,"${1:troop_id}",${2:note_slot_no},${3:value}),$4",
+        "prefix": "add_troop_note_from_dialog",
+        "scope": "python"
+    },
+
+    "add_troop_note_from_sreg": {
+        "body": "(add_troop_note_from_sreg,"${1:troop_id}",${2:note_slot_no},"${3:str_id}",${4:value}),$5",
+        "prefix": "add_troop_note_from_sreg",
+        "scope": "python"
+    },
+
+    "add_troop_note_tableau_mesh": {
+        "body": "(add_troop_note_tableau_mesh,"${1:troop_id}","${2:tableau_material_id}"),$3",
+        "prefix": "add_troop_note_tableau_mesh",
+        "scope": "python"
+    },
+
+    "add_troop_to_site": {
+        "body": "(add_troop_to_site,"${1:trp_id}","${2:scene_id}",${3:entry_no}),$4",
+        "prefix": "add_troop_to_site",
+        "scope": "python"
+    },
+
+    "add_visitors_to_current_scene": {
+        "body": "(add_visitors_to_current_scene,${1:entry_no},"${2:trp_id}",${3:number_of_troops},${4:team_no},${5:group_no}),$6",
+        "prefix": "add_visitors_to_current_scene",
+        "scope": "python"
+    },
+
+    "add_xp_as_reward": {
+        "body": "(add_xp_as_reward,${1:value}),$2",
+        "prefix": "add_xp_as_reward",
+        "scope": "python"
+    },
+
+    "add_xp_to_troop": {
+        "body": "(add_xp_to_troop,${1:value},"${2:troop_id}"),$3",
+        "prefix": "add_xp_to_troop",
+        "scope": "python"
+    },
+
+    "agent_add_offer_with_timeout": {
+        "body": "(agent_add_offer_with_timeout,"${1:agent_id}","${2:offerer_agent_id}",${3:duration-in-1/1000-seconds}),$4",
+        "prefix": "agent_add_offer_with_timeout",
+        "scope": "python"
+    },
+
+    "agent_add_relation_with_agent": {
+        "body": "(agent_add_relation_with_agent,"${1:agent_id_1}","${2:agent_id_2}",${3:value}),$4",
+        "prefix": "agent_add_relation_with_agent",
+        "scope": "python"
+    },
+
+    "agent_ai_get_behavior_target": {
+        "body": "(agent_ai_get_behavior_target,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_ai_get_behavior_target",
+        "scope": "python"
+    },
+
+    "agent_ai_get_cached_enemy": {
+        "body": "(agent_ai_get_cached_enemy,"${1:destination}","${2:agent_no}","${3:cache_index}"),$4",
+        "prefix": "agent_ai_get_cached_enemy",
+        "scope": "python"
+    },
+
+    "agent_ai_get_look_target": {
+        "body": "(agent_ai_get_look_target,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_ai_get_look_target",
+        "scope": "python"
+    },
+
+    "agent_ai_get_move_target": {
+        "body": "(agent_ai_get_move_target,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_ai_get_move_target",
+        "scope": "python"
+    },
+
+    "agent_ai_get_num_cached_enemies": {
+        "body": "(agent_ai_get_num_cached_enemies,"${1:destination}","${2:agent_no}"),$3",
+        "prefix": "agent_ai_get_num_cached_enemies",
+        "scope": "python"
+    },
+
+    "agent_ai_set_aggressiveness": {
+        "body": "(agent_ai_set_aggressiveness,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_ai_set_aggressiveness",
+        "scope": "python"
+    },
+
+    "agent_ai_set_always_attack_in_melee": {
+        "body": "(agent_ai_set_always_attack_in_melee,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_ai_set_always_attack_in_melee",
+        "scope": "python"
+    },
+
+    "agent_ai_set_can_crouch": {
+        "body": "(agent_ai_set_can_crouch,"${1:agent_id}",${2:value0-1}),$3",
+        "prefix": "agent_ai_set_can_crouch",
+        "scope": "python"
+    },
+
+    "agent_check_offer_from_agent": {
+        "body": "(agent_check_offer_from_agent,"${1:agent_id}","${2:offerer_agent_id}"),$3",
+        "prefix": "agent_check_offer_from_agent",
+        "scope": "python"
+    },
+
+    "agent_clear_relations_with_agents": {
+        "body": "(agent_clear_relations_with_agents,"${1:agent_id}"),$2",
+        "prefix": "agent_clear_relations_with_agents",
+        "scope": "python"
+    },
+
+    "agent_clear_scripted_mode": {
+        "body": "(agent_clear_scripted_mode,"${1:agent_id}"),$2",
+        "prefix": "agent_clear_scripted_mode",
+        "scope": "python"
+    },
+
+    "agent_deliver_damage_to_agent": {
+        "body": "(agent_deliver_damage_to_agent,"${1:agent_id_deliverer}","${2:agent_id}",${3:value}${4:,[item_id]}),$5",
+        "prefix": "agent_deliver_damage_to_agent",
+        "scope": "python"
+    },
+
+    "agent_deliver_damage_to_agent_advanced": {
+        "body": "(agent_deliver_damage_to_agent_advanced,":${1:destination}","${2:agent_id_deliverer}","${3:agent_id}",${4:value}${5:,[item_id]}),$6",
+        "prefix": "agent_deliver_damage_to_agent_advanced",
+        "scope": "python"
+    },
+
+    "agent_equip_item": {
+        "body": "(agent_equip_item,"${1:agent_id}","${2:itm_id}"${3:,[weapon_slot_no]}),$4",
+        "prefix": "agent_equip_item",
+        "scope": "python"
+    },
+
+    "agent_fade_out": {
+        "body": "(agent_fade_out,"${1:agent_id}"),$2",
+        "prefix": "agent_fade_out",
+        "scope": "python"
+    },
+
+    "agent_force_rethink": {
+        "body": "(agent_force_rethink,"${1:agent_id}"),$2",
+        "prefix": "agent_force_rethink",
+        "scope": "python"
+    },
+
+    "agent_get_action_dir": {
+        "body": "(agent_get_action_dir,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_action_dir",
+        "scope": "python"
+    },
+
+    "agent_get_ammo": {
+        "body": "(agent_get_ammo,":${1:destination}","${2:agent_id}",${3:value}),$4",
+        "prefix": "agent_get_ammo",
+        "scope": "python"
+    },
+
+    "agent_get_ammo_for_slot": {
+        "body": "(agent_get_ammo_for_slot,":${1:destination}","${2:agent_id}",${3:slot_no0-3}),$4",
+        "prefix": "agent_get_ammo_for_slot",
+        "scope": "python"
+    },
+
+    "agent_get_animation": {
+        "body": "(agent_get_animation,":${1:destination}","${2:agent_id}",${3:body_part0-1}),$4",
+        "prefix": "agent_get_animation",
+        "scope": "python"
+    },
+
+    "agent_get_attached_scene_prop": {
+        "body": "(agent_get_attached_scene_prop,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_attached_scene_prop",
+        "scope": "python"
+    },
+
+    "agent_get_attack_action": {
+        "body": "(agent_get_attack_action,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_attack_action",
+        "scope": "python"
+    },
+
+    "agent_get_class": {
+        "body": "(agent_get_class,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_class",
+        "scope": "python"
+    },
+
+    "agent_get_combat_state": {
+        "body": "(agent_get_combat_state,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_combat_state",
+        "scope": "python"
+    },
+
+    "agent_get_crouch_mode": {
+        "body": "(agent_get_crouch_mode,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_crouch_mode",
+        "scope": "python"
+    },
+
+    "agent_get_defend_action": {
+        "body": "(agent_get_defend_action,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_defend_action",
+        "scope": "python"
+    },
+
+    "agent_get_division": {
+        "body": "(agent_get_division,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_division",
+        "scope": "python"
+    },
+
+    "agent_get_entry_no": {
+        "body": "(agent_get_entry_no,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_entry_no",
+        "scope": "python"
+    },
+
+    "agent_get_group": {
+        "body": "(agent_get_group,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_group",
+        "scope": "python"
+    },
+
+    "agent_get_horse": {
+        "body": "(agent_get_horse,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_horse",
+        "scope": "python"
+    },
+
+    "agent_get_item_cur_ammo": {
+        "body": "(agent_get_item_cur_ammo,":${1:destination}","${2:agent_id}",${3:slot_no}),$4",
+        "prefix": "agent_get_item_cur_ammo",
+        "scope": "python"
+    },
+
+    "agent_get_item_id": {
+        "body": "(agent_get_item_id,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_item_id",
+        "scope": "python"
+    },
+
+    "agent_get_item_slot": {
+        "body": "(agent_get_item_slot,":${1:destination}","${2:agent_id}",${3:value0-7}),$4",
+        "prefix": "agent_get_item_slot",
+        "scope": "python"
+    },
+
+    "agent_get_kill_count": {
+        "body": "(agent_get_kill_count,":${1:destination}","${2:agent_id}"${3:,[get_wounded0-1]}),$4",
+        "prefix": "agent_get_kill_count",
+        "scope": "python"
+    },
+
+    "agent_get_look_position": {
+        "body": "(agent_get_look_position,pos${1:1},"${2:agent_id}"),$3",
+        "prefix": "agent_get_look_position",
+        "scope": "python"
+    },
+
+    "agent_get_number_of_enemies_following": {
+        "body": "(agent_get_number_of_enemies_following,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_number_of_enemies_following",
+        "scope": "python"
+    },
+
+    "agent_get_party_id": {
+        "body": "(agent_get_party_id,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_party_id",
+        "scope": "python"
+    },
+
+    "agent_get_player_id": {
+        "body": "(agent_get_player_id,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_player_id",
+        "scope": "python"
+    },
+
+    "agent_get_position": {
+        "body": "(agent_get_position,pos${1:1},"${2:agent_id}"),$3",
+        "prefix": "agent_get_position",
+        "scope": "python"
+    },
+
+    "agent_get_rider": {
+        "body": "(agent_get_rider,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_rider",
+        "scope": "python"
+    },
+
+    "agent_get_scripted_destination": {
+        "body": "(agent_get_scripted_destination,pos${1:1},"${2:agent_id}"),$3",
+        "prefix": "agent_get_scripted_destination",
+        "scope": "python"
+    },
+
+    "agent_get_simple_behavior": {
+        "body": "(agent_get_simple_behavior,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_simple_behavior",
+        "scope": "python"
+    },
+
+    "agent_get_slot": {
+        "body": "(agent_get_slot,":${1:destination}","${2:agent_id}",${3:slot_no}),$4",
+        "prefix": "agent_get_slot",
+        "scope": "python"
+    },
+
+    "agent_get_speed": {
+        "body": "(agent_get_speed,pos${1:1},"${2:agent_id}"),$3",
+        "prefix": "agent_get_speed",
+        "scope": "python"
+    },
+
+    "agent_get_team": {
+        "body": "(agent_get_team,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_team",
+        "scope": "python"
+    },
+
+    "agent_get_time_elapsed_since_removed": {
+        "body": "(agent_get_time_elapsed_since_removed,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_time_elapsed_since_removed",
+        "scope": "python"
+    },
+
+    "agent_get_troop_id": {
+        "body": "(agent_get_troop_id,":${1:destination}","${2:agent_id}"),$3",
+        "prefix": "agent_get_troop_id",
+        "scope": "python"
+    },
+
+    "agent_get_wielded_item": {
+        "body": "(agent_get_wielded_item,":${1:destination}","${2:agent_id}",${3:hand_no}),$4",
+        "prefix": "agent_get_wielded_item",
+        "scope": "python"
+    },
+
+    "agent_has_item_equipped": {
+        "body": "(agent_has_item_equipped,"${1:agent_id}","${2:itm_id}"),$3",
+        "prefix": "agent_has_item_equipped",
+        "scope": "python"
+    },
+
+    "agent_is_active": {
+        "body": "(agent_is_active,"${1:agent_id}"),$2",
+        "prefix": "agent_is_active",
+        "scope": "python"
+    },
+
+    "agent_is_alarmed": {
+        "body": "(agent_is_alarmed,"${1:agent_id}"),$2",
+        "prefix": "agent_is_alarmed",
+        "scope": "python"
+    },
+
+    "agent_is_alive": {
+        "body": "(agent_is_alive,"${1:agent_id}"),$2",
+        "prefix": "agent_is_alive",
+        "scope": "python"
+    },
+
+    "agent_is_ally": {
+        "body": "(agent_is_ally,"${1:agent_id}"),$2",
+        "prefix": "agent_is_ally",
+        "scope": "python"
+    },
+
+    "agent_is_defender": {
+        "body": "(agent_is_defender,"${1:agent_id}"),$2",
+        "prefix": "agent_is_defender",
+        "scope": "python"
+    },
+
+    "agent_is_human": {
+        "body": "(agent_is_human,"${1:agent_id}"),$2",
+        "prefix": "agent_is_human",
+        "scope": "python"
+    },
+
+    "agent_is_in_line_of_sight": {
+        "body": "(agent_is_in_line_of_sight,"${1:agent_id}",pos${2:1}),$3",
+        "prefix": "agent_is_in_line_of_sight",
+        "scope": "python"
+    },
+
+    "agent_is_in_parried_animation": {
+        "body": "(agent_is_in_parried_animation,"${1:agent_id}"),$2",
+        "prefix": "agent_is_in_parried_animation",
+        "scope": "python"
+    },
+
+    "agent_is_in_special_mode": {
+        "body": "(agent_is_in_special_mode,"${1:agent_id}"),$2",
+        "prefix": "agent_is_in_special_mode",
+        "scope": "python"
+    },
+
+    "agent_is_non_player": {
+        "body": "(agent_is_non_player,"${1:agent_id}"),$2",
+        "prefix": "agent_is_non_player",
+        "scope": "python"
+    },
+
+    "agent_is_routed": {
+        "body": "(agent_is_routed,"${1:agent_id}"),$2",
+        "prefix": "agent_is_routed",
+        "scope": "python"
+    },
+
+    "agent_is_wounded": {
+        "body": "(agent_is_wounded,"${1:agent_id}"),$2",
+        "prefix": "agent_is_wounded",
+        "scope": "python"
+    },
+
+    "agent_play_sound": {
+        "body": "(agent_play_sound,"${1:agent_id}","${2:snd_id}"),$3",
+        "prefix": "agent_play_sound",
+        "scope": "python"
+    },
+
+    "agent_refill_ammo": {
+        "body": "(agent_refill_ammo,"${1:agent_id}"),$2",
+        "prefix": "agent_refill_ammo",
+        "scope": "python"
+    },
+
+    "agent_refill_wielded_shield_hit_points": {
+        "body": "(agent_refill_wielded_shield_hit_points,"${1:agent_id}"),$2",
+        "prefix": "agent_refill_wielded_shield_hit_points",
+        "scope": "python"
+    },
+
+    "agent_set_accuracy_modifier": {
+        "body": "(agent_set_accuracy_modifier,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_accuracy_modifier",
+        "scope": "python"
+    },
+
+    "agent_set_ammo": {
+        "body": "(agent_set_ammo,"${1:agent_id}","${2:itm_id}",${3:value}),$4",
+        "prefix": "agent_set_ammo",
+        "scope": "python"
+    },
+
+    "agent_set_animation": {
+        "body": "(agent_set_animation,"${1:agent_id}","${2:anim_id}"${3:,[channel_no]}),$4",
+        "prefix": "agent_set_animation",
+        "scope": "python"
+    },
+
+    "agent_set_animation_progress": {
+        "body": "(agent_set_animation_progress,"${1:agent_id}",${2:value_fixed_point}),$3",
+        "prefix": "agent_set_animation_progress",
+        "scope": "python"
+    },
+
+    "agent_set_attached_scene_prop": {
+        "body": "(agent_set_attached_scene_prop,"${1:agent_id}","${2:spr_id}"),$3",
+        "prefix": "agent_set_attached_scene_prop",
+        "scope": "python"
+    },
+
+    "agent_set_attached_scene_prop_x": {
+        "body": "(agent_set_attached_scene_prop_x,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_attached_scene_prop_x",
+        "scope": "python"
+    },
+
+    "agent_set_attached_scene_prop_y": {
+        "body": "(agent_set_attached_scene_prop_y,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_attached_scene_prop_y",
+        "scope": "python"
+    },
+
+    "agent_set_attached_scene_prop_z": {
+        "body": "(agent_set_attached_scene_prop_z,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_attached_scene_prop_z",
+        "scope": "python"
+    },
+
+    "agent_set_attack_action": {
+        "body": "(agent_set_attack_action,"${1:agent_id}",${2:value_1},${3:value_2}),$4",
+        "prefix": "agent_set_attack_action",
+        "scope": "python"
+    },
+
+    "agent_set_crouch_mode": {
+        "body": "(agent_set_crouch_mode,"${1:agent_id}",${2:value0-1}),$3",
+        "prefix": "agent_set_crouch_mode",
+        "scope": "python"
+    },
+
+    "agent_set_damage_modifier": {
+        "body": "(agent_set_damage_modifier,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_damage_modifier",
+        "scope": "python"
+    },
+
+    "agent_set_defend_action": {
+        "body": "(agent_set_defend_action,"${1:agent_id}",${2:value},${3:duration-in-1/1000-seconds}),$4",
+        "prefix": "agent_set_defend_action",
+        "scope": "python"
+    },
+
+    "agent_set_division": {
+        "body": "(agent_set_division,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_division",
+        "scope": "python"
+    },
+
+    "agent_set_group": {
+        "body": "(agent_set_group,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_group",
+        "scope": "python"
+    },
+
+    "agent_set_hit_points": {
+        "body": "(agent_set_hit_points,"${1:agent_id}",${2:value}${3:,[absolute]}),$4",
+        "prefix": "agent_set_hit_points",
+        "scope": "python"
+    },
+
+    "agent_set_horse_speed_factor": {
+        "body": "(agent_set_horse_speed_factor,"${1:agent_id}",${2:speed_multiplier-in-1/100}),$3",
+        "prefix": "agent_set_horse_speed_factor",
+        "scope": "python"
+    },
+
+    "agent_set_invulnerable_shield": {
+        "body": "(agent_set_invulnerable_shield,"${1:agent_id}"),$2",
+        "prefix": "agent_set_invulnerable_shield",
+        "scope": "python"
+    },
+
+    "agent_set_is_alarmed": {
+        "body": "(agent_set_is_alarmed,"${1:agent_id}",${2:value1/0}),$3",
+        "prefix": "agent_set_is_alarmed",
+        "scope": "python"
+    },
+
+    "agent_set_kick_allowed": {
+        "body": "(agent_set_kick_allowed,"${1:agent_id}",${2:value0-1}),$3",
+        "prefix": "agent_set_kick_allowed",
+        "scope": "python"
+    },
+
+    "agent_set_look_target_agent": {
+        "body": "(agent_set_look_target_agent,"${1:agent_id}","${2:target_agent_id}"),$3",
+        "prefix": "agent_set_look_target_agent",
+        "scope": "python"
+    },
+
+    "agent_set_look_target_position": {
+        "body": "(agent_set_look_target_position,"${1:agent_id}",pos${2:1}),$3",
+        "prefix": "agent_set_look_target_position",
+        "scope": "python"
+    },
+
+    "agent_set_max_hit_points": {
+        "body": "(agent_set_max_hit_points,"${1:agent_id}",${2:value}${3:,[absolute]}),$4",
+        "prefix": "agent_set_max_hit_points",
+        "scope": "python"
+    },
+
+    "agent_set_no_death_knock_down_only": {
+        "body": "(agent_set_no_death_knock_down_only,"${1:agent_id}",${2:value0-1}),$3",
+        "prefix": "agent_set_no_death_knock_down_only",
+        "scope": "python"
+    },
+
+    "agent_set_no_dynamics": {
+        "body": "(agent_set_no_dynamics,"${1:agent_id}",${2:value0-1}),$3",
+        "prefix": "agent_set_no_dynamics",
+        "scope": "python"
+    },
+
+    "agent_set_position": {
+        "body": "(agent_set_position,"${1:agent_id}",pos${2:1}),$3",
+        "prefix": "agent_set_position",
+        "scope": "python"
+    },
+
+    "agent_set_ranged_damage_modifier": {
+        "body": "(agent_set_ranged_damage_modifier,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_ranged_damage_modifier",
+        "scope": "python"
+    },
+
+    "agent_set_reload_speed_modifier": {
+        "body": "(agent_set_reload_speed_modifier,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_reload_speed_modifier",
+        "scope": "python"
+    },
+
+    "agent_set_scripted_destination": {
+        "body": "(agent_set_scripted_destination,"${1:agent_id}",pos${2:1},${3:auto_set_z_to_ground_level}),$4",
+        "prefix": "agent_set_scripted_destination",
+        "scope": "python"
+    },
+
+    "agent_set_scripted_destination_no_attack": {
+        "body": "(agent_set_scripted_destination_no_attack,"${1:agent_id}",pos${2:1},${3:auto_set_z_to_ground_level}),$4",
+        "prefix": "agent_set_scripted_destination_no_attack",
+        "scope": "python"
+    },
+
+    "agent_set_slot": {
+        "body": "(agent_set_slot,"${1:agent_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "agent_set_slot",
+        "scope": "python"
+    },
+
+    "agent_set_speed_limit": {
+        "body": "(agent_set_speed_limit,"${1:agent_id}",${2:speed_limit(kilometers/hour)}),$3",
+        "prefix": "agent_set_speed_limit",
+        "scope": "python"
+    },
+
+    "agent_set_speed_modifier": {
+        "body": "(agent_set_speed_modifier,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_speed_modifier",
+        "scope": "python"
+    },
+
+    "agent_set_stand_animation": {
+        "body": "(agent_set_stand_animation,"${1:agent_id}","${2:anim_id}"),$3",
+        "prefix": "agent_set_stand_animation",
+        "scope": "python"
+    },
+
+    "agent_set_team": {
+        "body": "(agent_set_team,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_team",
+        "scope": "python"
+    },
+
+    "agent_set_use_speed_modifier": {
+        "body": "(agent_set_use_speed_modifier,"${1:agent_id}",${2:value}),$3",
+        "prefix": "agent_set_use_speed_modifier",
+        "scope": "python"
+    },
+
+    "agent_set_visibility": {
+        "body": "(agent_set_visibility,"${1:agent_id}",${2:value0-1}),$3",
+        "prefix": "agent_set_visibility",
+        "scope": "python"
+    },
+
+    "agent_set_walk_forward_animation": {
+        "body": "(agent_set_walk_forward_animation,"${1:agent_id}","${2:anim_id}"),$3",
+        "prefix": "agent_set_walk_forward_animation",
+        "scope": "python"
+    },
+
+    "agent_set_wielded_item": {
+        "body": "(agent_set_wielded_item,"${1:agent_id}","${2:itm_id}"),$3",
+        "prefix": "agent_set_wielded_item",
+        "scope": "python"
+    },
+
+    "agent_slot_eq": {
+        "body": "(agent_slot_eq,"${1:agent_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "agent_slot_eq",
+        "scope": "python"
+    },
+
+    "agent_slot_ge": {
+        "body": "(agent_slot_ge,"${1:agent_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "agent_slot_ge",
+        "scope": "python"
+    },
+
+    "agent_start_running_away": {
+        "body": "(agent_start_running_away,"${1:agent_id}"${2:,[pos1]}),$3",
+        "prefix": "agent_start_running_away",
+        "scope": "python"
+    },
+
+    "agent_stop_running_away": {
+        "body": "(agent_stop_running_away,"${1:agent_id}"),$2",
+        "prefix": "agent_stop_running_away",
+        "scope": "python"
+    },
+
+    "agent_stop_sound": {
+        "body": "(agent_stop_sound,"${1:agent_id}"),$2",
+        "prefix": "agent_stop_sound",
+        "scope": "python"
+    },
+
+    "agent_unequip_item": {
+        "body": "(agent_unequip_item,"${1:agent_id}","${2:itm_id}"${3:,[weapon_slot_no]}),$4",
+        "prefix": "agent_unequip_item",
+        "scope": "python"
+    },
+
+    "ai_mesh_face_group_show_hide": {
+        "body": "(ai_mesh_face_group_show_hide,"${1:group_no}",${2:value1/0}),$3",
+        "prefix": "ai_mesh_face_group_show_hide",
+        "scope": "python"
+    },
+
+    "all_enemies_defeated": {
+        "body": "(all_enemies_defeated),$1",
+        "prefix": "all_enemies_defeated",
+        "scope": "python"
+    },
+
+    "assign": {
+        "body": "(assign,${1:destination},${2:value}),$3",
+        "prefix": "assign",
+        "scope": "python"
+    },
+
+    "auto_set_meta_mission_at_end_commited": {
+        "body": "(auto_set_meta_mission_at_end_commited),$1",
+        "prefix": "auto_set_meta_mission_at_end_commited",
+        "scope": "python"
+    },
+
+    "ban_player": {
+        "body": "(ban_player,"${1:player_id}",${2:value},"${3:admin_player_id}"),$4",
+        "prefix": "ban_player",
+        "scope": "python"
+    },
+
+    "ban_player_using_saved_ban_info": {
+        "body": "(ban_player_using_saved_ban_info),$1",
+        "prefix": "ban_player_using_saved_ban_info",
+        "scope": "python"
+    },
+
+    "call_script": {
+        "body": "(call_script,"script_${1:name}"),$2",
+        "prefix": "call_script",
+        "scope": "python"
+    },
+
+    "cancel_quest": {
+        "body": "(cancel_quest,"${1:qst_id}"),$2",
+        "prefix": "cancel_quest",
+        "scope": "python"
+    },
+
+    "change_screen_buy_mercenaries": {
+        "body": "(change_screen_buy_mercenaries),$1",
+        "prefix": "change_screen_buy_mercenaries",
+        "scope": "python"
+    },
+
+    "change_screen_controls": {
+        "body": "(change_screen_controls),$1",
+        "prefix": "change_screen_controls",
+        "scope": "python"
+    },
+
+    "change_screen_equip_other": {
+        "body": "(change_screen_equip_other,"${1:trp_id}"),$2",
+        "prefix": "change_screen_equip_other",
+        "scope": "python"
+    },
+
+    "change_screen_exchange_members": {
+        "body": "(change_screen_exchange_members${1:,[exchange_leader0-1]}${2:,[party_id]}),$3",
+        "prefix": "change_screen_exchange_members",
+        "scope": "python"
+    },
+
+    "change_screen_exchange_with_party": {
+        "body": "(change_screen_exchange_with_party,"${1:party_id}"),$2",
+        "prefix": "change_screen_exchange_with_party",
+        "scope": "python"
+    },
+
+    "change_screen_give_members": {
+        "body": "(change_screen_give_members${1:,"[party_id]"}),$2",
+        "prefix": "change_screen_give_members",
+        "scope": "python"
+    },
+
+    "change_screen_loot": {
+        "body": "(change_screen_loot,"${1:trp_id}"),$2",
+        "prefix": "change_screen_loot",
+        "scope": "python"
+    },
+
+    "change_screen_map": {
+        "body": "(change_screen_map),$1",
+        "prefix": "change_screen_map",
+        "scope": "python"
+    },
+
+    "change_screen_map_conversation": {
+        "body": "(change_screen_map_conversation,"${1:trp_id}"),$2",
+        "prefix": "change_screen_map_conversation",
+        "scope": "python"
+    },
+
+    "change_screen_mission": {
+        "body": "(change_screen_mission),$1",
+        "prefix": "change_screen_mission",
+        "scope": "python"
+    },
+
+    "change_screen_notes": {
+        "body": "(change_screen_notes,${1:note_type1-5},${2:object_id}),$3",
+        "prefix": "change_screen_notes",
+        "scope": "python"
+    },
+
+    "change_screen_options": {
+        "body": "(change_screen_options),$1",
+        "prefix": "change_screen_options",
+        "scope": "python"
+    },
+
+    "change_screen_quit": {
+        "body": "(change_screen_quit),$1",
+        "prefix": "change_screen_quit",
+        "scope": "python"
+    },
+
+    "change_screen_return": {
+        "body": "(change_screen_return${1:,0}),$2",
+        "prefix": "change_screen_return",
+        "scope": "python"
+    },
+
+    "change_screen_trade": {
+        "body": "(change_screen_trade,"${1:trp_id}"),$2",
+        "prefix": "change_screen_trade",
+        "scope": "python"
+    },
+
+    "change_screen_trade_prisoners": {
+        "body": "(change_screen_trade_prisoners),$1",
+        "prefix": "change_screen_trade_prisoners",
+        "scope": "python"
+    },
+
+    "change_screen_training": {
+        "body": "(change_screen_training),$1",
+        "prefix": "change_screen_training",
+        "scope": "python"
+    },
+
+    "change_screen_view_character": {
+        "body": "(change_screen_view_character),$1",
+        "prefix": "change_screen_view_character",
+        "scope": "python"
+    },
+
+    "check_quest_active": {
+        "body": "(check_quest_active,"${1:quest_id}"),$2",
+        "prefix": "check_quest_active",
+        "scope": "python"
+    },
+
+    "check_quest_concluded": {
+        "body": "(check_quest_concluded,"${1:quest_id}"),$2",
+        "prefix": "check_quest_concluded",
+        "scope": "python"
+    },
+
+    "check_quest_failed": {
+        "body": "(check_quest_failed,"${1:quest_id}"),$2",
+        "prefix": "check_quest_failed",
+        "scope": "python"
+    },
+
+    "check_quest_finished": {
+        "body": "(check_quest_finished,"${1:quest_id}"),$2",
+        "prefix": "check_quest_finished",
+        "scope": "python"
+    },
+
+    "check_quest_succeeded": {
+        "body": "(check_quest_succeeded,"${1:quest_id}"),$2",
+        "prefix": "check_quest_succeeded",
+        "scope": "python"
+    },
+
+    "class_is_listening_order": {
+        "body": "(class_is_listening_order,${1:team_no},${2:sub_class}),$3",
+        "prefix": "class_is_listening_order",
+        "scope": "python"
+    },
+
+    "class_set_name": {
+        "body": "(class_set_name,${1:sub_class},"${2:str_id}"),$3",
+        "prefix": "class_set_name",
+        "scope": "python"
+    },
+
+    "clear_omitted_keys": {
+        "body": "(clear_omitted_keys),$1",
+        "prefix": "clear_omitted_keys",
+        "scope": "python"
+    },
+
+    "close_item_details": {
+        "body": "(close_item_details),$1",
+        "prefix": "close_item_details",
+        "scope": "python"
+    },
+
+    "complete_quest": {
+        "body": "(complete_quest,"${1:qst_id}"),$2",
+        "prefix": "complete_quest",
+        "scope": "python"
+    },
+
+    "conclude_quest": {
+        "body": "(conclude_quest,"${1:qst_id}"),$2",
+        "prefix": "conclude_quest",
+        "scope": "python"
+    },
+
+    "context_menu_add_item": {
+        "body": "(context_menu_add_item,"${1:str_id}",${2:value}),$3",
+        "prefix": "context_menu_add_item",
+        "scope": "python"
+    },
+
+    "conversation_screen_is_active": {
+        "body": "(conversation_screen_is_active),$1",
+        "prefix": "conversation_screen_is_active",
+        "scope": "python"
+    },
+
+    "convert_from_fixed_point": {
+        "body": "(convert_from_fixed_point,":${1:destination}"),$2",
+        "prefix": "convert_from_fixed_point",
+        "scope": "python"
+    },
+
+    "convert_to_fixed_point": {
+        "body": "(convert_to_fixed_point,":${1:destination_fixed_point}"),$2",
+        "prefix": "convert_to_fixed_point",
+        "scope": "python"
+    },
+
+    "copy_position": {
+        "body": "(copy_position,pos${1:2},pos${2:1}),$3",
+        "prefix": "copy_position",
+        "scope": "python"
+    },
+
+    "create_button_overlay": {
+        "body": "(create_button_overlay,"\\$g_${1:button_id}","${2:str_id}"),$3",
+        "prefix": "create_button_overlay",
+        "scope": "python"
+    },
+
+    "create_check_box_overlay": {
+        "body": "(create_check_box_overlay,"\\$g_${1:check_box_id}"),$2",
+        "prefix": "create_check_box_overlay",
+        "scope": "python"
+    },
+
+    "create_combo_button_overlay": {
+        "body": "(create_combo_button_overlay,"\\$g_${1:combo_button_id}"),$2",
+        "prefix": "create_combo_button_overlay",
+        "scope": "python"
+    },
+
+    "create_combo_label_overlay": {
+        "body": "(create_combo_label_overlay,"\\$g_${1:combo_label_id}"),$2",
+        "prefix": "create_combo_label_overlay",
+        "scope": "python"
+    },
+
+    "create_game_button_overlay": {
+        "body": "(create_game_button_overlay,"\\$g_${1:game_button_id}","${2:str_id}"),$3",
+        "prefix": "create_game_button_overlay",
+        "scope": "python"
+    },
+
+    "create_image_button_overlay": {
+        "body": "(create_image_button_overlay,"\\$g_${1:image_button_id}","mesh_${2:id}","mesh_${3:pressed_button_mesh_id}"),$4",
+        "prefix": "create_image_button_overlay",
+        "scope": "python"
+    },
+
+    "create_image_button_overlay_with_tableau_material": {
+        "body": "(create_image_button_overlay_with_tableau_material,"\\$g_${1:overlay_id}","mesh_${2:id}","tableau_${3:id}",${4:value}),$5",
+        "prefix": "create_image_button_overlay_with_tableau_material",
+        "scope": "python"
+    },
+
+    "create_in_game_button_overlay": {
+        "body": "(create_in_game_button_overlay,"\\$g_${1:in_game_button_id}","${2:str_id}"),$3",
+        "prefix": "create_in_game_button_overlay",
+        "scope": "python"
+    },
+
+    "create_listbox_overlay": {
+        "body": "(create_listbox_overlay,"\\$g_${1:listbox_id}"),$2",
+        "prefix": "create_listbox_overlay",
+        "scope": "python"
+    },
+
+    "create_mesh_overlay": {
+        "body": "(create_mesh_overlay,${1:reg1},"mesh_${2:id}"),$3",
+        "prefix": "create_mesh_overlay",
+        "scope": "python"
+    },
+
+    "create_mesh_overlay_with_item_id": {
+        "body": "(create_mesh_overlay_with_item_id,${1:reg1},"itm_${2:id}"),$3",
+        "prefix": "create_mesh_overlay_with_item_id",
+        "scope": "python"
+    },
+
+    "create_mesh_overlay_with_tableau_material": {
+        "body": "(create_mesh_overlay_with_tableau_material,${1:reg1},"mesh_${2:id}","tableau_${3:id}",${4:value}),$5",
+        "prefix": "create_mesh_overlay_with_tableau_material",
+        "scope": "python"
+    },
+
+    "create_number_box_overlay": {
+        "body": "(create_number_box_overlay,"\\$g_${1:number_box_id}",${2:min_value},${3:max_value}),$4",
+        "prefix": "create_number_box_overlay",
+        "scope": "python"
+    },
+
+    "create_progress_overlay": {
+        "body": "(create_progress_overlay,${1:reg1},${2:min_value},${3:max_value}),$4",
+        "prefix": "create_progress_overlay",
+        "scope": "python"
+    },
+
+    "create_simple_text_box_overlay": {
+        "body": "(create_simple_text_box_overlay,${1:reg1}),$2",
+        "prefix": "create_simple_text_box_overlay",
+        "scope": "python"
+    },
+
+    "create_slider_overlay": {
+        "body": "(create_slider_overlay,${1:reg1},${2:min_value},${3:max_value}),$4",
+        "prefix": "create_slider_overlay",
+        "scope": "python"
+    },
+
+    "create_text_box_overlay": {
+        "body": "(create_text_box_overlay,${1:reg1}),$2",
+        "prefix": "create_text_box_overlay",
+        "scope": "python"
+    },
+
+    "create_text_overlay": {
+        "body": "(create_text_overlay,${1:reg1},"${2:str_id}"),$3",
+        "prefix": "create_text_overlay",
+        "scope": "python"
+    },
+
+    "cur_agent_set_banner_tableau_material": {
+        "body": "(cur_agent_set_banner_tableau_material,"${1:tableau_material_id}"),$2",
+        "prefix": "cur_agent_set_banner_tableau_material",
+        "scope": "python"
+    },
+
+    "cur_item_set_tableau_material": {
+        "body": "(cur_item_set_tableau_material,"tableau_${1:material_id}",${2:instance_code}),$3",
+        "prefix": "cur_item_set_tableau_material",
+        "scope": "python"
+    },
+
+    "cur_map_icon_set_tableau_material": {
+        "body": "(cur_map_icon_set_tableau_material,"tableau_${1:material_id}",${2:instance_code}),$3",
+        "prefix": "cur_map_icon_set_tableau_material",
+        "scope": "python"
+    },
+
+    "cur_scene_prop_set_tableau_material": {
+        "body": "(cur_scene_prop_set_tableau_material,"tableau_${1:material_id}",${2:instance_code}),$3",
+        "prefix": "cur_scene_prop_set_tableau_material",
+        "scope": "python"
+    },
+
+    "cur_tableau_add_horse": {
+        "body": "(cur_tableau_add_horse,"${1:itm_id}",pos${2:1},"anim_${3:animation_id}"),$4",
+        "prefix": "cur_tableau_add_horse",
+        "scope": "python"
+    },
+
+    "cur_tableau_add_map_icon": {
+        "body": "(cur_tableau_add_map_icon,"icon_${1:map_icon_id}",pos${2:1},${3:scale_factor_fixed_point}),$4",
+        "prefix": "cur_tableau_add_map_icon",
+        "scope": "python"
+    },
+
+    "cur_tableau_add_mesh": {
+        "body": "(cur_tableau_add_mesh,"${1:mesh_id}",pos${2:1},${3:scale_factor_fixed_point},${4:alpha_fixed_point}),$5",
+        "prefix": "cur_tableau_add_mesh",
+        "scope": "python"
+    },
+
+    "cur_tableau_add_mesh_with_scale_and_vertex_color": {
+        "body": "(cur_tableau_add_mesh_with_scale_and_vertex_color,"mesh_${1:id}",pos${2:1},pos${3:2},${4:alpha_fixed_point},${5:vertexcolor}),$6",
+        "prefix": "cur_tableau_add_mesh_with_scale_and_vertex_color",
+        "scope": "python"
+    },
+
+    "cur_tableau_add_mesh_with_vertex_color": {
+        "body": "(cur_tableau_add_mesh_with_vertex_color,"${1:mesh_id}",pos${2:1},${3:scale_factor_fixed_point},${4:alpha_fixed_point},${5:vertex_color}),$6",
+        "prefix": "cur_tableau_add_mesh_with_vertex_color",
+        "scope": "python"
+    },
+
+    "cur_tableau_add_override_item": {
+        "body": "(cur_tableau_add_override_item,"itm_${1:item_kind_id}"),$2",
+        "prefix": "cur_tableau_add_override_item",
+        "scope": "python"
+    },
+
+    "cur_tableau_add_point_light": {
+        "body": "(cur_tableau_add_point_light,"icon_${1:map_icon_id}",pos${2:1},${3:red_fixed_point},${4:green_fixed_point},${5:blue_fixed_point}),$6",
+        "prefix": "cur_tableau_add_point_light",
+        "scope": "python"
+    },
+
+    "cur_tableau_add_sun_light": {
+        "body": "(cur_tableau_add_sun_light,"icon_${1:map_icon_id}",pos${2:1},${3:red_fixed_point},${4:green_fixed_point},${5:blue_fixed_point}),$6",
+        "prefix": "cur_tableau_add_sun_light",
+        "scope": "python"
+    },
+
+    "cur_tableau_add_tableau_mesh": {
+        "body": "(cur_tableau_add_tableau_mesh,"tableau_${1:material_id}",${2:value},pos${3:1},0,0),$4",
+        "prefix": "cur_tableau_add_tableau_mesh",
+        "scope": "python"
+    },
+
+    "cur_tableau_add_troop": {
+        "body": "(cur_tableau_add_troop,"${1:trp_id}",pos${2:1},"anim_${3:animation_id}"${4:instance_no}),$5",
+        "prefix": "cur_tableau_add_troop",
+        "scope": "python"
+    },
+
+    "cur_tableau_clear_override_items": {
+        "body": "(cur_tableau_clear_override_items),$1",
+        "prefix": "cur_tableau_clear_override_items",
+        "scope": "python"
+    },
+
+    "cur_tableau_render_as_alpha_mask": {
+        "body": "(cur_tableau_render_as_alpha_mask),$1",
+        "prefix": "cur_tableau_render_as_alpha_mask",
+        "scope": "python"
+    },
+
+    "cur_tableau_set_ambient_light": {
+        "body": "(cur_tableau_set_ambient_light,${1:red_fixed_point},${2:green_fixed_point},${3:blue_fixed_point}),$4",
+        "prefix": "cur_tableau_set_ambient_light",
+        "scope": "python"
+    },
+
+    "cur_tableau_set_background_color": {
+        "body": "(cur_tableau_set_background_color,${1:0xAARRGGBB}),$2",
+        "prefix": "cur_tableau_set_background_color",
+        "scope": "python"
+    },
+
+    "cur_tableau_set_camera_parameters": {
+        "body": "(cur_tableau_set_camera_parameters,${1:is_perspective},${2:camera_width_times_1000},${3:camera_height_times_100},${4:camera_near_times_1000},${5:camera_far_times_1000}),$6",
+        "prefix": "cur_tableau_set_camera_parameters",
+        "scope": "python"
+    },
+
+    "cur_tableau_set_camera_position": {
+        "body": "(cur_tableau_set_camera_position,pos${1:1}),$2",
+        "prefix": "cur_tableau_set_camera_position",
+        "scope": "python"
+    },
+
+    "cur_tableau_set_override_flags": {
+        "body": "(cur_tableau_set_override_flags,${1:value}),$2",
+        "prefix": "cur_tableau_set_override_flags",
+        "scope": "python"
+    },
+
+    "dialog_box": {
+        "body": "(dialog_box,"${1:text_string_id}","${2:title_string_id}"),$3",
+        "prefix": "dialog_box",
+        "scope": "python"
+    },
+
+    "disable_menu_option": {
+        "body": "(disable_menu_option),$1",
+        "prefix": "disable_menu_option",
+        "scope": "python"
+    },
+
+    "disable_party": {
+        "body": "(disable_party,"${1:party_id}"),$2",
+        "prefix": "disable_party",
+        "scope": "python"
+    },
+
+    "display_debug_message": {
+        "body": "(display_debug_message,"${1:str_id}"${2:,0xRRGGBB}),$3",
+        "prefix": "display_debug_message",
+        "scope": "python"
+    },
+
+    "display_log_message": {
+        "body": "(display_log_message,"${1:str_id}"${2:,0xRRGGBB}),$3",
+        "prefix": "display_log_message",
+        "scope": "python"
+    },
+
+    "display_message": {
+        "body": "(display_message,"${1:str_id}"${2:,0xRRGGBB}),$3",
+        "prefix": "display_message",
+        "scope": "python"
+    },
+
+    "distribute_party_among_party_group": {
+        "body": "(distribute_party_among_party_group,"${1:party_to_be_distributed}","${2:group_root_part}"),$3",
+        "prefix": "distribute_party_among_party_group",
+        "scope": "python"
+    },
+
+    "else-try": {
+        "body": "(else_try),${1}",
+        "prefix": "else-try",
+        "scope": "python"
+    },
+
+    "else_try": {
+        "body": "(else_try),${1}",
+        "prefix": "else_try",
+        "scope": "python"
+    },
+
+    "enable_party": {
+        "body": "(enable_party,"${1:party_id}"),$2",
+        "prefix": "enable_party",
+        "scope": "python"
+    },
+
+    "encountered_party_is_attacker": {
+        "body": "(encountered_party_is_attacker),$1",
+        "prefix": "encountered_party_is_attacker",
+        "scope": "python"
+    },
+
+    "encounter_attack": {
+        "body": "(encounter_attack),$1",
+        "prefix": "encounter_attack",
+        "scope": "python"
+    },
+
+    "end_current_battle": {
+        "body": "(end_current_battle),$1",
+        "prefix": "end_current_battle",
+        "scope": "python"
+    },
+
+    "entering_town": {
+        "body": "(entering_town,"${1:town_id}"),$2",
+        "prefix": "entering_town",
+        "scope": "python"
+    },
+
+    "entry_point_get_position": {
+        "body": "(entry_point_get_position,pos${1:1},${2:entry_no}),$3",
+        "prefix": "entry_point_get_position",
+        "scope": "python"
+    },
+
+    "entry_point_is_auto_generated": {
+        "body": "(entry_point_is_auto_generated,${1:entry_no}),$2",
+        "prefix": "entry_point_is_auto_generated",
+        "scope": "python"
+    },
+
+    "entry_point_set_position": {
+        "body": "(entry_point_set_position,${1:entry_no},pos${2:1}),$3",
+        "prefix": "entry_point_set_position",
+        "scope": "python"
+    },
+
+    "eq": {
+        "body": "(eq,${1:value_1},${2:value_2}),$3",
+        "prefix": "eq",
+        "scope": "python"
+    },
+
+    "face_keys_get_age": {
+        "body": "(face_keys_get_age,"${1:destination}","${2:string_no}"),$3",
+        "prefix": "face_keys_get_age",
+        "scope": "python"
+    },
+
+    "face_keys_get_beard": {
+        "body": "(face_keys_get_beard,"${1:destination}","${2:string_no}"),$3",
+        "prefix": "face_keys_get_beard",
+        "scope": "python"
+    },
+
+    "face_keys_get_face_texture": {
+        "body": "(face_keys_get_face_texture,"${1:destination}","${2:string_no}"),$3",
+        "prefix": "face_keys_get_face_texture",
+        "scope": "python"
+    },
+
+    "face_keys_get_hair": {
+        "body": "(face_keys_get_hair,"${1:destination}","${2:string_no}"),$3",
+        "prefix": "face_keys_get_hair",
+        "scope": "python"
+    },
+
+    "face_keys_get_hair_color": {
+        "body": "(face_keys_get_hair_color,"${1:destination}","${2:string_no}"),$3",
+        "prefix": "face_keys_get_hair_color",
+        "scope": "python"
+    },
+
+    "face_keys_get_hair_texture": {
+        "body": "(face_keys_get_hair_texture,"${1:destination}","${2:string_no}"),$3",
+        "prefix": "face_keys_get_hair_texture",
+        "scope": "python"
+    },
+
+    "face_keys_get_morph_key": {
+        "body": "(face_keys_get_morph_key,"${1:destination}","${2:string_no}",${3:key_no}),$4",
+        "prefix": "face_keys_get_morph_key",
+        "scope": "python"
+    },
+
+    "face_keys_get_skin_color": {
+        "body": "(face_keys_get_skin_color,"${1:destination}","${2:string_no}"),$3",
+        "prefix": "face_keys_get_skin_color",
+        "scope": "python"
+    },
+
+    "face_keys_set_age": {
+        "body": "(face_keys_set_age,"${1:string_no}",${2:value}),$3",
+        "prefix": "face_keys_set_age",
+        "scope": "python"
+    },
+
+    "face_keys_set_beard": {
+        "body": "(face_keys_set_beard,"${1:string_no}",${2:value}),$3",
+        "prefix": "face_keys_set_beard",
+        "scope": "python"
+    },
+
+    "face_keys_set_face_texture": {
+        "body": "(face_keys_set_face_texture,"${1:string_no}",${2:value}),$3",
+        "prefix": "face_keys_set_face_texture",
+        "scope": "python"
+    },
+
+    "face_keys_set_hair": {
+        "body": "(face_keys_set_hair,"${1:string_no}",${2:value}),$3",
+        "prefix": "face_keys_set_hair",
+        "scope": "python"
+    },
+
+    "face_keys_set_hair_color": {
+        "body": "(face_keys_set_hair_color,"${1:string_no}",${2:value}),$3",
+        "prefix": "face_keys_set_hair_color",
+        "scope": "python"
+    },
+
+    "face_keys_set_hair_texture": {
+        "body": "(face_keys_set_hair_texture,"${1:string_no}",${2:value}),$3",
+        "prefix": "face_keys_set_hair_texture",
+        "scope": "python"
+    },
+
+    "face_keys_set_morph_key": {
+        "body": "(face_keys_set_morph_key,"${1:string_no}",${2:key_no},${3:value}),$4",
+        "prefix": "face_keys_set_morph_key",
+        "scope": "python"
+    },
+
+    "face_keys_set_skin_color": {
+        "body": "(face_keys_set_skin_color,"${1:string_no}",${2:value}),$3",
+        "prefix": "face_keys_set_skin_color",
+        "scope": "python"
+    },
+
+    "faction_get_color": {
+        "body": "(faction_get_color,":${1:destination}","${2:faction_id}"),$3",
+        "prefix": "faction_get_color",
+        "scope": "python"
+    },
+
+    "faction_get_slot": {
+        "body": "(faction_get_slot,":${1:destination}","${2:faction_id}",${3:slot_no}),$4",
+        "prefix": "faction_get_slot",
+        "scope": "python"
+    },
+
+    "faction_set_color": {
+        "body": "(faction_set_color,"${1:faction_id}",${2:0xRRGGBB}),$3",
+        "prefix": "faction_set_color",
+        "scope": "python"
+    },
+
+    "faction_set_name": {
+        "body": "(faction_set_name,"${1:faction_id}","${2:str_id}"),$3",
+        "prefix": "faction_set_name",
+        "scope": "python"
+    },
+
+    "faction_set_note_available": {
+        "body": "(faction_set_note_available,"${1:faction_id}",${2:value}),$3",
+        "prefix": "faction_set_note_available",
+        "scope": "python"
+    },
+
+    "faction_set_slot": {
+        "body": "(faction_set_slot,"${1:faction_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "faction_set_slot",
+        "scope": "python"
+    },
+
+    "faction_slot_eq": {
+        "body": "(faction_slot_eq,"${1:faction_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "faction_slot_eq",
+        "scope": "python"
+    },
+
+    "faction_slot_ge": {
+        "body": "(faction_slot_ge,"${1:faction_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "faction_slot_ge",
+        "scope": "python"
+    },
+
+    "fail_quest": {
+        "body": "(fail_quest,"${1:qst_id}"),$2",
+        "prefix": "fail_quest",
+        "scope": "python"
+    },
+
+    "finish_mission": {
+        "body": "(finish_mission,${1:delay_in_seconds}),$2",
+        "prefix": "finish_mission",
+        "scope": "python"
+    },
+
+    "finish_party_battle_mode": {
+        "body": "(finish_party_battle_mode),$1",
+        "prefix": "finish_party_battle_mode",
+        "scope": "python"
+    },
+
+    "game_in_multiplayer_mode": {
+        "body": "(game_in_multiplayer_mode),$1",
+        "prefix": "game_in_multiplayer_mode",
+        "scope": "python"
+    },
+
+    "game_key_clicked": {
+        "body": "(game_key_clicked,gk_${1:id}),$2",
+        "prefix": "game_key_clicked",
+        "scope": "python"
+    },
+
+    "game_key_is_down": {
+        "body": "(game_key_is_down,gk_${1:id}),$2",
+        "prefix": "game_key_is_down",
+        "scope": "python"
+    },
+
+    "ge": {
+        "body": "(ge,${1:value_1},${2:value_2}),$3",
+        "prefix": "ge",
+        "scope": "python"
+    },
+
+    "get_achievement_stat": {
+        "body": "(get_achievement_stat,":${1:destination}",${2:achievement_id},${3:stat_index}),$4",
+        "prefix": "get_achievement_stat",
+        "scope": "python"
+    },
+
+    "get_angle_between_positions": {
+        "body": "(get_angle_between_positions,":${1:destination_fixed_point}",pos${2:1},pos${3:2}),$4",
+        "prefix": "get_angle_between_positions",
+        "scope": "python"
+    },
+
+    "get_average_game_difficulty": {
+        "body": "(get_average_game_difficulty,":${1:destination}"),$2",
+        "prefix": "get_average_game_difficulty",
+        "scope": "python"
+    },
+
+    "get_battle_advantage": {
+        "body": "(get_battle_advantage,":${1:destination}"),$2",
+        "prefix": "get_battle_advantage",
+        "scope": "python"
+    },
+
+    "get_distance_between_positions": {
+        "body": "(get_distance_between_positions,":${1:destination}",pos${2:1},pos${3:2}),$4",
+        "prefix": "get_distance_between_positions",
+        "scope": "python"
+    },
+
+    "get_distance_between_positions_in_meters": {
+        "body": "(get_distance_between_positions_in_meters,":${1:destination}",pos${2:1},pos${3:2}),$4",
+        "prefix": "get_distance_between_positions_in_meters",
+        "scope": "python"
+    },
+
+    "get_global_cloud_amount": {
+        "body": "(get_global_cloud_amount,":${1:destination}"),$2",
+        "prefix": "get_global_cloud_amount",
+        "scope": "python"
+    },
+
+    "get_global_haze_amount": {
+        "body": "(get_global_haze_amount,":${1:destination}"),$2",
+        "prefix": "get_global_haze_amount",
+        "scope": "python"
+    },
+
+    "get_level_boundary": {
+        "body": "(get_level_boundary,":${1:destination}",${2:level_no}),$3",
+        "prefix": "get_level_boundary",
+        "scope": "python"
+    },
+
+    "get_max_players": {
+        "body": "(get_max_players,":${1:destination}"),$2",
+        "prefix": "get_max_players",
+        "scope": "python"
+    },
+
+    "get_party_ai_behavior": {
+        "body": "(get_party_ai_behavior,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "get_party_ai_behavior",
+        "scope": "python"
+    },
+
+    "get_party_ai_current_behavior": {
+        "body": "(get_party_ai_current_behavior,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "get_party_ai_current_behavior",
+        "scope": "python"
+    },
+
+    "get_party_ai_current_object": {
+        "body": "(get_party_ai_current_object,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "get_party_ai_current_object",
+        "scope": "python"
+    },
+
+    "get_party_ai_object": {
+        "body": "(get_party_ai_object,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "get_party_ai_object",
+        "scope": "python"
+    },
+
+    "get_player_agent_kill_count": {
+        "body": "(get_player_agent_kill_count,":${1:destination}"${2:,[get_wounded0-1]}),$3",
+        "prefix": "get_player_agent_kill_count",
+        "scope": "python"
+    },
+
+    "get_player_agent_no": {
+        "body": "(get_player_agent_no,":${1:destination}"),$2",
+        "prefix": "get_player_agent_no",
+        "scope": "python"
+    },
+
+    "get_player_agent_own_troop_kill_count": {
+        "body": "(get_player_agent_own_troop_kill_count,":${1:destination}"${2:,[get_wounded0-1]}),$3",
+        "prefix": "get_player_agent_own_troop_kill_count",
+        "scope": "python"
+    },
+
+    "get_scene_boundaries": {
+        "body": "(get_scene_boundaries,pos${1:1},pos${2:2}),$3",
+        "prefix": "get_scene_boundaries",
+        "scope": "python"
+    },
+
+    "get_sq_distance_between_positions": {
+        "body": "(get_sq_distance_between_positions,":${1:destination}",pos${2:1},pos${3:2}),$4",
+        "prefix": "get_sq_distance_between_positions",
+        "scope": "python"
+    },
+
+    "get_sq_distance_between_positions_in_meters": {
+        "body": "(get_sq_distance_between_positions_in_meters,":${1:destination}",pos${2:1},pos${3:2}),$4",
+        "prefix": "get_sq_distance_between_positions_in_meters",
+        "scope": "python"
+    },
+
+    "get_sq_distance_between_position_heights": {
+        "body": "(get_sq_distance_between_position_heights,":${1:destination}",pos${2:1},pos${3:2}),$4",
+        "prefix": "get_sq_distance_between_position_heights",
+        "scope": "python"
+    },
+
+    "get_trigger_object_position": {
+        "body": "(get_trigger_object_position,pos${1:1}),$2",
+        "prefix": "get_trigger_object_position",
+        "scope": "python"
+    },
+
+    "gt": {
+        "body": "(gt,${1:value_1},${2:value_2}),$3",
+        "prefix": "gt",
+        "scope": "python"
+    },
+
+    "heal_party": {
+        "body": "(heal_party,"${1:party_id}"),$2",
+        "prefix": "heal_party",
+        "scope": "python"
+    },
+
+    "hero_can_join": {
+        "body": "(hero_can_join${1:,[party_id]}),$2",
+        "prefix": "hero_can_join",
+        "scope": "python"
+    },
+
+    "hero_can_join_as_prisoner": {
+        "body": "(hero_can_join_as_prisoner${1:,[party_id]}),$2",
+        "prefix": "hero_can_join_as_prisoner",
+        "scope": "python"
+    },
+
+    "inflict_casualties_to_party_group": {
+        "body": "(inflict_casualties_to_party_group,"${1:parent_party_id}",${2:attack_rounds},"${3:party_id_to_add_causalties_to}"),$4",
+        "prefix": "inflict_casualties_to_party_group",
+        "scope": "python"
+    },
+
+    "init_position": {
+        "body": "(init_position,pos${1:1}),$2",
+        "prefix": "init_position",
+        "scope": "python"
+    },
+
+    "is_between": {
+        "body": "(is_between,${1:value},${2:lower_bound},${3:upper_bound}),$4",
+        "prefix": "is_between",
+        "scope": "python"
+    },
+
+    "is_currently_night": {
+        "body": "(is_currently_night),$2",
+        "prefix": "is_currently_night",
+        "scope": "python"
+    },
+
+    "is_edit_mode_enabled": {
+        "body": "(is_edit_mode_enabled),$1",
+        "prefix": "is_edit_mode_enabled",
+        "scope": "python"
+    },
+
+    "is_presentation_active": {
+        "body": "(is_presentation_active,"prsnt_${1:id}"),$2",
+        "prefix": "is_presentation_active",
+        "scope": "python"
+    },
+
+    "is_trial_version": {
+        "body": "(is_trial_version),$1",
+        "prefix": "is_trial_version",
+        "scope": "python"
+    },
+
+    "is_zoom_disabled": {
+        "body": "(is_zoom_disabled),$1",
+        "prefix": "is_zoom_disabled",
+        "scope": "python"
+    },
+
+    "item_get_abundance": {
+        "body": "(item_get_abundance,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_abundance",
+        "scope": "python"
+    },
+
+    "item_get_accuracy": {
+        "body": "(item_get_accuracy,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_accuracy",
+        "scope": "python"
+    },
+
+    "item_get_body_armor": {
+        "body": "(item_get_body_armor,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_body_armor",
+        "scope": "python"
+    },
+
+    "item_get_difficulty": {
+        "body": "(item_get_difficulty,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_difficulty",
+        "scope": "python"
+    },
+
+    "item_get_food_quality": {
+        "body": "(item_get_food_quality,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_food_quality",
+        "scope": "python"
+    },
+
+    "item_get_head_armor": {
+        "body": "(item_get_head_armor,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_head_armor",
+        "scope": "python"
+    },
+
+    "item_get_hit_points": {
+        "body": "(item_get_hit_points,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_hit_points",
+        "scope": "python"
+    },
+
+    "item_get_horse_charge_damage": {
+        "body": "(item_get_horse_charge_damage,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_horse_charge_damage",
+        "scope": "python"
+    },
+
+    "item_get_horse_maneuver": {
+        "body": "(item_get_horse_maneuver,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_horse_maneuver",
+        "scope": "python"
+    },
+
+    "item_get_horse_scale": {
+        "body": "(item_get_horse_scale,"${1:destination_fixed_point}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_horse_scale",
+        "scope": "python"
+    },
+
+    "item_get_horse_speed": {
+        "body": "(item_get_horse_speed,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_horse_speed",
+        "scope": "python"
+    },
+
+    "item_get_leg_armor": {
+        "body": "(item_get_leg_armor,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_leg_armor",
+        "scope": "python"
+    },
+
+    "item_get_max_ammo": {
+        "body": "(item_get_max_ammo,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_max_ammo",
+        "scope": "python"
+    },
+
+    "item_get_missile_speed": {
+        "body": "(item_get_missile_speed,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_missile_speed",
+        "scope": "python"
+    },
+
+    "item_get_shield_height": {
+        "body": "(item_get_shield_height,"${1:destination_fixed_point}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_shield_height",
+        "scope": "python"
+    },
+
+    "item_get_slot": {
+        "body": "(item_get_slot,":${1:destination}","${2:item_id}",${3:slot_no}),$4",
+        "prefix": "item_get_slot",
+        "scope": "python"
+    },
+
+    "item_get_speed_rating": {
+        "body": "(item_get_speed_rating,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_speed_rating",
+        "scope": "python"
+    },
+
+    "item_get_swing_damage": {
+        "body": "(item_get_swing_damage,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_swing_damage",
+        "scope": "python"
+    },
+
+    "item_get_swing_damage_type": {
+        "body": "(item_get_swing_damage_type,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_swing_damage_type",
+        "scope": "python"
+    },
+
+    "item_get_thrust_damage": {
+        "body": "(item_get_thrust_damage,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_thrust_damage",
+        "scope": "python"
+    },
+
+    "item_get_thrust_damage_type": {
+        "body": "(item_get_thrust_damage_type,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_thrust_damage_type",
+        "scope": "python"
+    },
+
+    "item_get_type": {
+        "body": "(item_get_type,":${1:destination}","${2:itm_id}"),$3",
+        "prefix": "item_get_type",
+        "scope": "python"
+    },
+
+    "item_get_value": {
+        "body": "(item_get_value,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_value",
+        "scope": "python"
+    },
+
+    "item_get_weapon_length": {
+        "body": "(item_get_weapon_length,"${1:destination}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_weapon_length",
+        "scope": "python"
+    },
+
+    "item_get_weight": {
+        "body": "(item_get_weight,"${1:destination_fixed_point}","${2:item_kind_no}"),$3",
+        "prefix": "item_get_weight",
+        "scope": "python"
+    },
+
+    "item_has_capability": {
+        "body": "(item_has_capability,"${1:item_kind_no}",itcf_${2:capability}),$3",
+        "prefix": "item_has_capability",
+        "scope": "python"
+    },
+
+    "item_has_faction": {
+        "body": "(item_has_faction,"${1:item_kind_no}",${2:faction_no}),$3",
+        "prefix": "item_has_faction",
+        "scope": "python"
+    },
+
+    "item_has_modifier": {
+        "body": "(item_has_modifier,"${1:item_kind_no}",imod_${2:item_modifier_no}),$3",
+        "prefix": "item_has_modifier",
+        "scope": "python"
+    },
+
+    "item_has_property": {
+        "body": "(item_has_property,"${1:item_kind_no}",itp_${2:property}),$3",
+        "prefix": "item_has_property",
+        "scope": "python"
+    },
+
+    "item_set_slot": {
+        "body": "(item_set_slot,"${1:item_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "item_set_slot",
+        "scope": "python"
+    },
+
+    "item_slot_eq": {
+        "body": "(item_slot_eq,"${1:item_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "item_slot_eq",
+        "scope": "python"
+    },
+
+    "item_slot_ge": {
+        "body": "(item_slot_ge,"${1:item_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "item_slot_ge",
+        "scope": "python"
+    },
+
+    "jump_to_menu": {
+        "body": "(jump_to_menu,"mnu_${1:menu_id}"),$2",
+        "prefix": "jump_to_menu",
+        "scope": "python"
+    },
+
+    "jump_to_scene": {
+        "body": "(jump_to_scene,"${1:scene_id}"${2:,[entry_no]}),$3",
+        "prefix": "jump_to_scene",
+        "scope": "python"
+    },
+
+    "key_clicked": {
+        "body": "(key_clicked,key_${1:id}),$2",
+        "prefix": "key_clicked",
+        "scope": "python"
+    },
+
+    "key_is_down": {
+        "body": "(key_is_down,key_${1:id}),$2",
+        "prefix": "key_is_down",
+        "scope": "python"
+    },
+
+    "kick_player": {
+        "body": "(kick_player,"${1:player_id}"),$2",
+        "prefix": "kick_player",
+        "scope": "python"
+    },
+
+    "le": {
+        "body": "(le,${1:value_1},${2:value_2}),$3",
+        "prefix": "le",
+        "scope": "python"
+    },
+
+    "leave_encounter": {
+        "body": "(leave_encounter),$1",
+        "prefix": "leave_encounter",
+        "scope": "python"
+    },
+
+    "lt": {
+        "body": "(lt,${1:value_1},${2:value_2}),$3",
+        "prefix": "lt",
+        "scope": "python"
+    },
+
+    "main_hero_fallen": {
+        "body": "(main_hero_fallen),$1",
+        "prefix": "main_hero_fallen",
+        "scope": "python"
+    },
+
+    "main_party_has_troop": {
+        "body": "(main_party_has_troop,"${1:trp_id}"),$2",
+        "prefix": "main_party_has_troop",
+        "scope": "python"
+    },
+
+    "map_free": {
+        "body": "(map_free),]]>",
+        "prefix": "map_free",
+        "scope": "python"
+    },
+
+    "map_get_land_position_around_position": {
+        "body": "(map_get_land_position_around_position,pos${1:2},pos${2:1},${3:radius}),$4",
+        "prefix": "map_get_land_position_around_position",
+        "scope": "python"
+    },
+
+    "map_get_random_position_around_position": {
+        "body": "(map_get_random_position_around_position,pos${1:2},pos${2:1},${3:radius}),$4",
+        "prefix": "map_get_random_position_around_position",
+        "scope": "python"
+    },
+
+    "map_get_water_position_around_position": {
+        "body": "(map_get_water_position_around_position,pos${1:2},pos${2:1},${3:radius}),$4",
+        "prefix": "map_get_water_position_around_position",
+        "scope": "python"
+    },
+
+    "mission_cam_animate_to_aperture": {
+        "body": "(mission_cam_animate_to_aperture,${1:value},${2:duration-in-1/1000-seconds},${3:linear_velocity_value}),$4",
+        "prefix": "mission_cam_animate_to_aperture",
+        "scope": "python"
+    },
+
+    "mission_cam_animate_to_position": {
+        "body": "(mission_cam_animate_to_position,pos${1:1},${2:duration-in-1/1000-seconds},${3:value}),$4",
+        "prefix": "mission_cam_animate_to_position",
+        "scope": "python"
+    },
+
+    "mission_cam_animate_to_position_and_aperture": {
+        "body": "(mission_cam_animate_to_position_and_aperture,pos${1:1},${2:value},${3:duration-in-1/1000-seconds},${4:linear_velocity_value}),$5",
+        "prefix": "mission_cam_animate_to_position_and_aperture",
+        "scope": "python"
+    },
+
+    "mission_cam_animate_to_screen_color": {
+        "body": "(mission_cam_animate_to_screen_color,0x${1:AARRGGBB},${2:duration-in-1/1000-seconds}),$3",
+        "prefix": "mission_cam_animate_to_screen_color",
+        "scope": "python"
+    },
+
+    "mission_cam_clear_target_agent": {
+        "body": "(mission_cam_clear_target_agent),$1",
+        "prefix": "mission_cam_clear_target_agent",
+        "scope": "python"
+    },
+
+    "mission_cam_get_aperture": {
+        "body": "(mission_cam_get_aperture,":${1:destination}"),$2",
+        "prefix": "mission_cam_get_aperture",
+        "scope": "python"
+    },
+
+    "mission_cam_get_position": {
+        "body": "(mission_cam_get_position,pos${1:1}),$2",
+        "prefix": "mission_cam_get_position",
+        "scope": "python"
+    },
+
+    "mission_cam_set_animation": {
+        "body": "(mission_cam_set_animation,"anim_${1:animation_id}"),$2",
+        "prefix": "mission_cam_set_animation",
+        "scope": "python"
+    },
+
+    "mission_cam_set_aperture": {
+        "body": "(mission_cam_set_aperture,${1:value}),$2",
+        "prefix": "mission_cam_set_aperture",
+        "scope": "python"
+    },
+
+    "mission_cam_set_mode": {
+        "body": "(mission_cam_set_mode,${1:mission_cam_mode},${2:duration-in-1/1000-seconds},${3:value}),$4",
+        "prefix": "mission_cam_set_mode",
+        "scope": "python"
+    },
+
+    "mission_cam_set_position": {
+        "body": "(mission_cam_set_position,pos${1:1}),$2",
+        "prefix": "mission_cam_set_position",
+        "scope": "python"
+    },
+
+    "mission_cam_set_screen_color": {
+        "body": "(mission_cam_set_screen_color,0x${1:AARRGGBB}),$2",
+        "prefix": "mission_cam_set_screen_color",
+        "scope": "python"
+    },
+
+    "mission_cam_set_target_agent": {
+        "body": "(mission_cam_set_target_agent,"${1:agent_id}",${2:use_agent_rotation}),$3",
+        "prefix": "mission_cam_set_target_agent",
+        "scope": "python"
+    },
+
+    "mission_disable_talk": {
+        "body": "(mission_disable_talk),$1",
+        "prefix": "mission_disable_talk",
+        "scope": "python"
+    },
+
+    "mission_enable_talk": {
+        "body": "(mission_enable_talk),$1",
+        "prefix": "mission_enable_talk",
+        "scope": "python"
+    },
+
+    "mission_get_time_speed": {
+        "body": "(mission_get_time_speed,":${1:destination_fixed_point}"),$2",
+        "prefix": "mission_get_time_speed",
+        "scope": "python"
+    },
+
+    "mission_set_duel_mode": {
+        "body": "(mission_set_duel_mode,${1:value0-1}),$2",
+        "prefix": "mission_set_duel_mode",
+        "scope": "python"
+    },
+
+    "mission_set_time_speed": {
+        "body": "(mission_set_time_speed,${1:value_fixed_point}),$2",
+        "prefix": "mission_set_time_speed",
+        "scope": "python"
+    },
+
+    "mission_time_speed_move_to_value": {
+        "body": "(mission_time_speed_move_to_value,${1:value_fixed_point},${2:duration-in-1/1000-seconds}),$3",
+        "prefix": "mission_time_speed_move_to_value",
+        "scope": "python"
+    },
+
+    "mission_tpl_entry_add_override_item": {
+        "body": "(mission_tpl_entry_add_override_item,"mt_${1:mission_template_id}",${2:entry_no},"itm_${3:item_kind_id}"),$4",
+        "prefix": "mission_tpl_entry_add_override_item",
+        "scope": "python"
+    },
+
+    "mission_tpl_entry_clear_override_items": {
+        "body": "(mission_tpl_entry_clear_override_items,"mt_${1:mission_template_id}",${2:entry_no}),$3",
+        "prefix": "mission_tpl_entry_clear_override_items",
+        "scope": "python"
+    },
+
+    "mission_tpl_entry_set_override_flags": {
+        "body": "(mission_tpl_entry_set_override_flags,"mt_${1:mission_template_id}",${2:entry_no},${3:value}),$4",
+        "prefix": "mission_tpl_entry_set_override_flags",
+        "scope": "python"
+    },
+
+    "modify_visitors_at_site": {
+        "body": "(modify_visitors_at_site,"${1:scene_id}"),$2",
+        "prefix": "modify_visitors_at_site",
+        "scope": "python"
+    },
+
+    "mouse_get_position": {
+        "body": "(mouse_get_position,pos${1:1}),$2",
+        "prefix": "mouse_get_position",
+        "scope": "python"
+    },
+
+    "multiplayer_clear_scene": {
+        "body": "(multiplayer_clear_scene),$1",
+        "prefix": "multiplayer_clear_scene",
+        "scope": "python"
+    },
+
+    "multiplayer_find_spawn_point": {
+        "body": "(multiplayer_find_spawn_point,":${1:destination}",${2:team_no},${3:examine_all_spawn_points},${4:is_horseman}),$5",
+        "prefix": "multiplayer_find_spawn_point",
+        "scope": "python"
+    },
+
+    "multiplayer_get_my_gold": {
+        "body": "(multiplayer_get_my_gold,":${1:destination}"),$2",
+        "prefix": "multiplayer_get_my_gold",
+        "scope": "python"
+    },
+
+    "multiplayer_get_my_player": {
+        "body": "(multiplayer_get_my_player,":${1:destination}"),$2",
+        "prefix": "multiplayer_get_my_player",
+        "scope": "python"
+    },
+
+    "multiplayer_get_my_team": {
+        "body": "(multiplayer_get_my_team,":${1:destination}"),$2",
+        "prefix": "multiplayer_get_my_team",
+        "scope": "python"
+    },
+
+    "multiplayer_get_my_troop": {
+        "body": "(multiplayer_get_my_troop,":${1:destination}"),$2",
+        "prefix": "multiplayer_get_my_troop",
+        "scope": "python"
+    },
+
+    "multiplayer_is_dedicated_server": {
+        "body": "(multiplayer_is_dedicated_server),$1",
+        "prefix": "multiplayer_is_dedicated_server",
+        "scope": "python"
+    },
+
+    "multiplayer_is_server": {
+        "body": "(multiplayer_is_server),$1",
+        "prefix": "multiplayer_is_server",
+        "scope": "python"
+    },
+
+    "multiplayer_make_everyone_enemy": {
+        "body": "(multiplayer_make_everyone_enemy),$1",
+        "prefix": "multiplayer_make_everyone_enemy",
+        "scope": "python"
+    },
+
+    "multiplayer_send_2_int_to_player": {
+        "body": "(multiplayer_send_2_int_to_player,"${1:player_id}",${2:message_type},${3:value_1},${4:value_2}),$5",
+        "prefix": "multiplayer_send_2_int_to_player",
+        "scope": "python"
+    },
+
+    "multiplayer_send_2_int_to_server": {
+        "body": "(multiplayer_send_2_int_to_server,${1:message_type},${2:value_1},${3:value_2}),$4",
+        "prefix": "multiplayer_send_2_int_to_server",
+        "scope": "python"
+    },
+
+    "multiplayer_send_3_int_to_player": {
+        "body": "(multiplayer_send_3_int_to_player,"${1:player_id}",${2:message_type},${3:value_1},${4:value_2},${5:value_3}),$6",
+        "prefix": "multiplayer_send_3_int_to_player",
+        "scope": "python"
+    },
+
+    "multiplayer_send_3_int_to_server": {
+        "body": "(multiplayer_send_3_int_to_server,${1:message_type},${2:value_1},${3:value_2},${4:value_3}),$5",
+        "prefix": "multiplayer_send_3_int_to_server",
+        "scope": "python"
+    },
+
+    "multiplayer_send_4_int_to_player": {
+        "body": "(multiplayer_send_4_int_to_player,"${1:player_id}",${2:message_type},${3:value_1},${4:value_2},${5:value_3},${6:value_4}),$7",
+        "prefix": "multiplayer_send_4_int_to_player",
+        "scope": "python"
+    },
+
+    "multiplayer_send_4_int_to_server": {
+        "body": "(multiplayer_send_4_int_to_server,${1:message_type},${2:value_1},${3:value_2},${4:value_3},${5:value_4}),$6",
+        "prefix": "multiplayer_send_4_int_to_server",
+        "scope": "python"
+    },
+
+    "multiplayer_send_int_to_player": {
+        "body": "(multiplayer_send_int_to_player,"${1:player_id}",${2:message_type},${3:value}),$4",
+        "prefix": "multiplayer_send_int_to_player",
+        "scope": "python"
+    },
+
+    "multiplayer_send_int_to_server": {
+        "body": "(multiplayer_send_int_to_server,${1:message_type},${2:value}),$3",
+        "prefix": "multiplayer_send_int_to_server",
+        "scope": "python"
+    },
+
+    "multiplayer_send_message_to_player": {
+        "body": "(multiplayer_send_message_to_player,"${1:player_id}",${2:message_type}),$3",
+        "prefix": "multiplayer_send_message_to_player",
+        "scope": "python"
+    },
+
+    "multiplayer_send_message_to_server": {
+        "body": "(multiplayer_send_message_to_server,${1:message_type}),$2",
+        "prefix": "multiplayer_send_message_to_server",
+        "scope": "python"
+    },
+
+    "multiplayer_send_string_to_player": {
+        "body": "(multiplayer_send_string_to_player,"${1:player_id}",${2:message_type},"${3:string_id}"),$4",
+        "prefix": "multiplayer_send_string_to_player",
+        "scope": "python"
+    },
+
+    "multiplayer_send_string_to_server": {
+        "body": "(multiplayer_send_string_to_server,${1:message_type},"${2:string_id}"),$3",
+        "prefix": "multiplayer_send_string_to_server",
+        "scope": "python"
+    },
+
+    "multiplayer_set_my_troop": {
+        "body": "(multiplayer_set_my_troop,"${1:troop_id}"),$2",
+        "prefix": "multiplayer_set_my_troop",
+        "scope": "python"
+    },
+
+    "music_set_culture": {
+        "body": "(music_set_culture,mtf_${1:culture_type}),$2",
+        "prefix": "music_set_culture",
+        "scope": "python"
+    },
+
+    "music_set_situation": {
+        "body": "(music_set_situation,mtf_${1:situation_type}),$2",
+        "prefix": "music_set_situation",
+        "scope": "python"
+    },
+
+    "neq": {
+        "body": "(neq,${1:value_1},${2:value_2}),$3",
+        "prefix": "neq",
+        "scope": "python"
+    },
+
+    "new_script": {
+        "body": "#"script_${1:name}"",
+        "prefix": "new_script",
+        "scope": "python"
+    },
+
+    "num_active_teams_le": {
+        "body": "(num_active_teams_le,${1:value}),$2",
+        "prefix": "num_active_teams_le",
+        "scope": "python"
+    },
+
+    "omit_key_once": {
+        "body": "(omit_key_once,key_${1:id}),$2",
+        "prefix": "omit_key_once",
+        "scope": "python"
+    },
+
+    "options_get_campaign_ai": {
+        "body": "(options_get_campaign_ai,":${1:destination}"),$2",
+        "prefix": "options_get_campaign_ai",
+        "scope": "python"
+    },
+
+    "options_get_combat_ai": {
+        "body": "(options_get_combat_ai,":${1:destination}"),$2",
+        "prefix": "options_get_combat_ai",
+        "scope": "python"
+    },
+
+    "options_get_combat_speed": {
+        "body": "(options_get_combat_speed,":${1:destination}"),$2",
+        "prefix": "options_get_combat_speed",
+        "scope": "python"
+    },
+
+    "options_get_damage_to_friends": {
+        "body": "(options_get_damage_to_friends,":${1:destination}"),$2",
+        "prefix": "options_get_damage_to_friends",
+        "scope": "python"
+    },
+
+    "options_get_damage_to_player": {
+        "body": "(options_get_damage_to_player,":${1:destination}"),$2",
+        "prefix": "options_get_damage_to_player",
+        "scope": "python"
+    },
+
+    "options_set_campaign_ai": {
+        "body": "(options_set_campaign_ai,${1:value}),$2",
+        "prefix": "options_set_campaign_ai",
+        "scope": "python"
+    },
+
+    "options_set_combat_ai": {
+        "body": "(options_set_combat_ai,${1:value}),$2",
+        "prefix": "options_set_combat_ai",
+        "scope": "python"
+    },
+
+    "options_set_combat_speed": {
+        "body": "(options_set_combat_speed,${1:value}),$2",
+        "prefix": "options_set_combat_speed",
+        "scope": "python"
+    },
+
+    "options_set_damage_to_friends": {
+        "body": "(options_set_damage_to_friends,${1:value}),$2",
+        "prefix": "options_set_damage_to_friends",
+        "scope": "python"
+    },
+
+    "options_set_damage_to_player": {
+        "body": "(options_set_damage_to_player,${1:value}),$2",
+        "prefix": "options_set_damage_to_player",
+        "scope": "python"
+    },
+
+    "overlay_add_item": {
+        "body": "(overlay_add_item,"\\$g_${1:overlay_id}","${2:str_id}"),$3",
+        "prefix": "overlay_add_item",
+        "scope": "python"
+    },
+
+    "overlay_animate_to_alpha": {
+        "body": "(overlay_animate_to_alpha,"\\$g_${1:overlay_id}",${2:100},0x${3:AA}),$4",
+        "prefix": "overlay_animate_to_alpha",
+        "scope": "python"
+    },
+
+    "overlay_animate_to_color": {
+        "body": "(overlay_animate_to_color,"\\$g_${1:overlay_id}",${2:100},0x${3:RRGGBB}),$4",
+        "prefix": "overlay_animate_to_color",
+        "scope": "python"
+    },
+
+    "overlay_animate_to_highlight_alpha": {
+        "body": "(overlay_animate_to_highlight_alpha,"\\$g_${1:overlay_id}",${2:100},0x${3:AA}),$4",
+        "prefix": "overlay_animate_to_highlight_alpha",
+        "scope": "python"
+    },
+
+    "overlay_animate_to_highlight_color": {
+        "body": "(overlay_animate_to_highlight_color,"\\$g_${1:overlay_id}",${2:100},0x${3:RRGGBB}),$4",
+        "prefix": "overlay_animate_to_highlight_color",
+        "scope": "python"
+    },
+
+    "overlay_animate_to_position": {
+        "body": "(overlay_animate_to_position,"\\$g_${1:overlay_id}",${2:100},pos${3:1}),$4",
+        "prefix": "overlay_animate_to_position",
+        "scope": "python"
+    },
+
+    "overlay_animate_to_size": {
+        "body": "(overlay_animate_to_size,"\\$g_${1:overlay_id}",${2:100},pos${3:1}),$4",
+        "prefix": "overlay_animate_to_size",
+        "scope": "python"
+    },
+
+    "overlay_get_position": {
+        "body": "(overlay_get_position,pos${1:1},"\\$g_${2:overlay_id}"),$3",
+        "prefix": "overlay_get_position",
+        "scope": "python"
+    },
+
+    "overlay_obtain_focus": {
+        "body": "(overlay_obtain_focus,"\\$g_${1:overlay_id}"),$2",
+        "prefix": "overlay_obtain_focus",
+        "scope": "python"
+    },
+
+    "overlay_set_additional_render_height": {
+        "body": "(overlay_set_additional_render_height,"\\$g_${1:overlay_id}",${2:height_adder}),$3",
+        "prefix": "overlay_set_additional_render_height",
+        "scope": "python"
+    },
+
+    "overlay_set_alpha": {
+        "body": "(overlay_set_alpha,${1:reg1},0x${2:AA}),$3",
+        "prefix": "overlay_set_alpha",
+        "scope": "python"
+    },
+
+    "overlay_set_area_size": {
+        "body": "(overlay_set_area_size,${1:reg1},pos${2:1}),$3",
+        "prefix": "overlay_set_area_size",
+        "scope": "python"
+    },
+
+    "overlay_set_boundaries": {
+        "body": "(overlay_set_boundaries,${1:reg1},${2:min_value},${3:max_value}),$4",
+        "prefix": "overlay_set_boundaries",
+        "scope": "python"
+    },
+
+    "overlay_set_color": {
+        "body": "(overlay_set_color,${1:reg1},0x${2:RRGGBB}),$3",
+        "prefix": "overlay_set_color",
+        "scope": "python"
+    },
+
+    "overlay_set_container_overlay": {
+        "body": "(overlay_set_container_overlay,"\\$g_${1:overlay_id}","\\$g_${2:container_overlay_id}"),$3",
+        "prefix": "overlay_set_container_overlay",
+        "scope": "python"
+    },
+
+    "overlay_set_display": {
+        "body": "(overlay_set_display,"\\$g_${1:overlay_id}",${2:0}),$3",
+        "prefix": "overlay_set_display",
+        "scope": "python"
+    },
+
+    "overlay_set_hilight_alpha": {
+        "body": "(overlay_set_hilight_alpha,${1:reg1},0x${2:AA}),$3",
+        "prefix": "overlay_set_hilight_alpha",
+        "scope": "python"
+    },
+
+    "overlay_set_hilight_color": {
+        "body": "(overlay_set_hilight_color,${1:reg1},0x${2:RRGGBB}),$3",
+        "prefix": "overlay_set_hilight_color",
+        "scope": "python"
+    },
+
+    "overlay_set_mesh_rotation": {
+        "body": "(overlay_set_mesh_rotation,${1:reg1},pos${2:1}),$3",
+        "prefix": "overlay_set_mesh_rotation",
+        "scope": "python"
+    },
+
+    "overlay_set_position": {
+        "body": "(overlay_set_position,${1:reg1},pos${2:1}),$3",
+        "prefix": "overlay_set_position",
+        "scope": "python"
+    },
+
+    "overlay_set_size": {
+        "body": "(overlay_set_size,${1:reg1},pos${2:1}),$3",
+        "prefix": "overlay_set_size",
+        "scope": "python"
+    },
+
+    "overlay_set_text": {
+        "body": "(overlay_set_text,"\\$g_${1:overlay_id}","${2:str_id}"),$3",
+        "prefix": "overlay_set_text",
+        "scope": "python"
+    },
+
+    "overlay_set_tooltip": {
+        "body": "(overlay_set_tooltip,"\\$g_${1:overlay_id}","${2:str_id}"),$3",
+        "prefix": "overlay_set_tooltip",
+        "scope": "python"
+    },
+
+    "overlay_set_val": {
+        "body": "(overlay_set_val,${1:reg1},${2:value}),$3",
+        "prefix": "overlay_set_val",
+        "scope": "python"
+    },
+
+    "particle_system_add_new": {
+        "body": "(particle_system_add_new,"psys_${1:particle_system_id}"${2:,[position_no]}),$3",
+        "prefix": "particle_system_add_new",
+        "scope": "python"
+    },
+
+    "particle_system_burst": {
+        "body": "(particle_system_burst,"psys_${1:particle_system_id}",pos${2:1}${3:,[percentage_burst_strength]}),$4",
+        "prefix": "particle_system_burst",
+        "scope": "python"
+    },
+
+    "particle_system_burst_no_sync": {
+        "body": "(particle_system_burst_no_sync,"psys_${1:particle_system_id}",pos${2:1}${3:,[percentage_burst_strength]}),$4",
+        "prefix": "particle_system_burst_no_sync",
+        "scope": "python"
+    },
+
+    "particle_system_emit": {
+        "body": "(particle_system_emit,"psys_${1:particle_system_id}",${2:value_num_particles},${3:value_period}),$4",
+        "prefix": "particle_system_emit",
+        "scope": "python"
+    },
+
+    "party_add_leader": {
+        "body": "(party_add_leader,"${1:party_id}","${2:trp_id}"),$3",
+        "prefix": "party_add_leader",
+        "scope": "python"
+    },
+
+    "party_add_members": {
+        "body": "(party_add_members,"${1:party_id}","${2:trp_id}",${3:number}),$4",
+        "prefix": "party_add_members",
+        "scope": "python"
+    },
+
+    "party_add_particle_system": {
+        "body": "(party_add_particle_system,"${1:party_id}","psys_${2:id}"),$3",
+        "prefix": "party_add_particle_system",
+        "scope": "python"
+    },
+
+    "party_add_prisoners": {
+        "body": "(party_add_prisoners,"${1:party_id}","${2:trp_id}",${3:number}),$4",
+        "prefix": "party_add_prisoners",
+        "scope": "python"
+    },
+
+    "party_add_template": {
+        "body": "(party_add_template,"${1:party_id}","${2:pt_id}"${3:,[reverse_prisoner_status]}),$4",
+        "prefix": "party_add_template",
+        "scope": "python"
+    },
+
+    "party_add_xp_to_stack": {
+        "body": "(party_add_xp_to_stack,"${1:party_id}",${2:stack_no},${3:xp_amount}),$4",
+        "prefix": "party_add_xp_to_stack",
+        "scope": "python"
+    },
+
+    "party_attach_to_party": {
+        "body": "(party_attach_to_party,"${1:party_id}","${2:party_idtoattachto}"),$3",
+        "prefix": "party_attach_to_party",
+        "scope": "python"
+    },
+
+    "party_can_join": {
+        "body": "(party_can_join),$1",
+        "prefix": "party_can_join",
+        "scope": "python"
+    },
+
+    "party_can_join_as_prisoner": {
+        "body": "(party_can_join_as_prisoner),$1",
+        "prefix": "party_can_join_as_prisoner",
+        "scope": "python"
+    },
+
+    "party_can_join_party": {
+        "body": "(party_can_join_party,"${1:joiner_party_id}","${2:host_party_id}"${3:,[flip_prisoners]}),$4",
+        "prefix": "party_can_join_party",
+        "scope": "python"
+    },
+
+    "party_clear": {
+        "body": "(party_clear,"${1:party_id}"),$2",
+        "prefix": "party_clear",
+        "scope": "python"
+    },
+
+    "party_clear_particle_systems": {
+        "body": "(party_clear_particle_systems,"${1:party_id}"),$2",
+        "prefix": "party_clear_particle_systems",
+        "scope": "python"
+    },
+
+    "party_collect_attachments_to_party": {
+        "body": "(party_collect_attachments_to_party,"${1:party_id}","${2:destinationparty_id}"),$3",
+        "prefix": "party_collect_attachments_to_party",
+        "scope": "python"
+    },
+
+    "party_count_companions_of_type": {
+        "body": "(party_count_companions_of_type,":${1:destination}","${2:party_id}","${3:trp_id}"),$4",
+        "prefix": "party_count_companions_of_type",
+        "scope": "python"
+    },
+
+    "party_count_members_of_type": {
+        "body": "(party_count_members_of_type,":${1:destination}","${2:party_id}","${3:trp_id}"),$4",
+        "prefix": "party_count_members_of_type",
+        "scope": "python"
+    },
+
+    "party_count_prisoners_of_type": {
+        "body": "(party_count_prisoners_of_type,":${1:destination}","${2:party_id}","${3:trp_id}"),$4",
+        "prefix": "party_count_prisoners_of_type",
+        "scope": "python"
+    },
+
+    "party_detach": {
+        "body": "(party_detach,"${1:party_id}"),$2",
+        "prefix": "party_detach",
+        "scope": "python"
+    },
+
+    "party_end_battle": {
+        "body": "(party_end_battle,"${1:party_no}"),$2",
+        "prefix": "party_end_battle",
+        "scope": "python"
+    },
+
+    "party_force_add_members": {
+        "body": "(party_force_add_members,"${1:party_id}","${2:trp_id}",${3:number}),$4",
+        "prefix": "party_force_add_members",
+        "scope": "python"
+    },
+
+    "party_force_add_prisoners": {
+        "body": "(party_force_add_prisoners,"${1:party_id}","${2:trp_id}",${3:number}),$4",
+        "prefix": "party_force_add_prisoners",
+        "scope": "python"
+    },
+
+    "party_get_ai_initiative": {
+        "body": "(party_get_ai_initiative,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_ai_initiative",
+        "scope": "python"
+    },
+
+    "party_get_ai_target_position": {
+        "body": "(party_get_ai_target_position,pos${1:1},"${2:party_id}"),$3",
+        "prefix": "party_get_ai_target_position",
+        "scope": "python"
+    },
+
+    "party_get_attached_party_with_rank": {
+        "body": "(party_get_attached_party_with_rank,":${1:destination}","${2:party_id}",${3:attached_party_no}),$4",
+        "prefix": "party_get_attached_party_with_rank",
+        "scope": "python"
+    },
+
+    "party_get_attached_to": {
+        "body": "(party_get_attached_to,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_attached_to",
+        "scope": "python"
+    },
+
+    "party_get_battle_opponent": {
+        "body": "(party_get_battle_opponent,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_battle_opponent",
+        "scope": "python"
+    },
+
+    "party_get_current_terrain": {
+        "body": "(party_get_current_terrain,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_current_terrain",
+        "scope": "python"
+    },
+
+    "party_get_cur_town": {
+        "body": "(party_get_cur_town,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_cur_town",
+        "scope": "python"
+    },
+
+    "party_get_free_companions_capacity": {
+        "body": "(party_get_free_companions_capacity,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_free_companions_capacity",
+        "scope": "python"
+    },
+
+    "party_get_helpfulness": {
+        "body": "(party_get_helpfulness,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_helpfulness",
+        "scope": "python"
+    },
+
+    "party_get_icon": {
+        "body": "(party_get_icon,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_icon",
+        "scope": "python"
+    },
+
+    "party_get_num_attached_parties": {
+        "body": "(party_get_num_attached_parties,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_num_attached_parties",
+        "scope": "python"
+    },
+
+    "party_get_num_companions": {
+        "body": "(party_get_num_companions,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_num_companions",
+        "scope": "python"
+    },
+
+    "party_get_num_companion_stacks": {
+        "body": "(party_get_num_companion_stacks,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_num_companion_stacks",
+        "scope": "python"
+    },
+
+    "party_get_num_prisoners": {
+        "body": "(party_get_num_prisoners,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_num_prisoners",
+        "scope": "python"
+    },
+
+    "party_get_num_prisoner_stacks": {
+        "body": "(party_get_num_prisoner_stacks,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_num_prisoner_stacks",
+        "scope": "python"
+    },
+
+    "party_get_position": {
+        "body": "(party_get_position,pos${1:1},"${2:party_id}"),$3",
+        "prefix": "party_get_position",
+        "scope": "python"
+    },
+
+    "party_get_skill_level": {
+        "body": "(party_get_skill_level,":${1:destination}","${2:party_id}",${3:skl_id}),$4",
+        "prefix": "party_get_skill_level",
+        "scope": "python"
+    },
+
+    "party_get_slot": {
+        "body": "(party_get_slot,":${1:destination}","${2:party_id}",${3:slot_no}),$4",
+        "prefix": "party_get_slot",
+        "scope": "python"
+    },
+
+    "party_get_template_id": {
+        "body": "(party_get_template_id,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "party_get_template_id",
+        "scope": "python"
+    },
+
+    "party_ignore_player": {
+        "body": "(party_ignore_player,"${1:party_id}",${2:duration_in_hours}),$3",
+        "prefix": "party_ignore_player",
+        "scope": "python"
+    },
+
+    "party_is_active": {
+        "body": "(party_is_active,"${1:party_id}"),$2",
+        "prefix": "party_is_active",
+        "scope": "python"
+    },
+
+    "party_is_in_any_town": {
+        "body": "(party_is_in_any_town,"${1:party_id}"),$2",
+        "prefix": "party_is_in_any_town",
+        "scope": "python"
+    },
+
+    "party_is_in_town": {
+        "body": "(party_is_in_town,"${1:party_id_1}","${2:party_id_2}"),$3",
+        "prefix": "party_is_in_town",
+        "scope": "python"
+    },
+
+    "party_join": {
+        "body": "(party_join),$1",
+        "prefix": "party_join",
+        "scope": "python"
+    },
+
+    "party_join_as_prisoner": {
+        "body": "(party_join_as_prisoner),$1",
+        "prefix": "party_join_as_prisoner",
+        "scope": "python"
+    },
+
+    "party_leave_cur_battle": {
+        "body": "(party_leave_cur_battle,"${1:party_id}"),$2",
+        "prefix": "party_leave_cur_battle",
+        "scope": "python"
+    },
+
+    "party_prisoner_stack_get_size": {
+        "body": "(party_prisoner_stack_get_size,":${1:destination}","${2:party_id}",${3:stack_no}),$4",
+        "prefix": "party_prisoner_stack_get_size",
+        "scope": "python"
+    },
+
+    "party_prisoner_stack_get_troop_dna": {
+        "body": "(party_prisoner_stack_get_troop_dna,":${1:destination}","${2:party_id}",${3:stack_no}),$4",
+        "prefix": "party_prisoner_stack_get_troop_dna",
+        "scope": "python"
+    },
+
+    "party_prisoner_stack_get_troop_id": {
+        "body": "(party_prisoner_stack_get_troop_id,":${1:destination}","${2:party_id}",${3:stack_no}),$4",
+        "prefix": "party_prisoner_stack_get_troop_id",
+        "scope": "python"
+    },
+
+    "party_quick_attach_to_current_battle": {
+        "body": "(party_quick_attach_to_current_battle,"${1:party_id}",${2:side(0:playersside,1:enemyside)}),$3",
+        "prefix": "party_quick_attach_to_current_battle",
+        "scope": "python"
+    },
+
+    "party_relocate_near_party": {
+        "body": "(party_relocate_near_party,"${1:party_id}","${2:target_party_id}",${3:value_spawn_radius}),$4",
+        "prefix": "party_relocate_near_party",
+        "scope": "python"
+    },
+
+    "party_remove_members": {
+        "body": "(party_remove_members,"${1:party_id}","${2:trp_id}",${3:number}),$4",
+        "prefix": "party_remove_members",
+        "scope": "python"
+    },
+
+    "party_remove_members_wounded_first": {
+        "body": "(party_remove_members_wounded_first,"${1:party_id}","${2:trp_id}",${3:number}),$4",
+        "prefix": "party_remove_members_wounded_first",
+        "scope": "python"
+    },
+
+    "party_remove_prisoners": {
+        "body": "(party_remove_prisoners,"${1:party_id}","${2:trp_id}",${3:number}),$4",
+        "prefix": "party_remove_prisoners",
+        "scope": "python"
+    },
+
+    "party_set_aggressiveness": {
+        "body": "(party_set_aggressiveness,"${1:party_id}",${2:value}),$3",
+        "prefix": "party_set_aggressiveness",
+        "scope": "python"
+    },
+
+    "party_set_ai_behavior": {
+        "body": "(party_set_ai_behavior,"${1:party_id}",ai_bhvr_${2:id}),$3",
+        "prefix": "party_set_ai_behavior",
+        "scope": "python"
+    },
+
+    "party_set_ai_initiative": {
+        "body": "(party_set_ai_initiative,"${1:party_id}",${2:value}),$3",
+        "prefix": "party_set_ai_initiative",
+        "scope": "python"
+    },
+
+    "party_set_ai_object": {
+        "body": "(party_set_ai_object,"${1:party_id_1}","${2:party_id_2}"),$3",
+        "prefix": "party_set_ai_object",
+        "scope": "python"
+    },
+
+    "party_set_ai_patrol_radius": {
+        "body": "(party_set_ai_patrol_radius,"${1:party_id}",${2:radius_in_km}),$3",
+        "prefix": "party_set_ai_patrol_radius",
+        "scope": "python"
+    },
+
+    "party_set_ai_target_position": {
+        "body": "(party_set_ai_target_position,"${1:party_id}",pos${2:1}),$3",
+        "prefix": "party_set_ai_target_position",
+        "scope": "python"
+    },
+
+    "party_set_bandit_attraction": {
+        "body": "(party_set_bandit_attraction,"${1:party_id}",${2:attaraction}),$3",
+        "prefix": "party_set_bandit_attraction",
+        "scope": "python"
+    },
+
+    "party_set_banner_icon": {
+        "body": "(party_set_banner_icon,"${1:party_id}","${2:icon_id}"),$3",
+        "prefix": "party_set_banner_icon",
+        "scope": "python"
+    },
+
+    "party_set_courage": {
+        "body": "(party_set_courage,"${1:party_id}",${2:value}),$3",
+        "prefix": "party_set_courage",
+        "scope": "python"
+    },
+
+    "party_set_extra_icon": {
+        "body": "(party_set_extra_icon,"${1:party_id}","${2:icon_id}",${3:up_down_distance_fixed_point},${4:up_down_frequency_fixed_point},${5:rotate_frequency_fixed_point},${6:fade_in_out_frequency_fixed_point}),$7",
+        "prefix": "party_set_extra_icon",
+        "scope": "python"
+    },
+
+    "party_set_extra_text": {
+        "body": "(party_set_extra_text,"${1:party_id}","${2:str_id}"),$3",
+        "prefix": "party_set_extra_text",
+        "scope": "python"
+    },
+
+    "party_set_faction": {
+        "body": "(party_set_faction,"${1:party_id}","${2:fac_id}"),$3",
+        "prefix": "party_set_faction",
+        "scope": "python"
+    },
+
+    "party_set_flags": {
+        "body": "(party_set_flags,"${1:party_id}",pf_${2:flag},${3:clear_or_set}),$4",
+        "prefix": "party_set_flags",
+        "scope": "python"
+    },
+
+    "party_set_helpfulness": {
+        "body": "(party_set_helpfulness,"${1:party_id}",${2:number}),$3",
+        "prefix": "party_set_helpfulness",
+        "scope": "python"
+    },
+
+    "party_set_icon": {
+        "body": "(party_set_icon,"${1:party_id}","${2:icon_id}"),$3",
+        "prefix": "party_set_icon",
+        "scope": "python"
+    },
+
+    "party_set_marshall": {
+        "body": "(party_set_marshall,"${1:party_id}",${2:value}),$3",
+        "prefix": "party_set_marshall",
+        "scope": "python"
+    },
+
+    "party_set_name": {
+        "body": "(party_set_name,"${1:party_id}","${2:str_id}"),$3",
+        "prefix": "party_set_name",
+        "scope": "python"
+    },
+
+    "party_set_next_battle_simulation_time": {
+        "body": "(party_set_next_battle_simulation_time,"${1:party_id}",${2:next_simulation_time_in_hours}),$3",
+        "prefix": "party_set_next_battle_simulation_time",
+        "scope": "python"
+    },
+
+    "party_set_note_available": {
+        "body": "(party_set_note_available,"${1:party_id}",${2:value}),$3",
+        "prefix": "party_set_note_available",
+        "scope": "python"
+    },
+
+    "party_set_position": {
+        "body": "(party_set_position,"${1:party_id}",pos${2:1}),$3",
+        "prefix": "party_set_position",
+        "scope": "python"
+    },
+
+    "party_set_slot": {
+        "body": "(party_set_slot,"${1:party_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "party_set_slot",
+        "scope": "python"
+    },
+
+    "party_slot_eq": {
+        "body": "(party_slot_eq,"${1:party_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "party_slot_eq",
+        "scope": "python"
+    },
+
+    "party_slot_ge": {
+        "body": "(party_slot_ge,"${1:party_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "party_slot_ge",
+        "scope": "python"
+    },
+
+    "party_stack_get_num_wounded": {
+        "body": "(party_stack_get_num_wounded,":${1:destination}","${2:party_id}",${3:stack_no}),$4",
+        "prefix": "party_stack_get_num_wounded",
+        "scope": "python"
+    },
+
+    "party_stack_get_size": {
+        "body": "(party_stack_get_size,":${1:destination}","${2:party_id}",${3:stack_no}),$4",
+        "prefix": "party_stack_get_size",
+        "scope": "python"
+    },
+
+    "party_stack_get_troop_dna": {
+        "body": "(party_stack_get_troop_dna,":${1:destination}","${2:party_id}",${3:stack_no}),$4",
+        "prefix": "party_stack_get_troop_dna",
+        "scope": "python"
+    },
+
+    "party_stack_get_troop_id": {
+        "body": "(party_stack_get_troop_id,":${1:destination}","${2:party_id}",${3:stack_no}),$4",
+        "prefix": "party_stack_get_troop_id",
+        "scope": "python"
+    },
+
+    "party_template_get_slot": {
+        "body": "(party_template_get_slot,":${1:destination}","${2:party_template_id}",${3:slot_no}),$4",
+        "prefix": "party_template_get_slot",
+        "scope": "python"
+    },
+
+    "party_template_set_slot": {
+        "body": "(party_template_set_slot,"${1:party_template_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "party_template_set_slot",
+        "scope": "python"
+    },
+
+    "party_template_slot_eq": {
+        "body": "(party_template_slot_eq,"${1:party_template_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "party_template_slot_eq",
+        "scope": "python"
+    },
+
+    "party_template_slot_ge": {
+        "body": "(party_template_slot_ge,"${1:party_template_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "party_template_slot_ge",
+        "scope": "python"
+    },
+
+    "party_wound_members": {
+        "body": "(party_wound_members,"${1:party_id}","${2:trp_id}",${3:number}),$4",
+        "prefix": "party_wound_members",
+        "scope": "python"
+    },
+
+    "player_add_spawn_item": {
+        "body": "(player_add_spawn_item,"${1:player_id}","${2:item_slot_no}","${3:item_id}"),$4",
+        "prefix": "player_add_spawn_item",
+        "scope": "python"
+    },
+
+    "player_control_agent": {
+        "body": "(player_control_agent,"${1:player_id}","${2:agent_id}"),$3",
+        "prefix": "player_control_agent",
+        "scope": "python"
+    },
+
+    "player_get_agent_id": {
+        "body": "(player_get_agent_id,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_agent_id",
+        "scope": "python"
+    },
+
+    "player_get_banner_id": {
+        "body": "(player_get_banner_id,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_banner_id",
+        "scope": "python"
+    },
+
+    "player_get_death_count": {
+        "body": "(player_get_death_count,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_death_count",
+        "scope": "python"
+    },
+
+    "player_get_gender": {
+        "body": "(player_get_gender,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_gender",
+        "scope": "python"
+    },
+
+    "player_get_gold": {
+        "body": "(player_get_gold,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_gold",
+        "scope": "python"
+    },
+
+    "player_get_is_muted": {
+        "body": "(player_get_is_muted,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_is_muted",
+        "scope": "python"
+    },
+
+    "player_get_item_id": {
+        "body": "(player_get_item_id,":${1:destination}","${2:player_id}","${3:item_slot_no}"),$4",
+        "prefix": "player_get_item_id",
+        "scope": "python"
+    },
+
+    "player_get_kill_count": {
+        "body": "(player_get_kill_count,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_kill_count",
+        "scope": "python"
+    },
+
+    "player_get_ping": {
+        "body": "(player_get_ping,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_ping",
+        "scope": "python"
+    },
+
+    "player_get_score": {
+        "body": "(player_get_score,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_score",
+        "scope": "python"
+    },
+
+    "player_get_slot": {
+        "body": "(player_get_slot,":${1:destination}","${2:player_id}",${3:slot_no}),$4",
+        "prefix": "player_get_slot",
+        "scope": "python"
+    },
+
+    "player_get_team_no": {
+        "body": "(player_get_team_no,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_team_no",
+        "scope": "python"
+    },
+
+    "player_get_troop_id": {
+        "body": "(player_get_troop_id,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_troop_id",
+        "scope": "python"
+    },
+
+    "player_get_unique_id": {
+        "body": "(player_get_unique_id,":${1:destination}","${2:player_id}"),$3",
+        "prefix": "player_get_unique_id",
+        "scope": "python"
+    },
+
+    "player_get_value_of_original_items": {
+        "body": "(player_get_value_of_original_items,"${1:player_id}"),$2",
+        "prefix": "player_get_value_of_original_items",
+        "scope": "python"
+    },
+
+    "player_has_item": {
+        "body": "(player_has_item,"${1:itm_id}"),$2",
+        "prefix": "player_has_item",
+        "scope": "python"
+    },
+
+    "player_is_active": {
+        "body": "(player_is_active,"${1:player_id}"),$2",
+        "prefix": "player_is_active",
+        "scope": "python"
+    },
+
+    "player_is_admin": {
+        "body": "(player_is_admin,"${1:player_id}"),$2",
+        "prefix": "player_is_admin",
+        "scope": "python"
+    },
+
+    "player_is_busy_with_menus": {
+        "body": "(player_is_busy_with_menus,"${1:player_id}"),$2",
+        "prefix": "player_is_busy_with_menus",
+        "scope": "python"
+    },
+
+    "player_item_slot_is_picked_up": {
+        "body": "(player_item_slot_is_picked_up,"${1:player_id}","${2:item_slot_no}"),$3",
+        "prefix": "player_item_slot_is_picked_up",
+        "scope": "python"
+    },
+
+    "player_save_picked_up_items_for_next_spawn": {
+        "body": "(player_save_picked_up_items_for_next_spawn,"${1:player_id}"),$2",
+        "prefix": "player_save_picked_up_items_for_next_spawn",
+        "scope": "python"
+    },
+
+    "player_set_death_count": {
+        "body": "(player_set_death_count,"${1:player_id}",${2:value}),$3",
+        "prefix": "player_set_death_count",
+        "scope": "python"
+    },
+
+    "player_set_face_keys": {
+        "body": "(player_set_face_keys,"${1:player_id}","${2:string_no}"),$3",
+        "prefix": "player_set_face_keys",
+        "scope": "python"
+    },
+
+    "player_set_gold": {
+        "body": "(player_set_gold,"${1:player_id}",${2:value},"${3:max_value}"),$4",
+        "prefix": "player_set_gold",
+        "scope": "python"
+    },
+
+    "player_set_is_admin": {
+        "body": "(player_set_is_admin,"${1:player_id}",${2:value}),$3",
+        "prefix": "player_set_is_admin",
+        "scope": "python"
+    },
+
+    "player_set_is_muted": {
+        "body": "(player_set_is_muted,"${1:player_id}",${2:value}${3:,[mute_for_everyone]}),$4",
+        "prefix": "player_set_is_muted",
+        "scope": "python"
+    },
+
+    "player_set_kill_count": {
+        "body": "(player_set_kill_count,"${1:player_id}",${2:value}),$3",
+        "prefix": "player_set_kill_count",
+        "scope": "python"
+    },
+
+    "player_set_score": {
+        "body": "(player_set_score,"${1:player_id}",${2:value}),$3",
+        "prefix": "player_set_score",
+        "scope": "python"
+    },
+
+    "player_set_slot": {
+        "body": "(player_set_slot,"${1:player_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "player_set_slot",
+        "scope": "python"
+    },
+
+    "player_set_team_no": {
+        "body": "(player_set_team_no,"${1:player_id}",${2:value}),$3",
+        "prefix": "player_set_team_no",
+        "scope": "python"
+    },
+
+    "player_set_troop_id": {
+        "body": "(player_set_troop_id,"${1:player_id}","${2:troop_id}"),$3",
+        "prefix": "player_set_troop_id",
+        "scope": "python"
+    },
+
+    "player_slot_eq": {
+        "body": "(player_slot_eq,"${1:player_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "player_slot_eq",
+        "scope": "python"
+    },
+
+    "player_slot_ge": {
+        "body": "(player_slot_ge,"${1:player_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "player_slot_ge",
+        "scope": "python"
+    },
+
+    "player_spawn_new_agent": {
+        "body": "(player_spawn_new_agent,"${1:player_id}","${2:entry_point}"),$3",
+        "prefix": "player_spawn_new_agent",
+        "scope": "python"
+    },
+
+    "play_cue_track": {
+        "body": "(play_cue_track,"track_${1:id}"),$2",
+        "prefix": "play_cue_track",
+        "scope": "python"
+    },
+
+    "play_sound": {
+        "body": "(play_sound,"snd_${1:id}"${2:,[options]}),$3",
+        "prefix": "play_sound",
+        "scope": "python"
+    },
+
+    "play_sound_at_position": {
+        "body": "(play_sound_at_position,"snd_${1:id}",pos${2:1}${3:,[options]}),$4",
+        "prefix": "play_sound_at_position",
+        "scope": "python"
+    },
+
+    "play_track": {
+        "body": "(play_track,"track_${1:id}"${2:,[options]}),$3",
+        "prefix": "play_track",
+        "scope": "python"
+    },
+
+    "position_copy_origin": {
+        "body": "(position_copy_origin,pos${1:1},pos${2:2}),$3",
+        "prefix": "position_copy_origin",
+        "scope": "python"
+    },
+
+    "position_copy_rotation": {
+        "body": "(position_copy_rotation,pos${1:1},pos${2:2}),$3",
+        "prefix": "position_copy_rotation",
+        "scope": "python"
+    },
+
+    "position_get_distance_to_ground_level": {
+        "body": "(position_get_distance_to_ground_level,":${1:destination}",pos${2:1}),$3",
+        "prefix": "position_get_distance_to_ground_level",
+        "scope": "python"
+    },
+
+    "position_get_distance_to_terrain": {
+        "body": "(position_get_distance_to_terrain,":${1:destination}",pos${2:1}),$3",
+        "prefix": "position_get_distance_to_terrain",
+        "scope": "python"
+    },
+
+    "position_get_rotation_around_x": {
+        "body": "(position_get_rotation_around_x,":${1:destination}",pos${2:1}),$3",
+        "prefix": "position_get_rotation_around_x",
+        "scope": "python"
+    },
+
+    "position_get_rotation_around_y": {
+        "body": "(position_get_rotation_around_y,":${1:destination}",pos${2:1}),$3",
+        "prefix": "position_get_rotation_around_y",
+        "scope": "python"
+    },
+
+    "position_get_rotation_around_z": {
+        "body": "(position_get_rotation_around_z,":${1:destination}",pos${2:1}),$3",
+        "prefix": "position_get_rotation_around_z",
+        "scope": "python"
+    },
+
+    "position_get_scale_x": {
+        "body": "(position_get_scale_x,":${1:destination_fixed_point}",pos${2:1}),$3",
+        "prefix": "position_get_scale_x",
+        "scope": "python"
+    },
+
+    "position_get_scale_y": {
+        "body": "(position_get_scale_y,":${1:destination_fixed_point}",pos${2:1}),$3",
+        "prefix": "position_get_scale_y",
+        "scope": "python"
+    },
+
+    "position_get_scale_z": {
+        "body": "(position_get_scale_z,":${1:destination_fixed_point}",pos${2:1}),$3",
+        "prefix": "position_get_scale_z",
+        "scope": "python"
+    },
+
+    "position_get_screen_projection": {
+        "body": "(position_get_screen_projection,pos${1:1},pos${2:2}),$3",
+        "prefix": "position_get_screen_projection",
+        "scope": "python"
+    },
+
+    "position_get_x": {
+        "body": "(position_get_x,":${1:destination_fixed_point}",pos${2:1}),$3",
+        "prefix": "position_get_x",
+        "scope": "python"
+    },
+
+    "position_get_y": {
+        "body": "(position_get_y,":${1:destination_fixed_point}",pos${2:1}),$3",
+        "prefix": "position_get_y",
+        "scope": "python"
+    },
+
+    "position_get_z": {
+        "body": "(position_get_z,":${1:destination_fixed_point}",pos${2:1}),$3",
+        "prefix": "position_get_z",
+        "scope": "python"
+    },
+
+    "position_has_line_of_sight_to_position": {
+        "body": "(position_has_line_of_sight_to_position,pos${1:1},pos${2:2}),$3",
+        "prefix": "position_has_line_of_sight_to_position",
+        "scope": "python"
+    },
+
+    "position_is_behind_position": {
+        "body": "(position_is_behind_position,pos${1:1},pos${2:2}),$3",
+        "prefix": "position_is_behind_position",
+        "scope": "python"
+    },
+
+    "position_move_x": {
+        "body": "(position_move_x,pos${1:1},${2:movement},${3:0}),$4",
+        "prefix": "position_move_x",
+        "scope": "python"
+    },
+
+    "position_move_y": {
+        "body": "(position_move_y,pos${1:1},${2:movement},${3:0}),$4",
+        "prefix": "position_move_y",
+        "scope": "python"
+    },
+
+    "position_move_z": {
+        "body": "(position_move_z,pos${1:1},${2:movement},${3:0}),$4",
+        "prefix": "position_move_z",
+        "scope": "python"
+    },
+
+    "position_normalize_origin": {
+        "body": "(position_normalize_origin,":${1:destination_fixed_point}",pos${2:1}),$3",
+        "prefix": "position_normalize_origin",
+        "scope": "python"
+    },
+
+    "position_rotate_x": {
+        "body": "(position_rotate_x,pos${1:1},${2:angle}),$3",
+        "prefix": "position_rotate_x",
+        "scope": "python"
+    },
+
+    "position_rotate_x_floating": {
+        "body": "(position_rotate_x_floating,pos${1:1},"${2:angle}"),$3",
+        "prefix": "position_rotate_x_floating",
+        "scope": "python"
+    },
+
+    "position_rotate_y": {
+        "body": "(position_rotate_y,pos${1:1},${2:angle}),$3",
+        "prefix": "position_rotate_y",
+        "scope": "python"
+    },
+
+    "position_rotate_y_floating": {
+        "body": "(position_rotate_y_floating,pos${1:1},"${2:angle}"),$3",
+        "prefix": "position_rotate_y_floating",
+        "scope": "python"
+    },
+
+    "position_rotate_z": {
+        "body": "(position_rotate_z,pos${1:1},${2:angle}${3:,[use_global_z_axis]}),$4",
+        "prefix": "position_rotate_z",
+        "scope": "python"
+    },
+
+    "position_set_scale_x": {
+        "body": "(position_set_scale_x,pos${1:1},"${2:value_fixed_point}"),$3",
+        "prefix": "position_set_scale_x",
+        "scope": "python"
+    },
+
+    "position_set_scale_y": {
+        "body": "(position_set_scale_y,pos${1:1},"${2:value_fixed_point}"),$3",
+        "prefix": "position_set_scale_y",
+        "scope": "python"
+    },
+
+    "position_set_scale_z": {
+        "body": "(position_set_scale_z,pos${1:1},"${2:value_fixed_point}"),$3",
+        "prefix": "position_set_scale_z",
+        "scope": "python"
+    },
+
+    "position_set_x": {
+        "body": "(position_set_x,pos${1:1},"${2:value_fixed_point}"),$3",
+        "prefix": "position_set_x",
+        "scope": "python"
+    },
+
+    "position_set_y": {
+        "body": "(position_set_y,pos${1:1},"${2:value_fixed_point}"),$3",
+        "prefix": "position_set_y",
+        "scope": "python"
+    },
+
+    "position_set_z": {
+        "body": "(position_set_z,pos${1:1},"${2:value_fixed_point}"),$3",
+        "prefix": "position_set_z",
+        "scope": "python"
+    },
+
+    "position_set_z_to_ground_level": {
+        "body": "(position_set_z_to_ground_level,pos${1:1}),$2",
+        "prefix": "position_set_z_to_ground_level",
+        "scope": "python"
+    },
+
+    "position_transform_position_to_local": {
+        "body": "(position_transform_position_to_local,${1:dest_position_no},${2:position_no},${3:position_no_to_be_transformed}),$4",
+        "prefix": "position_transform_position_to_local",
+        "scope": "python"
+    },
+
+    "position_transform_position_to_parent": {
+        "body": "(position_transform_position_to_parent,${1:dest_position_no},${2:position_no},${3:position_no_to_be_transformed}),$4",
+        "prefix": "position_transform_position_to_parent",
+        "scope": "python"
+    },
+
+    "presentation_set_duration": {
+        "body": "(presentation_set_duration,${1:999999}),$2",
+        "prefix": "presentation_set_duration",
+        "scope": "python"
+    },
+
+    "profile_get_banner_id": {
+        "body": "(profile_get_banner_id,":${1:destination}"),$2",
+        "prefix": "profile_get_banner_id",
+        "scope": "python"
+    },
+
+    "profile_set_banner_id": {
+        "body": "(profile_set_banner_id,${1:value}),$2",
+        "prefix": "profile_set_banner_id",
+        "scope": "python"
+    },
+
+    "prop_instance_add_particle_system": {
+        "body": "(prop_instance_add_particle_system,"${1:scene_prop_id}","psys_${2:id}",pos${3:1}),$4",
+        "prefix": "prop_instance_add_particle_system",
+        "scope": "python"
+    },
+
+    "prop_instance_animate_to_position": {
+        "body": "(prop_instance_animate_to_position,"${1:scene_prop_id}",pos${2:1},${3:duration-in-1/100-seconds}),$4",
+        "prefix": "prop_instance_animate_to_position",
+        "scope": "python"
+    },
+
+    "prop_instance_clear_attached_missiles": {
+        "body": "(prop_instance_clear_attached_missiles,"${1:scene_prop_id}"),$2",
+        "prefix": "prop_instance_clear_attached_missiles",
+        "scope": "python"
+    },
+
+    "prop_instance_deform_in_cycle_loop": {
+        "body": "(prop_instance_deform_in_cycle_loop,"${1:prop_instance_no}",${2:start_frame},${3:end_frame},${4:duration-in-1/1000-seconds}),$5",
+        "prefix": "prop_instance_deform_in_cycle_loop",
+        "scope": "python"
+    },
+
+    "prop_instance_deform_in_range": {
+        "body": "(prop_instance_deform_in_range,"${1:prop_instance_no}",${2:start_frame},${3:end_frame},${4:duration-in-1/1000-seconds}),$5",
+        "prefix": "prop_instance_deform_in_range",
+        "scope": "python"
+    },
+
+    "prop_instance_deform_to_time": {
+        "body": "(prop_instance_deform_to_time,"${1:prop_instance_no}",${2:value}),$3",
+        "prefix": "prop_instance_deform_to_time",
+        "scope": "python"
+    },
+
+    "prop_instance_dynamics_apply_impulse": {
+        "body": "(prop_instance_dynamics_apply_impulse,"${1:scene_prop_id}",${2:impulse_force}),$3",
+        "prefix": "prop_instance_dynamics_apply_impulse",
+        "scope": "python"
+    },
+
+    "prop_instance_dynamics_set_omega": {
+        "body": "(prop_instance_dynamics_set_omega,"${1:scene_prop_id}",${2:angular_velocity}),$3",
+        "prefix": "prop_instance_dynamics_set_omega",
+        "scope": "python"
+    },
+
+    "prop_instance_dynamics_set_properties": {
+        "body": "(prop_instance_dynamics_set_properties,"${1:scene_prop_id}",${2:mass_friction}),$3",
+        "prefix": "prop_instance_dynamics_set_properties",
+        "scope": "python"
+    },
+
+    "prop_instance_dynamics_set_velocity": {
+        "body": "(prop_instance_dynamics_set_velocity,"${1:scene_prop_id}",${2:linear_velocity}),$3",
+        "prefix": "prop_instance_dynamics_set_velocity",
+        "scope": "python"
+    },
+
+    "prop_instance_enable_physics": {
+        "body": "(prop_instance_enable_physics,"${1:scene_prop_id}",${2:value0-1}),$3",
+        "prefix": "prop_instance_enable_physics",
+        "scope": "python"
+    },
+
+    "prop_instance_get_animation_target_position": {
+        "body": "(prop_instance_get_animation_target_position,pos${1:1},"${2:scene_prop_id}"),$3",
+        "prefix": "prop_instance_get_animation_target_position",
+        "scope": "python"
+    },
+
+    "prop_instance_get_current_deform_frame": {
+        "body": "(prop_instance_get_current_deform_frame,"${1:destination}","${2:prop_instance_no}"),$3",
+        "prefix": "prop_instance_get_current_deform_frame",
+        "scope": "python"
+    },
+
+    "prop_instance_get_current_deform_progress": {
+        "body": "(prop_instance_get_current_deform_progress,"${1:destination}","${2:prop_instance_no}"),$3",
+        "prefix": "prop_instance_get_current_deform_progress",
+        "scope": "python"
+    },
+
+    "prop_instance_get_position": {
+        "body": "(prop_instance_get_position,pos${1:1},"${2:scene_prop_id}"),$3",
+        "prefix": "prop_instance_get_position",
+        "scope": "python"
+    },
+
+    "prop_instance_get_scale": {
+        "body": "(prop_instance_get_scale,pos${1:1},"${2:scene_prop_id}"),$3",
+        "prefix": "prop_instance_get_scale",
+        "scope": "python"
+    },
+
+    "prop_instance_get_scene_prop_kind": {
+        "body": "(prop_instance_get_scene_prop_kind,":${1:destination}","${2:scene_prop_id}"),$3",
+        "prefix": "prop_instance_get_scene_prop_kind",
+        "scope": "python"
+    },
+
+    "prop_instance_get_starting_position": {
+        "body": "(prop_instance_get_starting_position,pos${1:1},"${2:scene_prop_id}"),$3",
+        "prefix": "prop_instance_get_starting_position",
+        "scope": "python"
+    },
+
+    "prop_instance_get_variation_id": {
+        "body": "(prop_instance_get_variation_id,":${1:destination}","${2:spr_id}"),$3",
+        "prefix": "prop_instance_get_variation_id",
+        "scope": "python"
+    },
+
+    "prop_instance_get_variation_id_2": {
+        "body": "(prop_instance_get_variation_id_2,":${1:destination}","${2:spr_id}"),$3",
+        "prefix": "prop_instance_get_variation_id_2",
+        "scope": "python"
+    },
+
+    "prop_instance_initialize_rotation_angles": {
+        "body": "(prop_instance_initialize_rotation_angles,"${1:scene_prop_id}"),$2",
+        "prefix": "prop_instance_initialize_rotation_angles",
+        "scope": "python"
+    },
+
+    "prop_instance_intersects_with_prop_instance": {
+        "body": "(prop_instance_intersects_with_prop_instance,"${1:scene_prop_id_1}","${2:scene_prop_id_2}"),$3",
+        "prefix": "prop_instance_intersects_with_prop_instance",
+        "scope": "python"
+    },
+
+    "prop_instance_is_animating": {
+        "body": "(prop_instance_is_animating,":${1:destination}","${2:scene_prop_id}"),$3",
+        "prefix": "prop_instance_is_animating",
+        "scope": "python"
+    },
+
+    "prop_instance_is_valid": {
+        "body": "(prop_instance_is_valid,"${1:spr_id}"),$2",
+        "prefix": "prop_instance_is_valid",
+        "scope": "python"
+    },
+
+    "prop_instance_play_sound": {
+        "body": "(prop_instance_play_sound,"${1:scene_prop_id}","${2:snd_id}"${3:,[flags]}),$4",
+        "prefix": "prop_instance_play_sound",
+        "scope": "python"
+    },
+
+    "prop_instance_receive_damage": {
+        "body": "(prop_instance_receive_damage,"${1:scene_prop_id}","${2:agent_id}",${3:damage_value}),$4",
+        "prefix": "prop_instance_receive_damage",
+        "scope": "python"
+    },
+
+    "prop_instance_refill_hit_points": {
+        "body": "(prop_instance_refill_hit_points,"${1:scene_prop_id}"),$2",
+        "prefix": "prop_instance_refill_hit_points",
+        "scope": "python"
+    },
+
+    "prop_instance_rotate_to_position": {
+        "body": "(prop_instance_rotate_to_position,"${1:scene_prop_id}",pos${2:1},${3:duration-in-1/100-seconds},${4:total_rotate_angle}),$5",
+        "prefix": "prop_instance_rotate_to_position",
+        "scope": "python"
+    },
+
+    "prop_instance_set_material": {
+        "body": "(prop_instance_set_material,"${1:prop_instance_no}",${2:sub_mesh_no},s${3:1}),$4",
+        "prefix": "prop_instance_set_material",
+        "scope": "python"
+    },
+
+    "prop_instance_set_position": {
+        "body": "(prop_instance_set_position,"${1:scene_prop_id}",pos${2:1}${3:,[dont_send_to_clients]}),$4",
+        "prefix": "prop_instance_set_position",
+        "scope": "python"
+    },
+
+    "prop_instance_set_scale": {
+        "body": "(prop_instance_set_scale,"${1:scene_prop_id}",${2:value_x_fixed_point},${3:value_y_fixed_point},${4:value_z_fixed_point}),$5",
+        "prefix": "prop_instance_set_scale",
+        "scope": "python"
+    },
+
+    "prop_instance_stop_all_particle_systems": {
+        "body": "(prop_instance_stop_all_particle_systems,"${1:scene_prop_id}"),$2",
+        "prefix": "prop_instance_stop_all_particle_systems",
+        "scope": "python"
+    },
+
+    "prop_instance_stop_animating": {
+        "body": "(prop_instance_stop_animating,"${1:scene_prop_id}"),$2",
+        "prefix": "prop_instance_stop_animating",
+        "scope": "python"
+    },
+
+    "prop_instance_stop_sound": {
+        "body": "(prop_instance_stop_sound,"${1:scene_prop_id}"),$2",
+        "prefix": "prop_instance_stop_sound",
+        "scope": "python"
+    },
+
+    "question_box": {
+        "body": "(question_box,"${1:str_id}"${2:,"yes_string_id"}${3:,"no_string_id"}),$4",
+        "prefix": "question_box",
+        "scope": "python"
+    },
+
+    "quest_get_slot": {
+        "body": "(quest_get_slot,":${1:destination}","${2:quest_id}",${3:slot_no}),$4",
+        "prefix": "quest_get_slot",
+        "scope": "python"
+    },
+
+    "quest_set_note_available": {
+        "body": "(quest_set_note_available,"${1:quest_id}",${2:value}),$3",
+        "prefix": "quest_set_note_available",
+        "scope": "python"
+    },
+
+    "quest_set_slot": {
+        "body": "(quest_set_slot,"${1:quest_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "quest_set_slot",
+        "scope": "python"
+    },
+
+    "quest_slot_eq": {
+        "body": "(quest_slot_eq,"${1:quest_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "quest_slot_eq",
+        "scope": "python"
+    },
+
+    "quest_slot_ge": {
+        "body": "(quest_slot_ge,"${1:quest_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "quest_slot_ge",
+        "scope": "python"
+    },
+
+    "race_completed_by_player": {
+        "body": "(race_completed_by_player),$1",
+        "prefix": "race_completed_by_player",
+        "scope": "python"
+    },
+
+    "rebuild_shadow_map": {
+        "body": "(rebuild_shadow_map),$1",
+        "prefix": "rebuild_shadow_map",
+        "scope": "python"
+    },
+
+    "remove_agent": {
+        "body": "(remove_agent,"${1:agent_id}"),$2",
+        "prefix": "remove_agent",
+        "scope": "python"
+    },
+
+    "remove_member_from_party": {
+        "body": "(remove_member_from_party,"${1:trp_id}"${2:,"party_id"}),$3",
+        "prefix": "remove_member_from_party",
+        "scope": "python"
+    },
+
+    "remove_party": {
+        "body": "(remove_party,"${1:party_id}"),$2",
+        "prefix": "remove_party",
+        "scope": "python"
+    },
+
+    "remove_regular_prisoners": {
+        "body": "(remove_regular_prisoners,"${1:party_id}"),$2",
+        "prefix": "remove_regular_prisoners",
+        "scope": "python"
+    },
+
+    "remove_troops_from_companions": {
+        "body": "(remove_troops_from_companions,"${1:trp_id}",${2:value}),$3",
+        "prefix": "remove_troops_from_companions",
+        "scope": "python"
+    },
+
+    "remove_troops_from_prisoners": {
+        "body": "(remove_troops_from_prisoners,"${1:trp_id}",${2:value}),$3",
+        "prefix": "remove_troops_from_prisoners",
+        "scope": "python"
+    },
+
+    "remove_troop_from_site": {
+        "body": "(remove_troop_from_site,"${1:trp_id}","${2:scene_id}"),$3",
+        "prefix": "remove_troop_from_site",
+        "scope": "python"
+    },
+
+    "replace_prop_instance": {
+        "body": "(replace_prop_instance,"${1:scene_prop_id}","${2:new_scene_prop_id}"),$3",
+        "prefix": "replace_prop_instance",
+        "scope": "python"
+    },
+
+    "replace_scene_items_with_scene_props": {
+        "body": "(replace_scene_items_with_scene_props,"${1:old_item_id}","${2:new_scene_prop_id}"),$3",
+        "prefix": "replace_scene_items_with_scene_props",
+        "scope": "python"
+    },
+
+    "replace_scene_props": {
+        "body": "(replace_scene_props,"${1:old_scene_prop_id}","${2:new_scene_prop_id}"),$3",
+        "prefix": "replace_scene_props",
+        "scope": "python"
+    },
+
+    "reset_item_probabilities": {
+        "body": "(reset_item_probabilities),$1",
+        "prefix": "reset_item_probabilities",
+        "scope": "python"
+    },
+
+    "reset_mission_timer_a": {
+        "body": "(reset_mission_timer_a),$1",
+        "prefix": "reset_mission_timer_a",
+        "scope": "python"
+    },
+
+    "reset_mission_timer_b": {
+        "body": "(reset_mission_timer_b),$1",
+        "prefix": "reset_mission_timer_b",
+        "scope": "python"
+    },
+
+    "reset_mission_timer_c": {
+        "body": "(reset_mission_timer_c),$1",
+        "prefix": "reset_mission_timer_c",
+        "scope": "python"
+    },
+
+    "reset_price_rates": {
+        "body": "(reset_price_rates),$1",
+        "prefix": "reset_price_rates",
+        "scope": "python"
+    },
+
+    "reset_visitors": {
+        "body": "(reset_visitors),$1",
+        "prefix": "reset_visitors",
+        "scope": "python"
+    },
+
+    "rest_for_hours": {
+        "body": "(rest_for_hours,${1:rest_period},${2:time_speed},${3:remain_attackable}),$4",
+        "prefix": "rest_for_hours",
+        "scope": "python"
+    },
+
+    "rest_for_hours_interactive": {
+        "body": "(rest_for_hours_interactive,${1:rest_period},${2:time_speed},${3:remain_attackable}),$4",
+        "prefix": "rest_for_hours_interactive",
+        "scope": "python"
+    },
+
+    "save_ban_info_of_player": {
+        "body": "(save_ban_info_of_player,"${1:player_id}"),$2",
+        "prefix": "save_ban_info_of_player",
+        "scope": "python"
+    },
+
+    "scene_allows_mounted_units": {
+        "body": "(scene_allows_mounted_units),$1",
+        "prefix": "scene_allows_mounted_units",
+        "scope": "python"
+    },
+
+    "scene_get_slot": {
+        "body": "(scene_get_slot,":${1:destination}","${2:scene_id}",${3:slot_no}),$4",
+        "prefix": "scene_get_slot",
+        "scope": "python"
+    },
+
+    "scene_item_get_instance": {
+        "body": "(scene_item_get_instance,":${1:destination}","${2:itm_id}","${3:instance_no}"),$4",
+        "prefix": "scene_item_get_instance",
+        "scope": "python"
+    },
+
+    "scene_item_get_num_instances": {
+        "body": "(scene_item_get_num_instances,":${1:destination}","${2:itm_id}"),$3",
+        "prefix": "scene_item_get_num_instances",
+        "scope": "python"
+    },
+
+    "scene_prop_enable_after_time": {
+        "body": "(scene_prop_enable_after_time,"${1:spr_id}",${2:value}),$3",
+        "prefix": "scene_prop_enable_after_time",
+        "scope": "python"
+    },
+
+    "scene_prop_fade_in": {
+        "body": "(scene_prop_fade_in,"${1:spr_id}",${2:fade_in_time}),$3",
+        "prefix": "scene_prop_fade_in",
+        "scope": "python"
+    },
+
+    "scene_prop_fade_out": {
+        "body": "(scene_prop_fade_out,"${1:spr_id}",${2:fade_out_time}),$3",
+        "prefix": "scene_prop_fade_out",
+        "scope": "python"
+    },
+
+    "scene_prop_get_hit_points": {
+        "body": "(scene_prop_get_hit_points,":${1:destination}","${2:spr_id}"),$3",
+        "prefix": "scene_prop_get_hit_points",
+        "scope": "python"
+    },
+
+    "scene_prop_get_instance": {
+        "body": "(scene_prop_get_instance,":${1:destination}","${2:spr_id}","${3:instance_no}"),$4",
+        "prefix": "scene_prop_get_instance",
+        "scope": "python"
+    },
+
+    "scene_prop_get_max_hit_points": {
+        "body": "(scene_prop_get_max_hit_points,":${1:destination}","${2:spr_id}"),$3",
+        "prefix": "scene_prop_get_max_hit_points",
+        "scope": "python"
+    },
+
+    "scene_prop_get_num_instances": {
+        "body": "(scene_prop_get_num_instances,":${1:destination}","${2:spr_id}"),$3",
+        "prefix": "scene_prop_get_num_instances",
+        "scope": "python"
+    },
+
+    "scene_prop_get_slot": {
+        "body": "(scene_prop_get_slot,":${1:destination}","${2:scene_prop_instance_id}",${3:slot_no}),$4",
+        "prefix": "scene_prop_get_slot",
+        "scope": "python"
+    },
+
+    "scene_prop_get_team": {
+        "body": "(scene_prop_get_team,":${1:destination}","${2:spr_id}"),$3",
+        "prefix": "scene_prop_get_team",
+        "scope": "python"
+    },
+
+    "scene_prop_get_visibility": {
+        "body": "(scene_prop_get_visibility,":${1:destination}","${2:spr_id}"),$3",
+        "prefix": "scene_prop_get_visibility",
+        "scope": "python"
+    },
+
+    "scene_prop_has_agent_on_it": {
+        "body": "(scene_prop_has_agent_on_it,"${1:spr_id}","${2:agent_id}"),$3",
+        "prefix": "scene_prop_has_agent_on_it",
+        "scope": "python"
+    },
+
+    "scene_prop_set_cur_hit_points": {
+        "body": "(scene_prop_set_cur_hit_points,"${1:spr_id}",${2:value}),$3",
+        "prefix": "scene_prop_set_cur_hit_points",
+        "scope": "python"
+    },
+
+    "scene_prop_set_hit_points": {
+        "body": "(scene_prop_set_hit_points,"${1:spr_id}",${2:value}),$3",
+        "prefix": "scene_prop_set_hit_points",
+        "scope": "python"
+    },
+
+    "scene_prop_set_prune_time": {
+        "body": "(scene_prop_set_prune_time,"${1:spr_id}",${2:value}),$3",
+        "prefix": "scene_prop_set_prune_time",
+        "scope": "python"
+    },
+
+    "scene_prop_set_slot": {
+        "body": "(scene_prop_set_slot,"${1:scene_prop_instance_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "scene_prop_set_slot",
+        "scope": "python"
+    },
+
+    "scene_prop_set_team": {
+        "body": "(scene_prop_set_team,"${1:spr_id}",${2:value}),$3",
+        "prefix": "scene_prop_set_team",
+        "scope": "python"
+    },
+
+    "scene_prop_set_visibility": {
+        "body": "(scene_prop_set_visibility,"${1:scene_prop_instance}",${2:value}),$3",
+        "prefix": "scene_prop_set_visibility",
+        "scope": "python"
+    },
+
+    "scene_prop_slot_eq": {
+        "body": "(scene_prop_slot_eq,"${1:scene_prop_instance_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "scene_prop_slot_eq",
+        "scope": "python"
+    },
+
+    "scene_prop_slot_ge": {
+        "body": "(scene_prop_slot_ge,"${1:scene_prop_instance_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "scene_prop_slot_ge",
+        "scope": "python"
+    },
+
+    "scene_set_day_time": {
+        "body": "(scene_set_day_time,${1:value}),$2",
+        "prefix": "scene_set_day_time",
+        "scope": "python"
+    },
+
+    "scene_set_slot": {
+        "body": "(scene_set_slot,"${1:scene_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "scene_set_slot",
+        "scope": "python"
+    },
+
+    "scene_slot_eq": {
+        "body": "(scene_slot_eq,"${1:scene_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "scene_slot_eq",
+        "scope": "python"
+    },
+
+    "scene_slot_ge": {
+        "body": "(scene_slot_ge,"${1:scene_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "scene_slot_ge",
+        "scope": "python"
+    },
+
+    "scene_spawned_item_get_instance": {
+        "body": "(scene_spawned_item_get_instance,":${1:destination}","${2:itm_id}","${3:instance_no}"),$4",
+        "prefix": "scene_spawned_item_get_instance",
+        "scope": "python"
+    },
+
+    "scene_spawned_item_get_num_instances": {
+        "body": "(scene_spawned_item_get_num_instances,":${1:destination}","${2:itm_id}"),$3",
+        "prefix": "scene_spawned_item_get_num_instances",
+        "scope": "python"
+    },
+
+    "select_enemy": {
+        "body": "(select_enemy,${1:value}),$2",
+        "prefix": "select_enemy",
+        "scope": "python"
+    },
+
+    "send_message_to_url": {
+        "body": "(send_message_to_url,"${1:string_id}","${2:encode_url}"),$3",
+        "prefix": "send_message_to_url",
+        "scope": "python"
+    },
+
+    "server_add_message_to_log": {
+        "body": "(server_add_message_to_log,"${1:string_id}"),$2",
+        "prefix": "server_add_message_to_log",
+        "scope": "python"
+    },
+
+    "server_get_add_to_game_servers_list": {
+        "body": "(server_get_add_to_game_servers_list,":${1:destination}"),$2",
+        "prefix": "server_get_add_to_game_servers_list",
+        "scope": "python"
+    },
+
+    "server_get_anti_cheat": {
+        "body": "(server_get_anti_cheat,":${1:destination}"),$2",
+        "prefix": "server_get_anti_cheat",
+        "scope": "python"
+    },
+
+    "server_get_changing_game_type_allowed": {
+        "body": "(server_get_changing_game_type_allowed,":${1:destination}"),$2",
+        "prefix": "server_get_changing_game_type_allowed",
+        "scope": "python"
+    },
+
+    "server_get_combat_speed": {
+        "body": "(server_get_combat_speed,":${1:destination}"),$2",
+        "prefix": "server_get_combat_speed",
+        "scope": "python"
+    },
+
+    "server_get_control_block_dir": {
+        "body": "(server_get_control_block_dir,":${1:destination}"),$2",
+        "prefix": "server_get_control_block_dir",
+        "scope": "python"
+    },
+
+    "server_get_friendly_fire": {
+        "body": "(server_get_friendly_fire,":${1:destination}"),$2",
+        "prefix": "server_get_friendly_fire",
+        "scope": "python"
+    },
+
+    "server_get_friendly_fire_damage_friend_ratio": {
+        "body": "(server_get_friendly_fire_damage_friend_ratio,":${1:destination}"),$2",
+        "prefix": "server_get_friendly_fire_damage_friend_ratio",
+        "scope": "python"
+    },
+
+    "server_get_friendly_fire_damage_self_ratio": {
+        "body": "(server_get_friendly_fire_damage_self_ratio,":${1:destination}"),$2",
+        "prefix": "server_get_friendly_fire_damage_self_ratio",
+        "scope": "python"
+    },
+
+    "server_get_ghost_mode": {
+        "body": "(server_get_ghost_mode,":${1:destination}"),$2",
+        "prefix": "server_get_ghost_mode",
+        "scope": "python"
+    },
+
+    "server_get_max_num_players": {
+        "body": "(server_get_max_num_players,":${1:destination}"),$2",
+        "prefix": "server_get_max_num_players",
+        "scope": "python"
+    },
+
+    "server_get_melee_friendly_fire": {
+        "body": "(server_get_melee_friendly_fire,":${1:destination}"),$2",
+        "prefix": "server_get_melee_friendly_fire",
+        "scope": "python"
+    },
+
+    "server_get_renaming_server_allowed": {
+        "body": "(server_get_renaming_server_allowed,":${1:destination}"),$2",
+        "prefix": "server_get_renaming_server_allowed",
+        "scope": "python"
+    },
+
+    "server_set_add_to_game_servers_list": {
+        "body": "(server_set_add_to_game_servers_list,${1:value}),$2",
+        "prefix": "server_set_add_to_game_servers_list",
+        "scope": "python"
+    },
+
+    "server_set_anti_cheat": {
+        "body": "(server_set_anti_cheat,${1:value}),$2",
+        "prefix": "server_set_anti_cheat",
+        "scope": "python"
+    },
+
+    "server_set_combat_speed": {
+        "body": "(server_set_combat_speed,${1:value}),$2",
+        "prefix": "server_set_combat_speed",
+        "scope": "python"
+    },
+
+    "server_set_control_block_dir": {
+        "body": "(server_set_control_block_dir,${1:value}),$2",
+        "prefix": "server_set_control_block_dir",
+        "scope": "python"
+    },
+
+    "server_set_friendly_fire": {
+        "body": "(server_set_friendly_fire,${1:value}),$2",
+        "prefix": "server_set_friendly_fire",
+        "scope": "python"
+    },
+
+    "server_set_friendly_fire_damage_friend_ratio": {
+        "body": "(server_set_friendly_fire_damage_friend_ratio,${1:value}),$2",
+        "prefix": "server_set_friendly_fire_damage_friend_ratio",
+        "scope": "python"
+    },
+
+    "server_set_friendly_fire_damage_self_ratio": {
+        "body": "(server_set_friendly_fire_damage_self_ratio,${1:value}),$2",
+        "prefix": "server_set_friendly_fire_damage_self_ratio",
+        "scope": "python"
+    },
+
+    "server_set_ghost_mode": {
+        "body": "(server_set_ghost_mode,${1:value}),$2",
+        "prefix": "server_set_ghost_mode",
+        "scope": "python"
+    },
+
+    "server_set_max_num_players": {
+        "body": "(server_set_max_num_players,${1:value}),$2",
+        "prefix": "server_set_max_num_players",
+        "scope": "python"
+    },
+
+    "server_set_melee_friendly_fire": {
+        "body": "(server_set_melee_friendly_fire,${1:value}),$2",
+        "prefix": "server_set_melee_friendly_fire",
+        "scope": "python"
+    },
+
+    "server_set_name": {
+        "body": "(server_set_name,"${1:string_id}"),$2",
+        "prefix": "server_set_name",
+        "scope": "python"
+    },
+
+    "server_set_password": {
+        "body": "(server_set_password,"${1:string_id}"),$2",
+        "prefix": "server_set_password",
+        "scope": "python"
+    },
+
+    "server_set_welcome_message": {
+        "body": "(server_set_welcome_message,"${1:string_id}"),$2",
+        "prefix": "server_set_welcome_message",
+        "scope": "python"
+    },
+
+    "setup_quest_giver": {
+        "body": "(setup_quest_giver,"${1:qst_id}","${2:str_id}"),$3",
+        "prefix": "setup_quest_giver",
+        "scope": "python"
+    },
+
+    "setup_quest_text": {
+        "body": "(setup_quest_text,"${1:qst_id}"),$2",
+        "prefix": "setup_quest_text",
+        "scope": "python"
+    },
+
+    "set_achievement_stat": {
+        "body": "(set_achievement_stat,${1:achievement_id},${2:stat_index},${3:value}),$4",
+        "prefix": "set_achievement_stat",
+        "scope": "python"
+    },
+
+    "set_background_mesh": {
+        "body": "(set_background_mesh,"${1:mesh_id}"),$2",
+        "prefix": "set_background_mesh",
+        "scope": "python"
+    },
+
+    "set_battle_advantage": {
+        "body": "(set_battle_advantage,${1:value}),$2",
+        "prefix": "set_battle_advantage",
+        "scope": "python"
+    },
+
+    "set_camera_follow_party": {
+        "body": "(set_camera_follow_party,"${1:party_id}"),$2",
+        "prefix": "set_camera_follow_party",
+        "scope": "python"
+    },
+
+    "set_cheer_at_no_enemy": {
+        "body": "(set_cheer_at_no_enemy,${1:value0-1}),$2",
+        "prefix": "set_cheer_at_no_enemy",
+        "scope": "python"
+    },
+
+    "set_container_overlay": {
+        "body": "(set_container_overlay,"\\$g_${1:container_overlay_id}"),$2",
+        "prefix": "set_container_overlay",
+        "scope": "python"
+    },
+
+    "set_conversation_speaker_agent": {
+        "body": "(set_conversation_speaker_agent,"${1:agent_id}"),$2",
+        "prefix": "set_conversation_speaker_agent",
+        "scope": "python"
+    },
+
+    "set_conversation_speaker_troop": {
+        "body": "(set_conversation_speaker_troop,"${1:trp_id}"),$2",
+        "prefix": "set_conversation_speaker_troop",
+        "scope": "python"
+    },
+
+    "set_current_color": {
+        "body": "(set_current_color,${1:red0-255},${2:green0-255},${3:blue0-255}),$4",
+        "prefix": "set_current_color",
+        "scope": "python"
+    },
+
+    "set_encountered_party": {
+        "body": "(set_encountered_party,"${1:party_id}"),$2",
+        "prefix": "set_encountered_party",
+        "scope": "python"
+    },
+
+    "set_fixed_point_multiplier": {
+        "body": "(set_fixed_point_multiplier,${1:value}),$2",
+        "prefix": "set_fixed_point_multiplier",
+        "scope": "python"
+    },
+
+    "set_fog_distance": {
+        "body": "(set_fog_distance,${1:distance_in_meters}${2:,[0xRRGGBB]}),$3",
+        "prefix": "set_fog_distance",
+        "scope": "python"
+    },
+
+    "set_game_menu_tableau_mesh": {
+        "body": "(set_game_menu_tableau_mesh,"tableau_${1:material_id}",${2:value},pos${3:1}),$4",
+        "prefix": "set_game_menu_tableau_mesh",
+        "scope": "python"
+    },
+
+    "set_global_cloud_amount": {
+        "body": "(set_global_cloud_amount,${1:value}),$2",
+        "prefix": "set_global_cloud_amount",
+        "scope": "python"
+    },
+
+    "set_global_haze_amount": {
+        "body": "(set_global_haze_amount,${1:value}),$2",
+        "prefix": "set_global_haze_amount",
+        "scope": "python"
+    },
+
+    "set_item_probability_in_merchandise": {
+        "body": "(set_item_probability_in_merchandise,"${1:itm_id}",${2:value}),$3",
+        "prefix": "set_item_probability_in_merchandise",
+        "scope": "python"
+    },
+
+    "set_jump_entry": {
+        "body": "(set_jump_entry,${1:entry_no}),$2",
+        "prefix": "set_jump_entry",
+        "scope": "python"
+    },
+
+    "set_jump_mission": {
+        "body": "(set_jump_mission,"mt_${1:mission_template_id}"),$2",
+        "prefix": "set_jump_mission",
+        "scope": "python"
+    },
+
+    "set_mercenary_source_party": {
+        "body": "(set_mercenary_source_party,"${1:party_id}"),$2",
+        "prefix": "set_mercenary_source_party",
+        "scope": "python"
+    },
+
+    "set_merchandise_max_value": {
+        "body": "(set_merchandise_max_value,${1:value}),$2",
+        "prefix": "set_merchandise_max_value",
+        "scope": "python"
+    },
+
+    "set_merchandise_modifier_quality": {
+        "body": "(set_merchandise_modifier_quality,${1:value}),$2",
+        "prefix": "set_merchandise_modifier_quality",
+        "scope": "python"
+    },
+
+    "set_mission_result": {
+        "body": "(set_mission_result,${1:value}),$2",
+        "prefix": "set_mission_result",
+        "scope": "python"
+    },
+
+    "set_party_battle_mode": {
+        "body": "(set_party_battle_mode),$1",
+        "prefix": "set_party_battle_mode",
+        "scope": "python"
+    },
+
+    "set_party_creation_random_limits": {
+        "body": "(set_party_creation_random_limits,${1:min_value},${2:max_value}),$3",
+        "prefix": "set_party_creation_random_limits",
+        "scope": "python"
+    },
+
+    "set_passage_menu": {
+        "body": "(set_passage_menu,${1:value}),$2",
+        "prefix": "set_passage_menu",
+        "scope": "python"
+    },
+
+    "set_player_troop": {
+        "body": "(set_player_troop,"${1:troop_id}"),$2",
+        "prefix": "set_player_troop",
+        "scope": "python"
+    },
+
+    "set_position_delta": {
+        "body": "(set_position_delta,${1:x},${2:y},${3:z}),$4",
+        "prefix": "set_position_delta",
+        "scope": "python"
+    },
+
+    "set_postfx": {
+        "body": "(set_postfx),$1",
+        "prefix": "set_postfx",
+        "scope": "python"
+    },
+
+    "set_price_rate_for_item": {
+        "body": "(set_price_rate_for_item,"${1:itm_id}",${2:value_percentage}),$3",
+        "prefix": "set_price_rate_for_item",
+        "scope": "python"
+    },
+
+    "set_price_rate_for_item_type": {
+        "body": "(set_price_rate_for_item_type,${1:item_type_id},${2:value_percentage}),$3",
+        "prefix": "set_price_rate_for_item_type",
+        "scope": "python"
+    },
+
+    "set_quest_progression": {
+        "body": "(set_quest_progression,"${1:qst_id}",${2:value}),$3",
+        "prefix": "set_quest_progression",
+        "scope": "python"
+    },
+
+    "set_rain": {
+        "body": "(set_rain,${1:rain-type},${2:strength0-100}),$3",
+        "prefix": "set_rain",
+        "scope": "python"
+    },
+
+    "set_relation": {
+        "body": "(set_relation,"${1:faction_id_1}","${2:faction_id_2}",${3:value}),$4",
+        "prefix": "set_relation",
+        "scope": "python"
+    },
+
+    "set_result_string": {
+        "body": "(set_result_string,"${1:string_id}"),$2",
+        "prefix": "set_result_string",
+        "scope": "python"
+    },
+
+    "set_river_shader_to_mud": {
+        "body": "(set_river_shader_to_mud),$1",
+        "prefix": "set_river_shader_to_mud",
+        "scope": "python"
+    },
+
+    "set_shader_param_float": {
+        "body": "(set_shader_param_float,${1:parameter_name},${2:value}),$3",
+        "prefix": "set_shader_param_float",
+        "scope": "python"
+    },
+
+    "set_shader_param_float4": {
+        "body": "(set_shader_param_float4,${1:parameter_name},${2:value_x},${3:value_y},${4:value_z},${5:value_w}),$6",
+        "prefix": "set_shader_param_float4",
+        "scope": "python"
+    },
+
+    "set_shader_param_float4x4": {
+        "body": "(set_shader_param_float4x4,${1:parameter_name},[0][0],[0][1],[0][2],[1][0],[1][1],[1][2],[2][0],[2][1],[2][2],[3][0],[3][1],[3][2]),$2",
+        "prefix": "set_shader_param_float4x4",
+        "scope": "python"
+    },
+
+    "set_shader_param_int": {
+        "body": "(set_shader_param_int,${1:parameter_name},${2:value}),$3",
+        "prefix": "set_shader_param_int",
+        "scope": "python"
+    },
+
+    "set_show_messages": {
+        "body": "(set_show_messages,${1:value}),$2",
+        "prefix": "set_show_messages",
+        "scope": "python"
+    },
+
+    "set_skybox": {
+        "body": "(set_skybox,${1:non_hdr_skybox_index},${2:hdr_skybox_index}),$3",
+        "prefix": "set_skybox",
+        "scope": "python"
+    },
+
+    "set_spawn_effector_scene_prop_id": {
+        "body": "(set_spawn_effector_scene_prop_id,"${1:scene_prop_id}"),$2",
+        "prefix": "set_spawn_effector_scene_prop_id",
+        "scope": "python"
+    },
+
+    "set_spawn_effector_scene_prop_kind": {
+        "body": "(set_spawn_effector_scene_prop_kind,${1:team_no},"${2:scene_prop_kind_no}"),$3",
+        "prefix": "set_spawn_effector_scene_prop_kind",
+        "scope": "python"
+    },
+
+    "set_spawn_position": {
+        "body": "(set_spawn_position,pos${1:1}),$2",
+        "prefix": "set_spawn_position",
+        "scope": "python"
+    },
+
+    "set_spawn_radius": {
+        "body": "(set_spawn_radius,${1:value}),$2",
+        "prefix": "set_spawn_radius",
+        "scope": "python"
+    },
+
+    "set_startup_ambient_light": {
+        "body": "(set_startup_ambient_light,${1:red0-255},${2:green0-255},${3:blue0-255}),$4",
+        "prefix": "set_startup_ambient_light",
+        "scope": "python"
+    },
+
+    "set_startup_ground_ambient_light": {
+        "body": "(set_startup_ground_ambient_light,${1:red0-255},${2:green0-255},${3:blue0-255}),$4",
+        "prefix": "set_startup_ground_ambient_light",
+        "scope": "python"
+    },
+
+    "set_startup_sun_light": {
+        "body": "(set_startup_sun_light,${1:red0-255},${2:green0-255},${3:blue0-255}),$4",
+        "prefix": "set_startup_sun_light",
+        "scope": "python"
+    },
+
+    "set_tooltip_text": {
+        "body": "(set_tooltip_text,"${1:str_id}"),$2",
+        "prefix": "set_tooltip_text",
+        "scope": "python"
+    },
+
+    "set_trigger_result": {
+        "body": "(set_trigger_result,${1:value}),$2",
+        "prefix": "set_trigger_result",
+        "scope": "python"
+    },
+
+    "set_visitor": {
+        "body": "(set_visitor,${1:entry_no},"${2:trp_id}"${3:,[dna]}),$4",
+        "prefix": "set_visitor",
+        "scope": "python"
+    },
+
+    "set_visitors": {
+        "body": "(set_visitors,${1:entry_no},"${2:trp_id}",${3:number_of_troops}),$4",
+        "prefix": "set_visitors",
+        "scope": "python"
+    },
+
+    "set_zoom_amount": {
+        "body": "(set_zoom_amount,${1:value_fixed_point}),$2",
+        "prefix": "set_zoom_amount",
+        "scope": "python"
+    },
+
+    "show_item_details": {
+        "body": "(show_item_details,"${1:itm_id}",pos${2:1},${3:show_default_text_or_not}),$4",
+        "prefix": "show_item_details",
+        "scope": "python"
+    },
+
+    "show_item_details_with_modifier": {
+        "body": "(show_item_details_with_modifier,"${1:itm_id}",${2:item_modifier},pos${3:1},${4:show_default_text_or_not}),$5",
+        "prefix": "show_item_details_with_modifier",
+        "scope": "python"
+    },
+
+    "show_object_details_overlay": {
+        "body": "(show_object_details_overlay,${1:value}),$2",
+        "prefix": "show_object_details_overlay",
+        "scope": "python"
+    },
+
+    "show_troop_details": {
+        "body": "(show_troop_details,"${1:trp_id}",pos${2:1},${3:troop_price}),$4",
+        "prefix": "show_troop_details",
+        "scope": "python"
+    },
+
+    "shuffle_range": {
+        "body": "(shuffle_range,${1:reg_no},${2:reg_no}),$3",
+        "prefix": "shuffle_range",
+        "scope": "python"
+    },
+
+    "spawn_agent": {
+        "body": "(spawn_agent,"trp_${1:troop_id}"),$2",
+        "prefix": "spawn_agent",
+        "scope": "python"
+    },
+
+    "spawn_around_party": {
+        "body": "(spawn_around_party,"${1:party_id}","${2:party_template_id}"),$3",
+        "prefix": "spawn_around_party",
+        "scope": "python"
+    },
+
+    "spawn_horse": {
+        "body": "(spawn_horse,"${1:item_kind_id}"${2:,item_modifier}),$3",
+        "prefix": "spawn_horse",
+        "scope": "python"
+    },
+
+    "spawn_item": {
+        "body": "(spawn_item,"${1:item_kind_id}",${2:item_modifier}${3:,[seconds_before_pruning]}),$4",
+        "prefix": "spawn_item",
+        "scope": "python"
+    },
+
+    "spawn_item_without_refill": {
+        "body": "(spawn_item_without_refill,"itm_${1:item_kind_id}",${2:item_modifier}${3:,[seconds_before_pruning]}),$4",
+        "prefix": "spawn_item_without_refill",
+        "scope": "python"
+    },
+
+    "spawn_scene_prop": {
+        "body": "(spawn_scene_prop,"spr_${1:scene_prop_id}"),$2",
+        "prefix": "spawn_scene_prop",
+        "scope": "python"
+    },
+
+    "start_background_presentation": {
+        "body": "(start_background_presentation,"prsnt_${1:id}"),$2",
+        "prefix": "start_background_presentation",
+        "scope": "python"
+    },
+
+    "start_encounter": {
+        "body": "(start_encounter,"${1:party_id}"),$2",
+        "prefix": "start_encounter",
+        "scope": "python"
+    },
+
+    "start_map_conversation": {
+        "body": "(start_map_conversation,"${1:troop_id}"),$2",
+        "prefix": "start_map_conversation",
+        "scope": "python"
+    },
+
+    "start_mission_conversation": {
+        "body": "(start_mission_conversation,"${1:trp_id}"),$2",
+        "prefix": "start_mission_conversation",
+        "scope": "python"
+    },
+
+    "start_multiplayer_mission": {
+        "body": "(start_multiplayer_mission,"${1:mission_template_id}","${2:scene_id}","${3:started_manually}"),$4",
+        "prefix": "start_multiplayer_mission",
+        "scope": "python"
+    },
+
+    "start_presentation": {
+        "body": "(start_presentation,"prsnt_${1:id}"),$2",
+        "prefix": "start_presentation",
+        "scope": "python"
+    },
+
+    "start_quest": {
+        "body": "(start_quest,"${1:qst_id}","${2:giver_troop_id}"),$3",
+        "prefix": "start_quest",
+        "scope": "python"
+    },
+
+    "stop_all_sounds": {
+        "body": "(stop_all_sounds${1:,[options]}),$2",
+        "prefix": "stop_all_sounds",
+        "scope": "python"
+    },
+
+    "stop_sound_channel": {
+        "body": "(stop_sound_channel,"${1:sound_channel_no}"),$2",
+        "prefix": "stop_sound_channel",
+        "scope": "python"
+    },
+
+    "store01_random_parties_in_range": {
+        "body": "(store01_random_parties_in_range,${1:lower_bound},${2:upper_bound}),$3",
+        "prefix": "store01_random_parties_in_range",
+        "scope": "python"
+    },
+
+    "store_acos": {
+        "body": "(store_acos,":${1:destination_fixed_point}",${2:value_fixed_point}),$3",
+        "prefix": "store_acos",
+        "scope": "python"
+    },
+
+    "store_add": {
+        "body": "(store_add,":${1:destination}",${2:value_1},${3:value_2}),$4",
+        "prefix": "store_add",
+        "scope": "python"
+    },
+
+    "store_agent_hit_points": {
+        "body": "(store_agent_hit_points,":${1:destination}","${2:agent_id}"${3:,[absolute]}),$4",
+        "prefix": "store_agent_hit_points",
+        "scope": "python"
+    },
+
+    "store_ally_count": {
+        "body": "(store_ally_count,":${1:destination}"),$2",
+        "prefix": "store_ally_count",
+        "scope": "python"
+    },
+
+    "store_and": {
+        "body": "(store_and,":${1:destination}",${2:value_1},${3:value_2}),$4",
+        "prefix": "store_and",
+        "scope": "python"
+    },
+
+    "store_asin": {
+        "body": "(store_asin,":${1:destination_fixed_point}",${2:value_fixed_point}),$3",
+        "prefix": "store_asin",
+        "scope": "python"
+    },
+
+    "store_atan": {
+        "body": "(store_atan,":${1:destination_fixed_point}",${2:value_fixed_point}),$3",
+        "prefix": "store_atan",
+        "scope": "python"
+    },
+
+    "store_atan2": {
+        "body": "(store_atan2,":${1:destination_fixed_point}",${2:y_value_fixed_point},${3:x_value_fixed_point}),$4",
+        "prefix": "store_atan2",
+        "scope": "python"
+    },
+
+    "store_attacker_count": {
+        "body": "(store_attacker_count,":${1:destination}"),$2",
+        "prefix": "store_attacker_count",
+        "scope": "python"
+    },
+
+    "store_attribute_level": {
+        "body": "(store_attribute_level,":${1:destination}","${2:trp_id}"${3:,[ca_attribute_id]}),$4",
+        "prefix": "store_attribute_level",
+        "scope": "python"
+    },
+
+    "store_character_level": {
+        "body": "(store_character_level,":${1:destination}"${2:,[troop_id]}),$3",
+        "prefix": "store_character_level",
+        "scope": "python"
+    },
+
+    "store_conversation_agent": {
+        "body": "(store_conversation_agent,":${1:destination}"),$2",
+        "prefix": "store_conversation_agent",
+        "scope": "python"
+    },
+
+    "store_conversation_troop": {
+        "body": "(store_conversation_troop,":${1:destination}"),$2",
+        "prefix": "store_conversation_troop",
+        "scope": "python"
+    },
+
+    "store_cos": {
+        "body": "(store_cos,":${1:destination_fixed_point}",${2:value_fixed_point}),$3",
+        "prefix": "store_cos",
+        "scope": "python"
+    },
+
+    "store_current_day": {
+        "body": "(store_current_day,":${1:destination}"),$2",
+        "prefix": "store_current_day",
+        "scope": "python"
+    },
+
+    "store_current_hours": {
+        "body": "(store_current_hours,":${1:destination}"),$2",
+        "prefix": "store_current_hours",
+        "scope": "python"
+    },
+
+    "store_current_scene": {
+        "body": "(store_current_scene,":${1:destination}"),$2",
+        "prefix": "store_current_scene",
+        "scope": "python"
+    },
+
+    "store_defender_count": {
+        "body": "(store_defender_count,":${1:destination}"),$2",
+        "prefix": "store_defender_count",
+        "scope": "python"
+    },
+
+    "store_distance_to_party_from_party": {
+        "body": "(store_distance_to_party_from_party,":${1:destination}","${2:party_id_1}","${3:party_id_2}"),$4",
+        "prefix": "store_distance_to_party_from_party",
+        "scope": "python"
+    },
+
+    "store_div": {
+        "body": "(store_div,":${1:destination}",${2:value_1},${3:value_2}),$4",
+        "prefix": "store_div",
+        "scope": "python"
+    },
+
+    "store_encountered_party": {
+        "body": "(store_encountered_party,":${1:destination}"),$2",
+        "prefix": "store_encountered_party",
+        "scope": "python"
+    },
+
+    "store_encountered_party2": {
+        "body": "(store_encountered_party2,":${1:destination}"),$2",
+        "prefix": "store_encountered_party2",
+        "scope": "python"
+    },
+
+    "store_enemy_count": {
+        "body": "(store_enemy_count,":${1:destination}"),$2",
+        "prefix": "store_enemy_count",
+        "scope": "python"
+    },
+
+    "store_faction_of_party": {
+        "body": "(store_faction_of_party,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "store_faction_of_party",
+        "scope": "python"
+    },
+
+    "store_faction_of_troop": {
+        "body": "(store_faction_of_troop,":${1:destination}","${2:trp_id}"),$3",
+        "prefix": "store_faction_of_troop",
+        "scope": "python"
+    },
+
+    "store_free_inventory_capacity": {
+        "body": "(store_free_inventory_capacity,":${1:destination}"${2:,[troop_id]}),$3",
+        "prefix": "store_free_inventory_capacity",
+        "scope": "python"
+    },
+
+    "store_friend_count": {
+        "body": "(store_friend_count,":${1:destination}"),$2",
+        "prefix": "store_friend_count",
+        "scope": "python"
+    },
+
+    "store_item_kind_count": {
+        "body": "(store_item_kind_count,":${1:destination}","${2:itm_id}"${3:,[troop_id]}),$4",
+        "prefix": "store_item_kind_count",
+        "scope": "python"
+    },
+
+    "store_item_value": {
+        "body": "(store_item_value,":${1:destination}","${2:itm_id}"),$3",
+        "prefix": "store_item_value",
+        "scope": "python"
+    },
+
+    "store_last_sound_channel": {
+        "body": "(store_last_sound_channel,":${1:destination}"),$2",
+        "prefix": "store_last_sound_channel",
+        "scope": "python"
+    },
+
+    "store_mission_timer_a": {
+        "body": "(store_mission_timer_a,":${1:destination}"),$2",
+        "prefix": "store_mission_timer_a",
+        "scope": "python"
+    },
+
+    "store_mission_timer_a_msec": {
+        "body": "(store_mission_timer_a_msec,":${1:destination}"),$2",
+        "prefix": "store_mission_timer_a_msec",
+        "scope": "python"
+    },
+
+    "store_mission_timer_b": {
+        "body": "(store_mission_timer_b,":${1:destination}"),$2",
+        "prefix": "store_mission_timer_b",
+        "scope": "python"
+    },
+
+    "store_mission_timer_b_msec": {
+        "body": "(store_mission_timer_b_msec,":${1:destination}"),$2",
+        "prefix": "store_mission_timer_b_msec",
+        "scope": "python"
+    },
+
+    "store_mission_timer_c": {
+        "body": "(store_mission_timer_c,":${1:destination}"),$2",
+        "prefix": "store_mission_timer_c",
+        "scope": "python"
+    },
+
+    "store_mission_timer_c_msec": {
+        "body": "(store_mission_timer_c_msec,":${1:destination}"),$2",
+        "prefix": "store_mission_timer_c_msec",
+        "scope": "python"
+    },
+
+    "store_mod": {
+        "body": "(store_mod,":${1:destination}",${2:value_1},${3:value_2}),$4",
+        "prefix": "store_mod",
+        "scope": "python"
+    },
+
+    "store_mul": {
+        "body": "(store_mul,":${1:destination}",${2:value_1},${3:value_2}),$4",
+        "prefix": "store_mul",
+        "scope": "python"
+    },
+
+    "store_normalized_team_count": {
+        "body": "(store_normalized_team_count,":${1:destination}",${2:team_no}),$3",
+        "prefix": "store_normalized_team_count",
+        "scope": "python"
+    },
+
+    "store_num_free_prisoner_stacks": {
+        "body": "(store_num_free_prisoner_stacks,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "store_num_free_prisoner_stacks",
+        "scope": "python"
+    },
+
+    "store_num_free_stacks": {
+        "body": "(store_num_free_stacks,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "store_num_free_stacks",
+        "scope": "python"
+    },
+
+    "store_num_parties_created": {
+        "body": "(store_num_parties_created,":${1:destination}","pt_${2:party_template_id}"),$3",
+        "prefix": "store_num_parties_created",
+        "scope": "python"
+    },
+
+    "store_num_parties_destroyed": {
+        "body": "(store_num_parties_destroyed,":${1:destination}","pt_${2:party_template_id}"),$3",
+        "prefix": "store_num_parties_destroyed",
+        "scope": "python"
+    },
+
+    "store_num_parties_destroyed_by_player": {
+        "body": "(store_num_parties_destroyed_by_player,":${1:destination}","pt_${2:party_template_id}"),$3",
+        "prefix": "store_num_parties_destroyed_by_player",
+        "scope": "python"
+    },
+
+    "store_num_parties_of_template": {
+        "body": "(store_num_parties_of_template,":${1:destination}","pt_${2:party_template_id}"),$3",
+        "prefix": "store_num_parties_of_template",
+        "scope": "python"
+    },
+
+    "store_num_regular_prisoners": {
+        "body": "(store_num_regular_prisoners,":${1:destination}","${2:party_id}"),$3",
+        "prefix": "store_num_regular_prisoners",
+        "scope": "python"
+    },
+
+    "store_or": {
+        "body": "(store_or,":${1:destination}",${2:value_1},${3:value_2}),$4",
+        "prefix": "store_or",
+        "scope": "python"
+    },
+
+    "store_partner_faction": {
+        "body": "(store_partner_faction,":${1:destination}"),$2",
+        "prefix": "store_partner_faction",
+        "scope": "python"
+    },
+
+    "store_partner_quest": {
+        "body": "(store_partner_quest,":${1:destination}"),$2",
+        "prefix": "store_partner_quest",
+        "scope": "python"
+    },
+
+    "store_party_size": {
+        "body": "(store_party_size,":${1:destination}"${2:,[party_id]}),$3",
+        "prefix": "store_party_size",
+        "scope": "python"
+    },
+
+    "store_party_size_wo_prisoners": {
+        "body": "(store_party_size_wo_prisoners,":${1:destination}"${2:,[party_id]}),$3",
+        "prefix": "store_party_size_wo_prisoners",
+        "scope": "python"
+    },
+
+    "store_pow": {
+        "body": "(store_pow,":${1:destination_fixed_point}",${2:value1_fixed_point},${3:value2_fixed_point}),$4",
+        "prefix": "store_pow",
+        "scope": "python"
+    },
+
+    "store_proficiency_level": {
+        "body": "(store_proficiency_level,":${1:destination}","${2:trp_id}",wpt_${3:proficiency_id}),$4",
+        "prefix": "store_proficiency_level",
+        "scope": "python"
+    },
+
+    "store_quest_item": {
+        "body": "(store_quest_item,":${1:destination}","${2:itm_id}"),$3",
+        "prefix": "store_quest_item",
+        "scope": "python"
+    },
+
+    "store_quest_number": {
+        "body": "(store_quest_number,":${1:destination}","${2:qst_quest_id}"),$3",
+        "prefix": "store_quest_number",
+        "scope": "python"
+    },
+
+    "store_quest_troop": {
+        "body": "(store_quest_troop,":${1:destination}","${2:trp_id}"),$3",
+        "prefix": "store_quest_troop",
+        "scope": "python"
+    },
+
+    "store_random_armor": {
+        "body": "(store_random_armor,":${1:destination}"),$2",
+        "prefix": "store_random_armor",
+        "scope": "python"
+    },
+
+    "store_random_equipment": {
+        "body": "(store_random_equipment,":${1:destination}"),$2",
+        "prefix": "store_random_equipment",
+        "scope": "python"
+    },
+
+    "store_random_horse": {
+        "body": "(store_random_horse,":${1:destination}"),$2",
+        "prefix": "store_random_horse",
+        "scope": "python"
+    },
+
+    "store_random_in_range": {
+        "body": "(store_random_in_range,":${1:destination}",${2:range_low},${3:range_high}),$4",
+        "prefix": "store_random_in_range",
+        "scope": "python"
+    },
+
+    "store_random_party_in_range": {
+        "body": "(store_random_party_in_range,":${1:destination}",${2:lower_bound},${3:upper_bound}),$4",
+        "prefix": "store_random_party_in_range",
+        "scope": "python"
+    },
+
+    "store_random_party_of_template": {
+        "body": "(store_random_party_of_template,":${1:destination}","pt_${2:party_template_id}"),$3",
+        "prefix": "store_random_party_of_template",
+        "scope": "python"
+    },
+
+    "store_random_quest_in_range": {
+        "body": "(store_random_quest_in_range,":${1:destination}",${2:lower_bound},${3:upper_bound}),$4",
+        "prefix": "store_random_quest_in_range",
+        "scope": "python"
+    },
+
+    "store_random_troop_to_capture": {
+        "body": "(store_random_troop_to_capture,":${1:destination}",${2:lower_bound},${3:upper_bound}),$4",
+        "prefix": "store_random_troop_to_capture",
+        "scope": "python"
+    },
+
+    "store_random_troop_to_raise": {
+        "body": "(store_random_troop_to_raise,":${1:destination}",${2:lower_bound},${3:upper_bound}),$4",
+        "prefix": "store_random_troop_to_raise",
+        "scope": "python"
+    },
+
+    "store_relation": {
+        "body": "(store_relation,":${1:destination}","fac_${2:faction_id_1}","fac_${3:faction_id_2}"),$4",
+        "prefix": "store_relation",
+        "scope": "python"
+    },
+
+    "store_remaining_team_no": {
+        "body": "(store_remaining_team_no,":${1:destination}"),$2",
+        "prefix": "store_remaining_team_no",
+        "scope": "python"
+    },
+
+    "store_repeat_object": {
+        "body": "(store_repeat_object,":${1:destination}"),$2",
+        "prefix": "store_repeat_object",
+        "scope": "python"
+    },
+
+    "store_script_param": {
+        "body": "(store_script_param,":${1:destination}",${2:1}),$3",
+        "prefix": "store_script_param",
+        "scope": "python"
+    },
+
+    "store_script_param_1": {
+        "body": "(store_script_param_1,":${1:destination}"),$2",
+        "prefix": "store_script_param_1",
+        "scope": "python"
+    },
+
+    "store_script_param_2": {
+        "body": "(store_script_param_2,":${1:destination}"),$2",
+        "prefix": "store_script_param_2",
+        "scope": "python"
+    },
+
+    "store_sin": {
+        "body": "(store_sin,":${1:destination_fixed_point}",${2:value_fixed_point}),$3",
+        "prefix": "store_sin",
+        "scope": "python"
+    },
+
+    "store_skill_level": {
+        "body": "(store_skill_level,":${1:destination}",skl_${2:skill_id}${3:,[troop_id]}),$4",
+        "prefix": "store_skill_level",
+        "scope": "python"
+    },
+
+    "store_sqrt": {
+        "body": "(store_sqrt,":${1:destination_fixed_point}",${2:value_fixed_point}),$3",
+        "prefix": "store_sqrt",
+        "scope": "python"
+    },
+
+    "store_sub": {
+        "body": "(store_sub,":${1:destination}",${2:value_1},${3:value_2}),$4",
+        "prefix": "store_sub",
+        "scope": "python"
+    },
+
+    "store_tan": {
+        "body": "(store_tan,":${1:destination_fixed_point}",${2:value_fixed_point}),$3",
+        "prefix": "store_tan",
+        "scope": "python"
+    },
+
+    "store_time_of_day": {
+        "body": "(store_time_of_day,":${1:destination}"),$2",
+        "prefix": "store_time_of_day",
+        "scope": "python"
+    },
+
+    "store_trigger_param": {
+        "body": "(store_trigger_param,":${1:destination}",${2:trigger_param_no}),$3",
+        "prefix": "store_trigger_param",
+        "scope": "python"
+    },
+
+    "store_trigger_param_1": {
+        "body": "(store_trigger_param_1,":${1:destination}"),$2",
+        "prefix": "store_trigger_param_1",
+        "scope": "python"
+    },
+
+    "store_trigger_param_2": {
+        "body": "(store_trigger_param_2,":${1:destination}"),$2",
+        "prefix": "store_trigger_param_2",
+        "scope": "python"
+    },
+
+    "store_trigger_param_3": {
+        "body": "(store_trigger_param_3,":${1:destination}"),$2",
+        "prefix": "store_trigger_param_3",
+        "scope": "python"
+    },
+
+    "store_troop_count_companions": {
+        "body": "(store_troop_count_companions,":${1:destination}","${2:troop_id}"${3:,[party_id]}),$4",
+        "prefix": "store_troop_count_companions",
+        "scope": "python"
+    },
+
+    "store_troop_count_prisoners": {
+        "body": "(store_troop_count_prisoners,":${1:destination}","${2:troop_id}"${3:,[party_id]}),$4",
+        "prefix": "store_troop_count_prisoners",
+        "scope": "python"
+    },
+
+    "store_troop_faction": {
+        "body": "(store_troop_faction,":${1:destination}","${2:trp_id}"),$3",
+        "prefix": "store_troop_faction",
+        "scope": "python"
+    },
+
+    "store_troop_gold": {
+        "body": "(store_troop_gold,":${1:destination}","${2:trp_id}"),$3",
+        "prefix": "store_troop_gold",
+        "scope": "python"
+    },
+
+    "store_troop_health": {
+        "body": "(store_troop_health,":${1:destination}","${2:trp_id}"${3:,[absolute]}),$4",
+        "prefix": "store_troop_health",
+        "scope": "python"
+    },
+
+    "store_troop_value": {
+        "body": "(store_troop_value,":${1:destination}","${2:trp_id}"),$3",
+        "prefix": "store_troop_value",
+        "scope": "python"
+    },
+
+    "store_zoom_amount": {
+        "body": "(store_zoom_amount,":${1:destination_fixed_point}"),$2",
+        "prefix": "store_zoom_amount",
+        "scope": "python"
+    },
+
+    "str_clear": {
+        "body": "(str_clear,s${1:1}),$2",
+        "prefix": "str_clear",
+        "scope": "python"
+    },
+
+    "str_encode_url": {
+        "body": "(str_encode_url,s${1:1}),$2",
+        "prefix": "str_encode_url",
+        "scope": "python"
+    },
+
+    "str_is_empty": {
+        "body": "(str_is_empty,s${1:1}),$2",
+        "prefix": "str_is_empty",
+        "scope": "python"
+    },
+
+    "str_store_agent_name": {
+        "body": "(str_store_agent_name,s${1:1},"${2:agent_id}"),$3",
+        "prefix": "str_store_agent_name",
+        "scope": "python"
+    },
+
+    "str_store_class_name": {
+        "body": "(str_store_class_name,s${1:1},"${2:class_id}"),$3",
+        "prefix": "str_store_class_name",
+        "scope": "python"
+    },
+
+    "str_store_date": {
+        "body": "(str_store_date,s${1:1},${2:number_of_hours_to_add_to_the_current_date}),$3",
+        "prefix": "str_store_date",
+        "scope": "python"
+    },
+
+    "str_store_faction_name": {
+        "body": "(str_store_faction_name,s${1:1},"${2:faction_id}"),$3",
+        "prefix": "str_store_faction_name",
+        "scope": "python"
+    },
+
+    "str_store_faction_name_link": {
+        "body": "(str_store_faction_name_link,s${1:1},"${2:faction_id}"),$3",
+        "prefix": "str_store_faction_name_link",
+        "scope": "python"
+    },
+
+    "str_store_info_page_name": {
+        "body": "(str_store_info_page_name,s${1:1},"${2:info_page_id}"),$3",
+        "prefix": "str_store_info_page_name",
+        "scope": "python"
+    },
+
+    "str_store_info_page_name_link": {
+        "body": "(str_store_info_page_name_link,s${1:1},"${2:info_page_id}"),$3",
+        "prefix": "str_store_info_page_name_link",
+        "scope": "python"
+    },
+
+    "str_store_item_name": {
+        "body": "(str_store_item_name,s${1:1},"${2:itm_id}"),$3",
+        "prefix": "str_store_item_name",
+        "scope": "python"
+    },
+
+    "str_store_item_name_by_count": {
+        "body": "(str_store_item_name_by_count,s${1:1},"${2:itm_id}",${3:number}),$4",
+        "prefix": "str_store_item_name_by_count",
+        "scope": "python"
+    },
+
+    "str_store_item_name_plural": {
+        "body": "(str_store_item_name_plural,s${1:1},"${2:itm_id}"),$3",
+        "prefix": "str_store_item_name_plural",
+        "scope": "python"
+    },
+
+    "str_store_party_name": {
+        "body": "(str_store_party_name,s${1:1},"${2:party_id}"),$3",
+        "prefix": "str_store_party_name",
+        "scope": "python"
+    },
+
+    "str_store_party_name_link": {
+        "body": "(str_store_party_name_link,s${1:1},"${2:party_id}"),$3",
+        "prefix": "str_store_party_name_link",
+        "scope": "python"
+    },
+
+    "str_store_player_face_keys": {
+        "body": "(str_store_player_face_keys,"${1:string_no}","${2:player_id}"),$3",
+        "prefix": "str_store_player_face_keys",
+        "scope": "python"
+    },
+
+    "str_store_player_username": {
+        "body": "(str_store_player_username,s${1:1},"${2:player_id}"),$3",
+        "prefix": "str_store_player_username",
+        "scope": "python"
+    },
+
+    "str_store_quest_name": {
+        "body": "(str_store_quest_name,s${1:1},"${2:quest_id}"),$3",
+        "prefix": "str_store_quest_name",
+        "scope": "python"
+    },
+
+    "str_store_quest_name_link": {
+        "body": "(str_store_quest_name_link,s${1:1},"${2:quest_id}"),$3",
+        "prefix": "str_store_quest_name_link",
+        "scope": "python"
+    },
+
+    "str_store_server_name": {
+        "body": "(str_store_server_name,s${1:1}),$2",
+        "prefix": "str_store_server_name",
+        "scope": "python"
+    },
+
+    "str_store_server_password": {
+        "body": "(str_store_server_password,s${1:1}),$2",
+        "prefix": "str_store_server_password",
+        "scope": "python"
+    },
+
+    "str_store_string": {
+        "body": "(str_store_string,s${1:1},"${2:str_id}"),$3",
+        "prefix": "str_store_string",
+        "scope": "python"
+    },
+
+    "str_store_string_reg": {
+        "body": "(str_store_string_reg,s${1:1},${2:string_no}),$3",
+        "prefix": "str_store_string_reg",
+        "scope": "python"
+    },
+
+    "str_store_troop_face_keys": {
+        "body": "(str_store_troop_face_keys,"${1:string_no}","${2:troop_no}"${3:,[alt]}),$4",
+        "prefix": "str_store_troop_face_keys",
+        "scope": "python"
+    },
+
+    "str_store_troop_name": {
+        "body": "(str_store_troop_name,s${1:1},"${2:trp_id}"),$3",
+        "prefix": "str_store_troop_name",
+        "scope": "python"
+    },
+
+    "str_store_troop_name_by_count": {
+        "body": "(str_store_troop_name_by_count,s${1:1},"${2:trp_id}",${3:number}),$4",
+        "prefix": "str_store_troop_name_by_count",
+        "scope": "python"
+    },
+
+    "str_store_troop_name_link": {
+        "body": "(str_store_troop_name_link,s${1:1},"${2:troop_id}"),$3",
+        "prefix": "str_store_troop_name_link",
+        "scope": "python"
+    },
+
+    "str_store_troop_name_plural": {
+        "body": "(str_store_troop_name_plural,s${1:1},"${2:trp_id}"),$3",
+        "prefix": "str_store_troop_name_plural",
+        "scope": "python"
+    },
+
+    "str_store_welcome_message": {
+        "body": "(str_store_welcome_message,s${1:1}),$2",
+        "prefix": "str_store_welcome_message",
+        "scope": "python"
+    },
+
+    "succeed_quest": {
+        "body": "(succeed_quest,"${1:qst_id}"),$2",
+        "prefix": "succeed_quest",
+        "scope": "python"
+    },
+
+    "talk_info_set_line": {
+        "body": "(talk_info_set_line,${1:line_no},"${2:str_id}"),$3",
+        "prefix": "talk_info_set_line",
+        "scope": "python"
+    },
+
+    "talk_info_set_relation_bar": {
+        "body": "(talk_info_set_relation_bar,${1:value}),$2",
+        "prefix": "talk_info_set_relation_bar",
+        "scope": "python"
+    },
+
+    "talk_info_show": {
+        "body": "(talk_info_show,${1:hide_or_show0-1}),$2",
+        "prefix": "talk_info_show",
+        "scope": "python"
+    },
+
+    "teams_are_enemies": {
+        "body": "(teams_are_enemies,"${1:team_no_1}","${2:team_no_2}"),$3",
+        "prefix": "teams_are_enemies",
+        "scope": "python"
+    },
+
+    "team_get_bot_death_count": {
+        "body": "(team_get_bot_death_count,":${1:destination}",${2:team_id}),$3",
+        "prefix": "team_get_bot_death_count",
+        "scope": "python"
+    },
+
+    "team_get_bot_kill_count": {
+        "body": "(team_get_bot_kill_count,":${1:destination}",${2:team_id}),$3",
+        "prefix": "team_get_bot_kill_count",
+        "scope": "python"
+    },
+
+    "team_get_faction": {
+        "body": "(team_get_faction,":${1:destination}",${2:team_id}),$3",
+        "prefix": "team_get_faction",
+        "scope": "python"
+    },
+
+    "team_get_gap_distance": {
+        "body": "(team_get_gap_distance,":${1:destination}",${2:team_no},${3:sub_class}),$4",
+        "prefix": "team_get_gap_distance",
+        "scope": "python"
+    },
+
+    "team_get_hold_fire_order": {
+        "body": "(team_get_hold_fire_order,":${1:destination}",${2:team_no},${3:sub_class}),$4",
+        "prefix": "team_get_hold_fire_order",
+        "scope": "python"
+    },
+
+    "team_get_kill_count": {
+        "body": "(team_get_kill_count,":${1:destination}",${2:team_id}),$3",
+        "prefix": "team_get_kill_count",
+        "scope": "python"
+    },
+
+    "team_get_leader": {
+        "body": "(team_get_leader,":${1:destination}",${2:team_no}),$3",
+        "prefix": "team_get_leader",
+        "scope": "python"
+    },
+
+    "team_get_movement_order": {
+        "body": "(team_get_movement_order,":${1:destination}",${2:team_no},${3:sub_class}),$4",
+        "prefix": "team_get_movement_order",
+        "scope": "python"
+    },
+
+    "team_get_order_position": {
+        "body": "(team_get_order_position,pos${1:1},${2:team_no},${3:sub_class}),$4",
+        "prefix": "team_get_order_position",
+        "scope": "python"
+    },
+
+    "team_get_riding_order": {
+        "body": "(team_get_riding_order,":${1:destination}",${2:team_no},${3:sub_class}),$4",
+        "prefix": "team_get_riding_order",
+        "scope": "python"
+    },
+
+    "team_get_score": {
+        "body": "(team_get_score,":${1:destination}",${2:team_id}),$3",
+        "prefix": "team_get_score",
+        "scope": "python"
+    },
+
+    "team_get_slot": {
+        "body": "(team_get_slot,":${1:destination}",${2:team_id},${3:slot_no}),$4",
+        "prefix": "team_get_slot",
+        "scope": "python"
+    },
+
+    "team_get_weapon_usage_order": {
+        "body": "(team_get_weapon_usage_order,":${1:destination}",${2:team_no},${3:sub_class}),$4",
+        "prefix": "team_get_weapon_usage_order",
+        "scope": "python"
+    },
+
+    "team_give_order": {
+        "body": "(team_give_order,${1:team_no},${2:sub_class},mordr_${3:order_id}),$4",
+        "prefix": "team_give_order",
+        "scope": "python"
+    },
+
+    "team_set_bot_death_count": {
+        "body": "(team_set_bot_death_count,${1:team_id},${2:value}),$3",
+        "prefix": "team_set_bot_death_count",
+        "scope": "python"
+    },
+
+    "team_set_bot_kill_count": {
+        "body": "(team_set_bot_kill_count,${1:team_id},${2:value}),$3",
+        "prefix": "team_set_bot_kill_count",
+        "scope": "python"
+    },
+
+    "team_set_faction": {
+        "body": "(team_set_faction,${1:team_id},"${2:faction_id}"),$3",
+        "prefix": "team_set_faction",
+        "scope": "python"
+    },
+
+    "team_set_leader": {
+        "body": "(team_set_leader,${1:team_no},"${2:new_leader_agent_id}"),$3",
+        "prefix": "team_set_leader",
+        "scope": "python"
+    },
+
+    "team_set_order_listener": {
+        "body": "(team_set_order_listener,${1:team_no},${2:sub_class},${3:value}),$4",
+        "prefix": "team_set_order_listener",
+        "scope": "python"
+    },
+
+    "team_set_order_position": {
+        "body": "(team_set_order_position,${1:team_no},${2:sub_class},pos${3:1}),$4",
+        "prefix": "team_set_order_position",
+        "scope": "python"
+    },
+
+    "team_set_relation": {
+        "body": "(team_set_relation,"${1:team_no_1}","${2:team_no_2}",${3:value}),$4",
+        "prefix": "team_set_relation",
+        "scope": "python"
+    },
+
+    "team_set_score": {
+        "body": "(team_set_score,${1:team_id},${2:value}),$3",
+        "prefix": "team_set_score",
+        "scope": "python"
+    },
+
+    "team_set_slot": {
+        "body": "(team_set_slot,${1:team_id},${2:slot_no},${3:value}),$4",
+        "prefix": "team_set_slot",
+        "scope": "python"
+    },
+
+    "team_slot_eq": {
+        "body": "(team_slot_eq,${1:team_id},${2:slot_no},${3:value}),$4",
+        "prefix": "team_slot_eq",
+        "scope": "python"
+    },
+
+    "team_slot_ge": {
+        "body": "(team_slot_ge,${1:team_id},${2:slot_no},${3:value}),$4",
+        "prefix": "team_slot_ge",
+        "scope": "python"
+    },
+
+    "troops_can_join": {
+        "body": "(troops_can_join,${1:value}),$2",
+        "prefix": "troops_can_join",
+        "scope": "python"
+    },
+
+    "troops_can_join_as_prisoner": {
+        "body": "(troops_can_join_as_prisoner,${1:value}),$2",
+        "prefix": "troops_can_join_as_prisoner",
+        "scope": "python"
+    },
+
+    "troop_add_gold": {
+        "body": "(troop_add_gold,"${1:trp_id}",${2:value}),$3",
+        "prefix": "troop_add_gold",
+        "scope": "python"
+    },
+
+    "troop_add_item": {
+        "body": "(troop_add_item,"${1:trp_id}","${2:itm_id}"${3:,[modifier]}),$4",
+        "prefix": "troop_add_item",
+        "scope": "python"
+    },
+
+    "troop_add_items": {
+        "body": "(troop_add_items,"${1:trp_id}","${2:itm_id}",${3:number}),$4",
+        "prefix": "troop_add_items",
+        "scope": "python"
+    },
+
+    "troop_add_merchandise": {
+        "body": "(troop_add_merchandise,"${1:trp_id}",${2:item_type_id},${3:value}),$4",
+        "prefix": "troop_add_merchandise",
+        "scope": "python"
+    },
+
+    "troop_add_merchandise_with_faction": {
+        "body": "(troop_add_merchandise_with_faction,"${1:trp_id}","${2:fac_id}",itp_type_${3:id},${4:value}),$5",
+        "prefix": "troop_add_merchandise_with_faction",
+        "scope": "python"
+    },
+
+    "troop_add_proficiency_points": {
+        "body": "(troop_add_proficiency_points,"${1:trp_id}",${2:value}),$3",
+        "prefix": "troop_add_proficiency_points",
+        "scope": "python"
+    },
+
+    "troop_clear_inventory": {
+        "body": "(troop_clear_inventory,"${1:trp_id}"),$2",
+        "prefix": "troop_clear_inventory",
+        "scope": "python"
+    },
+
+    "troop_ensure_inventory_space": {
+        "body": "(troop_ensure_inventory_space,"${1:trp_id}",${2:value}),$3",
+        "prefix": "troop_ensure_inventory_space",
+        "scope": "python"
+    },
+
+    "troop_equip_items": {
+        "body": "(troop_equip_items,"${1:trp_id}"),$2",
+        "prefix": "troop_equip_items",
+        "scope": "python"
+    },
+
+    "troop_get_class": {
+        "body": "(troop_get_class,":${1:destination}","${2:trp_id}"),$3",
+        "prefix": "troop_get_class",
+        "scope": "python"
+    },
+
+    "troop_get_inventory_capacity": {
+        "body": "(troop_get_inventory_capacity,":${1:destination}","${2:trp_id}"),$3",
+        "prefix": "troop_get_inventory_capacity",
+        "scope": "python"
+    },
+
+    "troop_get_inventory_slot": {
+        "body": "(troop_get_inventory_slot,":${1:destination}","${2:trp_id}",${3:inventory_slot_no}),$4",
+        "prefix": "troop_get_inventory_slot",
+        "scope": "python"
+    },
+
+    "troop_get_inventory_slot_modifier": {
+        "body": "(troop_get_inventory_slot_modifier,":${1:destination}","${2:trp_id}",${3:inventory_slot_no}),$4",
+        "prefix": "troop_get_inventory_slot_modifier",
+        "scope": "python"
+    },
+
+    "troop_get_slot": {
+        "body": "(troop_get_slot,":${1:destination}","${2:troop_id}",${3:slot_no}),$4",
+        "prefix": "troop_get_slot",
+        "scope": "python"
+    },
+
+    "troop_get_type": {
+        "body": "(troop_get_type,":${1:destination}","${2:trp_id}"),$3",
+        "prefix": "troop_get_type",
+        "scope": "python"
+    },
+
+    "troop_get_upgrade_troop": {
+        "body": "(troop_get_upgrade_troop,":${1:destination}","${2:trp_id}",${3:upgrade_path}),$4",
+        "prefix": "troop_get_upgrade_troop",
+        "scope": "python"
+    },
+
+    "troop_get_xp": {
+        "body": "(troop_get_xp,":${1:destination}","${2:trp_id}"),$3",
+        "prefix": "troop_get_xp",
+        "scope": "python"
+    },
+
+    "troop_has_item_equipped": {
+        "body": "(troop_has_item_equipped,"${1:trp_id}","${2:itm_id}"),$3",
+        "prefix": "troop_has_item_equipped",
+        "scope": "python"
+    },
+
+    "troop_inventory_slot_get_item_amount": {
+        "body": "(troop_inventory_slot_get_item_amount,":${1:destination}","${2:trp_id}",${3:inventory_slot_no}),$4",
+        "prefix": "troop_inventory_slot_get_item_amount",
+        "scope": "python"
+    },
+
+    "troop_inventory_slot_get_item_max_amount": {
+        "body": "(troop_inventory_slot_get_item_max_amount,":${1:destination}","${2:trp_id}",${3:inventory_slot_no}),$4",
+        "prefix": "troop_inventory_slot_get_item_max_amount",
+        "scope": "python"
+    },
+
+    "troop_inventory_slot_set_item_amount": {
+        "body": "(troop_inventory_slot_set_item_amount,"${1:trp_id}",${2:inventory_slot_no},${3:value}),$4",
+        "prefix": "troop_inventory_slot_set_item_amount",
+        "scope": "python"
+    },
+
+    "troop_is_guarantee_horse": {
+        "body": "(troop_is_guarantee_horse,"${1:trp_id}"),$2",
+        "prefix": "troop_is_guarantee_horse",
+        "scope": "python"
+    },
+
+    "troop_is_guarantee_ranged": {
+        "body": "(troop_is_guarantee_ranged,"${1:trp_id}"),$2",
+        "prefix": "troop_is_guarantee_ranged",
+        "scope": "python"
+    },
+
+    "troop_is_hero": {
+        "body": "(troop_is_hero,"${1:trp_id}"),$2",
+        "prefix": "troop_is_hero",
+        "scope": "python"
+    },
+
+    "troop_is_mounted": {
+        "body": "(troop_is_mounted,"${1:trp_id}"),$2",
+        "prefix": "troop_is_mounted",
+        "scope": "python"
+    },
+
+    "troop_is_wounded": {
+        "body": "(troop_is_wounded,"${1:trp_id}"),$2",
+        "prefix": "troop_is_wounded",
+        "scope": "python"
+    },
+
+    "troop_join": {
+        "body": "(troop_join,"${1:trp_id}"),$2",
+        "prefix": "troop_join",
+        "scope": "python"
+    },
+
+    "troop_join_as_prisoner": {
+        "body": "(troop_join_as_prisoner,"${1:trp_id}"),$2",
+        "prefix": "troop_join_as_prisoner",
+        "scope": "python"
+    },
+
+    "troop_loot_troop": {
+        "body": "(troop_loot_troop,"${1:target_troop_id}","${2:source_troop_id}",${3:probability}),$4",
+        "prefix": "troop_loot_troop",
+        "scope": "python"
+    },
+
+    "troop_raise_attribute": {
+        "body": "(troop_raise_attribute,"${1:trp_id}",ca_${2:id},${3:value}),$4",
+        "prefix": "troop_raise_attribute",
+        "scope": "python"
+    },
+
+    "troop_raise_proficiency": {
+        "body": "(troop_raise_proficiency,"${1:trp_id}",wpt_${2:id},${3:value}),$4",
+        "prefix": "troop_raise_proficiency",
+        "scope": "python"
+    },
+
+    "troop_raise_proficiency_linear": {
+        "body": "(troop_raise_proficiency_linear,"${1:trp_id}",wpt_${2:id},${3:value}),$4",
+        "prefix": "troop_raise_proficiency_linear",
+        "scope": "python"
+    },
+
+    "troop_raise_skill": {
+        "body": "(troop_raise_skill,"${1:trp_id}",skl_${2:id},${3:value}),$4",
+        "prefix": "troop_raise_skill",
+        "scope": "python"
+    },
+
+    "troop_remove_gold": {
+        "body": "(troop_remove_gold,"${1:trp_id}",${2:value}),$3",
+        "prefix": "troop_remove_gold",
+        "scope": "python"
+    },
+
+    "troop_remove_item": {
+        "body": "(troop_remove_item,"${1:trp_id}","${2:itm_id}"),$3",
+        "prefix": "troop_remove_item",
+        "scope": "python"
+    },
+
+    "troop_remove_items": {
+        "body": "(troop_remove_items,"${1:trp_id}","${2:itm_id}",${3:number}),$4",
+        "prefix": "troop_remove_items",
+        "scope": "python"
+    },
+
+    "troop_set_age": {
+        "body": "(troop_set_age,"${1:trp_id}",${2:age_slider_pos}),$3",
+        "prefix": "troop_set_age",
+        "scope": "python"
+    },
+
+    "troop_set_auto_equip": {
+        "body": "(troop_set_auto_equip,"${1:trp_id}",${2:value}),$3",
+        "prefix": "troop_set_auto_equip",
+        "scope": "python"
+    },
+
+    "troop_set_class": {
+        "body": "(troop_set_class,"${1:trp_id}",${2:value}),$3",
+        "prefix": "troop_set_class",
+        "scope": "python"
+    },
+
+    "troop_set_face_keys": {
+        "body": "(troop_set_face_keys,"${1:troop_no}","${2:string_no}"${3:,[alt]}),$4",
+        "prefix": "troop_set_face_keys",
+        "scope": "python"
+    },
+
+    "troop_set_face_key_from_current_profile": {
+        "body": "(troop_set_face_key_from_current_profile,"${1:trp_id}"),$2",
+        "prefix": "troop_set_face_key_from_current_profile",
+        "scope": "python"
+    },
+
+    "troop_set_faction": {
+        "body": "(troop_set_faction,"${1:trp_id}","${2:fac_id}"),$3",
+        "prefix": "troop_set_faction",
+        "scope": "python"
+    },
+
+    "troop_set_health": {
+        "body": "(troop_set_health,"${1:trp_id}",${2:relativehealth(0-100)}),$3",
+        "prefix": "troop_set_health",
+        "scope": "python"
+    },
+
+    "troop_set_inventory_slot": {
+        "body": "(troop_set_inventory_slot,"${1:trp_id}",${2:inventory_slot_no},${3:value}),$4",
+        "prefix": "troop_set_inventory_slot",
+        "scope": "python"
+    },
+
+    "troop_set_inventory_slot_modifier": {
+        "body": "(troop_set_inventory_slot_modifier,"${1:trp_id}",${2:inventory_slot_no},${3:value}),$4",
+        "prefix": "troop_set_inventory_slot_modifier",
+        "scope": "python"
+    },
+
+    "troop_set_name": {
+        "body": "(troop_set_name,"${1:trp_id}","${2:str_id}"),$3",
+        "prefix": "troop_set_name",
+        "scope": "python"
+    },
+
+    "troop_set_note_available": {
+        "body": "(troop_set_note_available,"${1:troop_id}",${2:value}),$3",
+        "prefix": "troop_set_note_available",
+        "scope": "python"
+    },
+
+    "troop_set_plural_name": {
+        "body": "(troop_set_plural_name,"${1:trp_id}","${2:str_id}"),$3",
+        "prefix": "troop_set_plural_name",
+        "scope": "python"
+    },
+
+    "troop_set_slot": {
+        "body": "(troop_set_slot,"${1:troop_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "troop_set_slot",
+        "scope": "python"
+    },
+
+    "troop_set_type": {
+        "body": "(troop_set_type,"${1:trp_id}",${2:gender}),$3",
+        "prefix": "troop_set_type",
+        "scope": "python"
+    },
+
+    "troop_slot_eq": {
+        "body": "(troop_slot_eq,"${1:troop_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "troop_slot_eq",
+        "scope": "python"
+    },
+
+    "troop_slot_ge": {
+        "body": "(troop_slot_ge,"${1:troop_id}",${2:slot_no},${3:value}),$4",
+        "prefix": "troop_slot_ge",
+        "scope": "python"
+    },
+
+    "troop_sort_inventory": {
+        "body": "(troop_sort_inventory,"${1:trp_id}"),$2",
+        "prefix": "troop_sort_inventory",
+        "scope": "python"
+    },
+
+    "try-else-end": {
+        "body": "(try_begin),(try_end),",
+        "prefix": "try-else-end",
+        "scope": "python"
+    },
+
+    "try-end": {
+        "body": "(try_begin),(try_end),",
+        "prefix": "try-end",
+        "scope": "python"
+    },
+
+    "try_end": {
+        "body": "(try_end),${1}",
+        "prefix": "try_end",
+        "scope": "python"
+    },
+
+    "try_for_agents": {
+        "body": "(try_for_agents,":agent_no"),(try_end),",
+        "prefix": "try_for_agents",
+        "scope": "python"
+    },
+
+    "try_for_parties": {
+        "body": "(try_for_parties,":party_no"),(try_end),",
+        "prefix": "try_for_parties",
+        "scope": "python"
+    },
+
+    "try_for_range": {
+        "body": "(try_for_range,":${1:unused}",${2}_begin,${2}_end),(try_end),",
+        "prefix": "try_for_range",
+        "scope": "python"
+    },
+
+    "try_for_range_backwards": {
+        "body": "(try_for_range_backwards,":${1:unused}",${2}_begin,${2}_end),(try_end),",
+        "prefix": "try_for_range_backwards",
+        "scope": "python"
+    },
+
+    "tutorial_message": {
+        "body": "(tutorial_message,"${1:str_id}",${2:0xRRGGBB},${3:auto_close_time}),$4",
+        "prefix": "tutorial_message",
+        "scope": "python"
+    },
+
+    "tutorial_message_set_background": {
+        "body": "(tutorial_message_set_background,${1:value}),$2",
+        "prefix": "tutorial_message_set_background",
+        "scope": "python"
+    },
+
+    "tutorial_message_set_center_justify": {
+        "body": "(tutorial_message_set_center_justify,${1:value}),$2",
+        "prefix": "tutorial_message_set_center_justify",
+        "scope": "python"
+    },
+
+    "tutorial_message_set_position": {
+        "body": "(tutorial_message_set_position,${1:position_x},${2:position_y}),$3",
+        "prefix": "tutorial_message_set_position",
+        "scope": "python"
+    },
+
+    "tutorial_message_set_size": {
+        "body": "(tutorial_message_set_size,${1:size_x},${2:size_y}),$3",
+        "prefix": "tutorial_message_set_size",
+        "scope": "python"
+    },
+
+    "unlock_achievement": {
+        "body": "(unlock_achievement,${1:achievement_id}),$2",
+        "prefix": "unlock_achievement",
+        "scope": "python"
+    },
+
+    "val_abs": {
+        "body": "(val_abs,":${1:destination}"),$2",
+        "prefix": "val_abs",
+        "scope": "python"
+    },
+
+    "val_add": {
+        "body": "(val_add,":${1:destination}",${2:value}),$3",
+        "prefix": "val_add",
+        "scope": "python"
+    },
+
+    "val_and": {
+        "body": "(val_and,":${1:destination}",${2:value}),$3",
+        "prefix": "val_and",
+        "scope": "python"
+    },
+
+    "val_clamp": {
+        "body": "(val_clamp,":${1:destination}",${2:lower_bound},${3:upper_bound}),$4",
+        "prefix": "val_clamp",
+        "scope": "python"
+    },
+
+    "val_div": {
+        "body": "(val_div,":${1:destination}",${2:value}),$3",
+        "prefix": "val_div",
+        "scope": "python"
+    },
+
+    "val_lshift": {
+        "body": "(val_lshift,":${1:destination}",${2:value}),$3",
+        "prefix": "val_lshift",
+        "scope": "python"
+    },
+
+    "val_max": {
+        "body": "(val_max,":${1:destination}",${2:value}),$3",
+        "prefix": "val_max",
+        "scope": "python"
+    },
+
+    "val_min": {
+        "body": "(val_min,":${1:destination}",${2:value}),$3",
+        "prefix": "val_min",
+        "scope": "python"
+    },
+
+    "val_mod": {
+        "body": "(val_mod,":${1:destination}",${2:value}),$3",
+        "prefix": "val_mod",
+        "scope": "python"
+    },
+
+    "val_mul": {
+        "body": "(val_mul,":${1:destination}",${2:value}),$3",
+        "prefix": "val_mul",
+        "scope": "python"
+    },
+
+    "val_or": {
+        "body": "(val_or,":${1:destination}",${2:value}),$3",
+        "prefix": "val_or",
+        "scope": "python"
+    },
+
+    "val_rshift": {
+        "body": "(val_rshift,":${1:destination}",${2:value}),$3",
+        "prefix": "val_rshift",
+        "scope": "python"
+    },
+
+    "val_sub": {
+        "body": "(val_sub,":${1:destination}",${2:value}),$3",
+        "prefix": "val_sub",
+        "scope": "python"
+    },
+
 
 }
