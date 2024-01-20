@@ -46,6 +46,17 @@ for file_name in os.listdir(input_directory):
                 exact = line.split(betweens[2])
                 newFirstLine += "".join(exact)
 
+        newFirstLine = newFirstLine.replace("$", "")
+        newFirstLine = newFirstLine.replace(":", "")
+        newFirstLine = newFirstLine.replace("{", "")
+        newFirstLine = newFirstLine.replace("}", "")
+        newFirstLine = newFirstLine.replace("1", "")
+        newFirstLine = newFirstLine.replace("2", "")
+        newFirstLine = newFirstLine.replace("3", "")
+        newFirstLine = newFirstLine.replace("4", "")
+        newFirstLine = newFirstLine.replace("5", "")
+        newFirstLine = newFirstLine.replace("\"", "")
+
         replaced = [" " * 4 + "\"{}\": ".format(file_name) + "{",
                     " " * 8 + "\"body\": \"{}\",".format(newFirstLine),
                     " " * 8 + "\"prefix\": \"{}\",".format(file_name),
