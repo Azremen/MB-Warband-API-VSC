@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const { execFileSync } = require('child_process');
+const { execSync } = require('child_process');
 const os = require('os');
 const fs = require('fs');
 
@@ -26,89 +26,95 @@ function formatAndSaveDocument() {
         const tempFilePath = `${os.tmpdir()}/temp_mbap_script.py`;
         fs.writeFileSync(tempFilePath, originalContent, 'utf-8');
 
-        // Use black command-line tool to format the content and get the formatted code
-        const blackCmd = `black --line-length ${vscode.workspace.getConfiguration().get('mbap.lineLength', 2000)} --skip-string-normalization --quiet ${tempFilePath}`;
-        execFileSync(blackCmd, {
-            encoding: 'utf-8',
-            shell: true
-        });
+        try {
+            // Use the Black command-line tool to format the content
+            const blackCmd = `black --line-length ${vscode.workspace.getConfiguration().get('mbap.lineLength', 2000)} --skip-string-normalization --quiet ${tempFilePath}`;
+            execSync(blackCmd, { encoding: 'utf-8', shell: true });
 
-        // Read the black-formatted content from the temporary file
-        const blackFormattedCode = fs.readFileSync(tempFilePath, 'utf-8');
+            // Read the Black-formatted content from the temporary file
+            const blackFormattedCode = fs.readFileSync(tempFilePath, 'utf-8');
 
-        // Delete the temporary file
-        fs.unlinkSync(tempFilePath);
+            // Delete the temporary file
+            fs.unlinkSync(tempFilePath);
 
-        // Apply your custom formatting with adjusted indentation levels for specific operation names
-        const customFormattedLines = [];
-        let currentIndentationLevel = 0;
+            // Apply custom formatting with adjusted indentation levels for specific operation names
+            const customFormattedLines = [];
+            let currentIndentationLevel = 0;
 
-        for (const line of blackFormattedCode.split('\n')) {
-            const trimmedLine = line.trim();
+            for (const line of blackFormattedCode.split('\n')) {
+                const trimmedLine = line.trim();
 
-            if (trimmedLine.includes("try_end") || trimmedLine.includes("else_try")) {
-                currentIndentationLevel--;
+                // Skip comment lines
+                if (trimmedLine.startsWith("#")) {
+                    customFormattedLines.push(line);
+                    continue;
+                }
+
+                // Adjust indentation for "try_end" and "else_try"
+                if (trimmedLine.includes("try_end") || trimmedLine.includes("else_try")) {
+                    currentIndentationLevel--;
+                }
+
+                let customFormattedLine = line;
+
+                // Handle tuples without commas
+                if (line.includes("(") && line.includes(")") && !line.includes(",") && !line.includes("try")) {
+                    customFormattedLine = line.replace(/^[ \t]*\(/, '').replace(/\)[ \t]*,$/, '');
+                }
+
+                const customIndentation = '\t'.repeat(Math.max(0, currentIndentationLevel));
+                customFormattedLine = customIndentation + customFormattedLine.trim();
+                customFormattedLines.push(customFormattedLine);
+
+                if (operationNames.some(op => trimmedLine.includes(op))) {
+                    currentIndentationLevel++;
+                }
             }
 
-            let customFormattedLine = line;
+            const customFormattedCode = customFormattedLines.join('\n');
 
-            if (line.includes("(") && line.includes(")") && !line.includes(",") && !line.includes("try")) {
-                // Tuple without commas, format as per your preference
-                customFormattedLine = line.replace(/^\s*\(/, '').replace(/\)\s*,$/, '');
-            }
+            const edit = new vscode.WorkspaceEdit();
+            edit.replace(document.uri, new vscode.Range(0, 0, document.lineCount, 0), customFormattedCode);
 
-            const customIndentation = '\t'.repeat(Math.max(0, currentIndentationLevel));
-            customFormattedLine = customIndentation + customFormattedLine;
-            customFormattedLines.push(customFormattedLine);
-
-            if (operationNames.some(op => trimmedLine.includes(op))) {
-                currentIndentationLevel++;
-            }
+            vscode.workspace.applyEdit(edit).then(success => {
+                if (success) {
+                    vscode.window.showInformationMessage('Formatted and saved the document successfully.');
+                } else {
+                    vscode.window.showErrorMessage('An error occurred while formatting and saving the document.');
+                }
+            });
+        } catch (error) {
+            vscode.window.showErrorMessage(`Error during formatting: ${error.message}`);
         }
-
-        const customFormattedCode = customFormattedLines.join('\n');
-
-        const edit = new vscode.WorkspaceEdit();
-        edit.replace(document.uri, new vscode.Range(0, 0, document.lineCount, 0), customFormattedCode);
-
-        vscode.workspace.applyEdit(edit).then(success => {
-            if (success) {
-                vscode.window.showInformationMessage('Formatted and saved the document.');
-            } else {
-                vscode.window.showErrorMessage('An error occurred while formatting and saving the document.');
-            }
-        });
+    } else {
+        vscode.window.showWarningMessage('No active editor found. Please open a file to format.');
     }
 }
 
 function checkAndInstallBlack() {
-    const terminal = vscode.window.createTerminal('Check Black Installation');
-
-    // Check if Black is installed
-    terminal.sendText('pip show black', true);
-
-    // When the terminal output is ready, check if Black is installed
-    terminal.onDidWriteData(data => {
-        if (data.includes("Package(s) not found: black")) {
-            // Black is not installed, ask the user if they want to install it
-            const installOption = 'Install Black';
-            const message = 'The Black formatter is not installed. Would you like to install it?';
-            vscode.window.showInformationMessage(message, installOption).then((choice) => {
-                if (choice === installOption) {
-                    // User chose to install Black
-                    vscode.window.showInformationMessage('Installing Black...');
-                    terminal.sendText('pip install black', true);
-                } else {
-                    vscode.window.showInformationMessage('Black is not installed. The extension may not work as expected.');
+    try {
+        // Check if Black is installed
+        execSync('black --version', { encoding: 'utf-8', shell: true });
+    } catch (error) {
+        // Black is not installed, prompt the user
+        const installOption = 'Install Black';
+        vscode.window.showInformationMessage(
+            'The Black formatter is not installed. Would you like to install it?',
+            installOption
+        ).then(choice => {
+            if (choice === installOption) {
+                vscode.window.showInformationMessage('Installing Black...');
+                try {
+                    execSync('pip install black', { encoding: 'utf-8', shell: true });
+                    vscode.window.showInformationMessage('Black installed successfully.');
+                } catch (installError) {
+                    vscode.window.showErrorMessage(`Failed to install Black: ${installError.message}`);
                 }
-            });
-        }
-
-        // Dispose of the terminal
-        terminal.dispose();
-    });
-
-    terminal.show();
+            } else {
+                vscode.window.showWarningMessage('Black is not installed. The extension may not work as expected.');
+            }
+        });
+    }
 }
 
 function activate(context) {
