@@ -1,2 +1,20 @@
-expected_module_scripts.py
-unformatted_module_scripts.py
+# Node bağımlılıkları
+/node_modules/
+
+# VS Code kullanıcı ayarları
+/.vscode/
+
+# Derleme / paketleme çıktıları
+*.vsix
+
+# Geçici dosyalar
+*.log
+*.tmp
+
+# Python cache (snippet.py gibi Python dosyaları varsa)
+/__pycache__/
+/*.pyc
+
+# OS özgü dosyalar
+.DS_Store
+Thumbs.db
