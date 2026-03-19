@@ -29,17 +29,6 @@
     ],
     "main": "./extension.js",
     "contributes": {
-        "languages": [
-            {
-                "id": "mbap",
-                "aliases": [
-                    "Warband Script Language"
-                ],
-                "extensions": [
-                    ".py"
-                ]
-            }
-        ],
         "commands": [
             {
                 "command": "mbap.formatWarbandScript",
