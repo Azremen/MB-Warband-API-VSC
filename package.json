@@ -1,9 +1,9 @@
 {
     "name": "mbap",
     "displayName": "M&B: Warband API",
-    "description": "Mount & Blade: Warband language support for Microsoft Visual Studio Code by Azremen and Sart",
+    "description": "Mount & Blade: Warband language support, code formatter, and dynamic IntelliSense for Microsoft Visual Studio Code by Azremen and Sart",
     "publisher": "Azremen",
-    "version": "0.2.12",
+    "version": "0.3.0",
     "homepage": "https://github.com/Azremen/MB-Warband-API-VSC/blob/main/README.md",
     "engines": {
         "vscode": "^1.95.0"
@@ -12,13 +12,22 @@
         "type": "git",
         "url": "https://github.com/Azremen/MB-Warband-API-VSC.git"
     },
+    "keywords": [
+        "warband",
+        "mount and blade",
+        "modding",
+        "script",
+        "snippet"
+    ],
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Formatters",
+        "Snippets"
+    ],
+    "activationEvents": [
+        "onLanguage:python"
     ],
     "main": "./extension.js",
-    "activationEvents": [
-        "onCommand:mbap.formatWarbandScript"
-    ],
     "contributes": {
         "languages": [
             {
@@ -43,30 +52,28 @@
                 "path": "./snippets/mbap.code-snippets"
             }
         ],
-        "keybindings": [
-            {
-                "command": "mbap.formatWarbandScript",
-                "key": "alt+shift+f",
-                "when": "editorTextFocus && resourceLangId == python"
-            }
-        ]
-    },
-    "configuration": {
-        "title": "Warband Script Language Formatter",
-        "properties": {
-            "mbap.indentation": {
-                "type": "string",
-                "enum": [
-                    "tabs",
-                    "spaces"
-                ],
-                "default": "spaces",
-                "description": "Indentation style for Warband Script Language Formatter."
-            },
-            "mbap.tabSize": {
-                "type": "number",
-                "default": 4,
-                "description": "Number of spaces or tabs to use for indentation."
+        "configuration": {
+            "title": "Warband Script Language Formatter",
+            "properties": {
+                "mbap.lineLength": {
+                    "type": "number",
+                    "default": 2000,
+                    "description": "Maximum line length for the formatter before wrapping."
+                },
+                "mbap.indentation": {
+                    "type": "string",
+                    "enum": [
+                        "tabs",
+                        "spaces"
+                    ],
+                    "default": "spaces",
+                    "description": "Indentation style for Warband Script Language Formatter."
+                },
+                "mbap.tabSize": {
+                    "type": "number",
+                    "default": 4,
+                    "description": "Number of spaces or tabs to use for indentation."
+                }
             }
         }
     }
