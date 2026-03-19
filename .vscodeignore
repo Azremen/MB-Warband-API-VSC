@@ -1,7 +1,27 @@
+# Editor and test folders
 .vscode/**
 .vscode-test/**
+
+# Source control
+.git/**
+.github/**
 .gitignore
+
+# Package manager lock files (not needed in production)
+package-lock.json
+yarn.lock
+
+# Compiled extension packages
+*.vsix
+
+# Boilerplate and documentation (excluding README.md and CHANGELOG.md)
 vsc-extension-quickstart.md
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Formatter test and helper scripts (Dev only)
 expected_module_scripts.py
 unformatted_module_scripts.py
 snippet.py
