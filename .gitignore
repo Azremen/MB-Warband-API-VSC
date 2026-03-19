@@ -1,20 +1,38 @@
-# Node bağımlılıkları
-/node_modules/
+# Node dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
 
-# VS Code kullanıcı ayarları
-/.vscode/
-
-# Derleme / paketleme çıktıları
+# VS Code extension specific
+.vscode-test/
 *.vsix
 
-# Geçici dosyalar
+# VS Code user settings (Keeps launch.json for debugging, ignores personal settings)
+.vscode/settings.json
+
+# Compiled or bundled outputs (in case you add a bundler like Webpack later)
+out/
+dist/
+
+# Temporary files and logs
 *.log
 *.tmp
 
-# Python cache (snippet.py gibi Python dosyaları varsa)
-/__pycache__/
-/*.pyc
+# Python cache (for snippet.py or any other Python helper scripts)
+__pycache__/
+*.py[cod]
+*$py.class
 
-# OS özgü dosyalar
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+
+# Environment variables (if you ever use them)
+.env
+.env.test
