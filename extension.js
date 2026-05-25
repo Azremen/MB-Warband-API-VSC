@@ -1,14 +1,13 @@
 const vscode = require('vscode');
-const { exec } = require('child_process');
+const { execFile } = require('child_process');
 const util = require('util');
 const os = require('os');
-const fs = require('fs');
-const fsPromises = fs.promises;
+const fsPromises = require('fs/promises');
 const path = require('path');
 const crypto = require('crypto');
 
-// Convert the exec command to a Promise-based asynchronous structure
-const execAsync = util.promisify(exec);
+// Promise-based execFile — no shell spawned, safe from command injection
+const execFileAsync = util.promisify(execFile);
 
 // Native Warband Skills and Attributes for IntelliSense
 const skills = [
@@ -63,11 +62,15 @@ const skills = [
   { id: "skl_reserved_18", name: "Reserved Skill 18", desc: "This is a reserved skill." }
 ];
 
+// Set of vanilla skill IDs — used to avoid duplicates when merging dynamic skills
+const staticSkillIds = new Set(skills.map(s => s.id));
+
 // --- Formatter Class ---
 class WarbandScriptFormatter {
   async provideDocumentFormattingEdits(document, options, token) {
     const cfg = vscode.workspace.getConfiguration();
-    const lineLength = cfg.get('mbap.lineLength', 2000);
+    // Clamp to a safe integer range to prevent argument injection
+    const lineLength = Math.max(1, Math.min(10000, parseInt(cfg.get('mbap.lineLength', 2000), 10) || 2000));
     
     const src = document.getText();
     
@@ -80,10 +83,7 @@ class WarbandScriptFormatter {
       await fsPromises.writeFile(tmpPath, src, 'utf8');
       
       // 2. Run Black asynchronously (prevents VS Code UI from freezing)
-      await execAsync(`black --line-length ${lineLength} --skip-string-normalization --quiet "${tmpPath}"`, {
-        encoding: 'utf8', 
-        shell: true
-      });
+      await execFileAsync('black', ['--line-length', String(lineLength), '--skip-string-normalization', '--quiet', tmpPath], { encoding: 'utf8' });
       
       // 3. Read the formatted file asynchronously
       const formatted = await fsPromises.readFile(tmpPath, 'utf8');
@@ -104,10 +104,8 @@ class WarbandScriptFormatter {
       vscode.window.showErrorMessage(`Warband Format Error: ${error.message}`);
       return []; // Do not modify the document in case of an error
     } finally {
-      // Clean up the temporary file when the process is finished
-      if (fs.existsSync(tmpPath)) {
-        await fsPromises.unlink(tmpPath);
-      }
+      // Clean up the temporary file; ignore error if it was never created
+      await fsPromises.unlink(tmpPath).catch(() => {});
     }
   }
 
@@ -154,8 +152,8 @@ class WarbandScriptFormatter {
       // Add the formatted line to the array
       out.push(indent + trimmed);
 
-      // try_begin / else_try opening
-      if (/\b(try_begin|else_try)\b/.test(codePart)) {
+      // try_begin / else_try opening / try_for_* loops
+      if (/\b(try_begin|else_try)\b|\btry_for_/.test(codePart)) {
         tryLevel++;
       }
 
@@ -212,6 +210,7 @@ class WarbandScriptFormatter {
 class WarbandIDParser {
   constructor() {
     this.dynamicItems = [];
+    this.dynamicItemSet = new Set(); // O(1) duplicate lookup
     this.watcher = null;
     
     // File name and prefix mapping for dynamic parsing
@@ -232,7 +231,8 @@ class WarbandIDParser {
       'module_info_pages.py': 'ip_',
       'module_animations.py': 'anim_',
       'module_particle_systems.py': 'psys_',
-      'module_scripts.py': 'script_'
+      'module_scripts.py': 'script_',
+      'module_skills.py': 'skl_'
     };
     
     this.supportedPrefixes = Object.values(this.filePrefixMap);
@@ -240,6 +240,7 @@ class WarbandIDParser {
 
   async parseWorkspace() {
     this.dynamicItems = [];
+    this.dynamicItemSet = new Set();
     const workspaceFolders = vscode.workspace.workspaceFolders;
     if (!workspaceFolders) return;
 
@@ -273,10 +274,10 @@ class WarbandIDParser {
             // Match the start of a tuple or list. e.g.: ["iron_sword" or ("village_1"
             const match = line.trim().match(/^[\[\(]\s*['"]([^'"]+)['"]/);
             if (match) {
-              let rawId = match[1];
+              const rawId = match[1];
               
               // Handle scripts properly (they are sometimes written as "script_game_start")
-              let fullId = rawId.startsWith(prefix) ? rawId : prefix + rawId;
+              const fullId = rawId.startsWith(prefix) ? rawId : prefix + rawId;
               this.addCompletionItem(fullId, fileName);
             }
           }
@@ -288,8 +289,8 @@ class WarbandIDParser {
   }
 
   addCompletionItem(idName, sourceFile) {
-    // Prevent duplicate entries (if an item exists in both module_ and ID_ file)
-    if (!this.dynamicItems.some(item => item.label === idName)) {
+    if (!this.dynamicItemSet.has(idName)) {
+      this.dynamicItemSet.add(idName);
       const item = new vscode.CompletionItem(idName, vscode.CompletionItemKind.Variable);
       item.detail = "Project ID";
       item.documentation = new vscode.MarkdownString(`Auto-parsed from \`${sourceFile}\``);
@@ -345,15 +346,15 @@ function activate(context) {
   context.subscriptions.push({ dispose: () => idParser.dispose() });
 
   // 3. IntelliSense (Auto-completion) for Skills, Attributes AND Dynamic IDs
+  // Compute once — supportedPrefixes never change after construction
+  const allPrefixes = ['skl_', 'ca_', 'knows_', ...idParser.supportedPrefixes];
+  const prefixRegex = new RegExp(`(${allPrefixes.join('|')})[a-zA-Z0-9_]*$`);
+
   const completionProvider = vscode.languages.registerCompletionItemProvider(
     { language: 'python', scheme: 'file' },
     {
       provideCompletionItems(document, position) {
-        const linePrefix = document.lineAt(position).text.substr(0, position.character);
-        
-        // Dynamic regex checking for all supported prefixes (including skills and dynamic ones like itm_, trp_)
-        const allPrefixes = ['skl_', 'ca_', 'knows_', ...idParser.supportedPrefixes];
-        const prefixRegex = new RegExp(`(${allPrefixes.join('|')})[a-zA-Z0-9_]*$`);
+        const linePrefix = document.lineAt(position).text.substring(0, position.character);
         const match = linePrefix.match(prefixRegex);
 
         if (!match) {
@@ -361,43 +362,54 @@ function activate(context) {
         }
 
         const matchedPrefix = match[1];
-        let completionList = [];
 
-        // If prefix is related to skills/attributes, return the static list
+        // Skills / attributes / knows_ — merge static list with dynamic custom skills
         if (matchedPrefix === 'skl_' || matchedPrefix === 'ca_' || matchedPrefix === 'knows_') {
-          completionList = skills.flatMap(skill => {
-            const items = [];
-            
-            // Generate items for skl_ and ca_
+          const items = skills.flatMap(skill => {
+            const result = [];
+
             const baseItem = new vscode.CompletionItem(skill.id, vscode.CompletionItemKind.Constant);
             baseItem.detail = skill.name;
             baseItem.documentation = new vscode.MarkdownString(skill.desc);
-            items.push(baseItem);
+            result.push(baseItem);
 
-            // Generate knows_ 1-10 variations only for skills (skl_)
+            // Generate knows_ 1-10 variants for each vanilla skill
             if (skill.id.startsWith('skl_')) {
               const baseName = skill.id.replace('skl_', '');
               for (let i = 1; i <= 10; i++) {
                 const knowsItem = new vscode.CompletionItem(`knows_${baseName}_${i}`, vscode.CompletionItemKind.EnumMember);
                 knowsItem.detail = `${skill.name} Level ${i}`;
                 knowsItem.documentation = new vscode.MarkdownString(`Assigns level ${i} ${skill.name} to a troop.`);
-                items.push(knowsItem);
+                result.push(knowsItem);
               }
             }
-            return items;
+            return result;
           });
-        } 
-        // If prefix is a dynamic ID (e.g. itm_, trp_), return the list from the Parser
-        else {
-           completionList = idParser.getCompletionItems(matchedPrefix);
+
+          // Append custom skills from module_skills.py, skipping vanilla ones already in static list
+          for (const dynItem of idParser.getCompletionItems('skl_')) {
+            if (staticSkillIds.has(dynItem.label)) continue;
+            items.push(dynItem);
+            // Also generate knows_ variants for each custom skill
+            const baseName = dynItem.label.replace('skl_', '');
+            for (let i = 1; i <= 10; i++) {
+              const knowsItem = new vscode.CompletionItem(`knows_${baseName}_${i}`, vscode.CompletionItemKind.EnumMember);
+              knowsItem.detail = `${dynItem.label} Level ${i}`;
+              knowsItem.documentation = new vscode.MarkdownString(`Assigns level ${i} of ${dynItem.label} to a troop.`);
+              items.push(knowsItem);
+            }
+          }
+
+          return items;
         }
 
-        return completionList;
+        // Dynamic IDs (itm_, trp_, etc.)
+        return idParser.getCompletionItems(matchedPrefix);
       }
     },
     '_' // Trigger character
   );
-  
+
   context.subscriptions.push(completionProvider);
 }
 
