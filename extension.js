@@ -65,6 +65,26 @@ const skills = [
 // Set of vanilla skill IDs — used to avoid duplicates when merging dynamic skills
 const staticSkillIds = new Set(skills.map(s => s.id));
 
+// Pre-built once at module load — avoids recreating hundreds of CompletionItem objects on every keystroke
+const cachedSkillItems = [];
+skills.forEach(skill => {
+  const baseItem = new vscode.CompletionItem(skill.id, vscode.CompletionItemKind.Constant);
+  baseItem.detail = skill.name;
+  baseItem.documentation = new vscode.MarkdownString(skill.desc);
+  cachedSkillItems.push(baseItem);
+
+  // Generate knows_ 1-10 variants for each vanilla skill
+  if (skill.id.startsWith('skl_')) {
+    const baseName = skill.id.replace('skl_', '');
+    for (let i = 1; i <= 10; i++) {
+      const knowsItem = new vscode.CompletionItem(`knows_${baseName}_${i}`, vscode.CompletionItemKind.EnumMember);
+      knowsItem.detail = `${skill.name} Level ${i}`;
+      knowsItem.documentation = new vscode.MarkdownString(`Assigns level ${i} ${skill.name} to a troop.`);
+      cachedSkillItems.push(knowsItem);
+    }
+  }
+});
+
 // --- Formatter Class ---
 class WarbandScriptFormatter {
   async provideDocumentFormattingEdits(document, options, token) {
@@ -101,7 +121,11 @@ class WarbandScriptFormatter {
       return [vscode.TextEdit.replace(fullRange, outputText)];
       
     } catch (error) {
-      vscode.window.showErrorMessage(`Warband Format Error: ${error.message}`);
+      if (error.code === 'ENOENT') {
+        vscode.window.showErrorMessage("Format failed: the 'black' formatter is not installed on your system. Please run 'pip install black' in your terminal.");
+      } else {
+        vscode.window.showErrorMessage(`Warband Format Error: ${error.message}`);
+      }
       return []; // Do not modify the document in case of an error
     } finally {
       // Clean up the temporary file; ignore error if it was never created
@@ -114,14 +138,29 @@ class WarbandScriptFormatter {
     let tryLevel = 0;
     let listDepth = 0;
     let tupleDepth = 0;
+    // Tracks original indentation of currently-open real Python blocks (def/for/if/etc.),
+    // so their bodies keep Black's own indentation instead of being flattened by the Warband indent logic
+    const blockIndentStack = [];
+    const blockOpenerRegex = /^(?:async\s+)?(def|class|for|while|if|elif|else|with|try|except|finally)\b.*:$/;
 
     const lines = formattedText.split('\n');
 
     for (let line of lines) {
       const trimmed = line.trim();
+      const leadingWs = line.length - line.trimStart().length;
 
       // Exclude comment lines (#) from logical checks
       const codePart = trimmed.split('#')[0].trim();
+      // Blank out string contents so keywords like "try_for_" inside text literals aren't mistaken for code
+      const codeWithoutStrings = codePart.replace(/(["'])(?:(?=(\\?))\2.)*?\1/g, '""');
+
+      // Blank lines don't reveal real indentation, so they can't be used to open/close a block
+      if (codePart !== '') {
+        while (blockIndentStack.length > 0 && leadingWs <= blockIndentStack[blockIndentStack.length - 1]) {
+          blockIndentStack.pop();
+        }
+      }
+      const inPythonBlock = blockIndentStack.length > 0;
 
       const opensList = (codePart.match(/\[/g) || []).length;
       const closesList = (codePart.match(/\]/g) || []).length;
@@ -132,7 +171,7 @@ class WarbandScriptFormatter {
       const isListEnd     = codePart === '],' || codePart === ']';
 
       // try_end / else_try closure
-      if (/\b(try_end|else_try)\b/.test(codePart)) {
+      if (/\b(try_end|else_try)\b/.test(codeWithoutStrings)) {
         tryLevel = Math.max(0, tryLevel - 1);
       }
 
@@ -141,25 +180,33 @@ class WarbandScriptFormatter {
       if (isTupleEnd) td--;
       if (isListEnd)  ld -= closesList;
 
-      let indentLevel;
-      if (isListAssign || isTupleAssign) {
-        indentLevel = 0;
+      if (inPythonBlock) {
+        // Preserve Black's own indentation for real Python code instead of recomputing it
+        out.push(line.replace(/\r$/, ''));
       } else {
-        indentLevel = tryLevel + td + ld;
+        let indentLevel;
+        if (isListAssign || isTupleAssign) {
+          indentLevel = 0;
+        } else {
+          indentLevel = tryLevel + td + ld;
+        }
+        const indent = '    '.repeat(Math.max(0, indentLevel));
+        out.push(indent + trimmed);
       }
-      const indent = '    '.repeat(Math.max(0, indentLevel));
-      
-      // Add the formatted line to the array
-      out.push(indent + trimmed);
 
       // try_begin / else_try opening / try_for_* loops
-      if (/\b(try_begin|else_try)\b|\btry_for_/.test(codePart)) {
+      if (/\b(try_begin|else_try)\b|\btry_for_/.test(codeWithoutStrings)) {
         tryLevel++;
       }
 
       listDepth += opensList - closesList;
       if (codePart === '(' || isTupleAssign) tupleDepth++;
       if (isTupleEnd) tupleDepth--;
+
+      // Entering a real Python block — its body will be indented deeper than this line
+      if (codePart !== '' && blockOpenerRegex.test(codePart)) {
+        blockIndentStack.push(leadingWs);
+      }
     }
 
     let outputText = out.join('\n');
@@ -171,13 +218,13 @@ class WarbandScriptFormatter {
       if (
         i <= splitLines.length - 5 &&
         /^\s*\($/.test(splitLines[i]) &&
-        /^\s*"[^"]+",?$/.test(splitLines[i+1]) &&
+        /^\s*["'][^"']+["'],?$/.test(splitLines[i+1]) &&
         /^\s*[0-9]+,?$/.test(splitLines[i+2]) &&
         /^\s*[0-9]+,?$/.test(splitLines[i+3]) &&
         /^\s*\[$/.test(splitLines[i+4])
       ) {
-        const baseIndent = (splitLines[i].match(/^(\s*)\(/) || ['',''])[1];
-        const key        = splitLines[i+1].trim().replace(/,$/, '').replace(/^"|"$/g, '');
+        const baseIndent = (splitLines[i].match(/^(\s*)\(/) || ['','']) [1];
+        const key        = splitLines[i+1].trim().replace(/,$/, '').replace(/^["']|["']$/g, '');
         const n1         = splitLines[i+2].trim().replace(/,$/, '');
         const n2         = splitLines[i+3].trim().replace(/,$/, '');
         newLines.push(`${baseIndent}("${key}", ${n1}, ${n2},`);
@@ -192,14 +239,21 @@ class WarbandScriptFormatter {
     // Collapse inner tuples to a single line
     outputText = outputText.replace(
       /\(\s*([^()\[\]]+?)\s*\),/gs,
-      (_, inner) =>
-        '(' +
-        inner
-          .split(/,?\s*\n/)
-          .map(s => s.replace(/,$/, '').trim())
-          .filter(Boolean)
-          .join(', ') +
-        '),'
+      (match, inner) => {
+        // A blank line inside means this span isn't a small Warband tuple (e.g. it swallowed a real
+        // `def`/function body) — leave it untouched instead of collapsing and losing those blank lines
+        if (/\n[ \t]*\n/.test(inner)) return match;
+        // Same protection when a real Python block header (def/if/for/etc.) got swallowed without a blank line
+        if (inner.split('\n').some(l => blockOpenerRegex.test(l.trim().split('#')[0].trim()))) return match;
+
+        return '(' +
+          inner
+            .split(/,?\s*\n/)
+            .map(s => s.replace(/,$/, '').trim())
+            .filter(Boolean)
+            .join(', ') +
+          '),';
+      }
     );
 
     return outputText;
@@ -211,6 +265,7 @@ class WarbandIDParser {
   constructor() {
     this.dynamicItems = [];
     this.dynamicItemSet = new Set(); // O(1) duplicate lookup
+    this.dynamicSkillItems = []; // pre-built knows_ variants for custom (non-vanilla) skills
     this.watcher = null;
     
     // File name and prefix mapping for dynamic parsing
@@ -239,8 +294,9 @@ class WarbandIDParser {
   }
 
   async parseWorkspace() {
-    this.dynamicItems = [];
-    this.dynamicItemSet = new Set();
+    // Collect into temporary containers so in-progress reads never leave dynamicItems empty for completion requests
+    const tempItems = [];
+    const tempItemSet = new Set();
     const workspaceFolders = vscode.workspace.workspaceFolders;
     if (!workspaceFolders) return;
 
@@ -263,7 +319,7 @@ class WarbandIDParser {
             if (match) {
               const idName = match[1];
               if (this.supportedPrefixes.some(prefix => idName.startsWith(prefix))) {
-                this.addCompletionItem(idName, fileName);
+                this.addCompletionItem(idName, fileName, tempItems, tempItemSet);
               }
             }
           }
@@ -278,7 +334,7 @@ class WarbandIDParser {
               
               // Handle scripts properly (they are sometimes written as "script_game_start")
               const fullId = rawId.startsWith(prefix) ? rawId : prefix + rawId;
-              this.addCompletionItem(fullId, fileName);
+              this.addCompletionItem(fullId, fileName, tempItems, tempItemSet);
             }
           }
         }
@@ -286,15 +342,34 @@ class WarbandIDParser {
         console.error(`Failed to parse ${file.fsPath}:`, err);
       }
     }
+
+    // Only swap in the new results once every file has finished reading
+    this.dynamicItems = tempItems;
+    this.dynamicItemSet = tempItemSet;
+
+    // Pre-build knows_ variants for custom (non-vanilla) skills once here, instead of on every keystroke
+    const dynamicSkillItems = [];
+    for (const dynItem of tempItems) {
+      if (!dynItem.label.startsWith('skl_') || staticSkillIds.has(dynItem.label)) continue;
+      dynamicSkillItems.push(dynItem);
+      const baseName = dynItem.label.replace('skl_', '');
+      for (let i = 1; i <= 10; i++) {
+        const knowsItem = new vscode.CompletionItem(`knows_${baseName}_${i}`, vscode.CompletionItemKind.EnumMember);
+        knowsItem.detail = `${dynItem.label} Level ${i}`;
+        knowsItem.documentation = new vscode.MarkdownString(`Assigns level ${i} of ${dynItem.label} to a troop.`);
+        dynamicSkillItems.push(knowsItem);
+      }
+    }
+    this.dynamicSkillItems = dynamicSkillItems;
   }
 
-  addCompletionItem(idName, sourceFile) {
-    if (!this.dynamicItemSet.has(idName)) {
-      this.dynamicItemSet.add(idName);
+  addCompletionItem(idName, sourceFile, items, itemSet) {
+    if (!itemSet.has(idName)) {
+      itemSet.add(idName);
       const item = new vscode.CompletionItem(idName, vscode.CompletionItemKind.Variable);
       item.detail = "Project ID";
       item.documentation = new vscode.MarkdownString(`Auto-parsed from \`${sourceFile}\``);
-      this.dynamicItems.push(item);
+      items.push(item);
     }
   }
 
@@ -363,44 +438,11 @@ function activate(context) {
 
         const matchedPrefix = match[1];
 
-        // Skills / attributes / knows_ — merge static list with dynamic custom skills
+        // Skills / attributes / knows_ — filter pre-built caches instead of rebuilding items on every keystroke
         if (matchedPrefix === 'skl_' || matchedPrefix === 'ca_' || matchedPrefix === 'knows_') {
-          const items = skills.flatMap(skill => {
-            const result = [];
-
-            const baseItem = new vscode.CompletionItem(skill.id, vscode.CompletionItemKind.Constant);
-            baseItem.detail = skill.name;
-            baseItem.documentation = new vscode.MarkdownString(skill.desc);
-            result.push(baseItem);
-
-            // Generate knows_ 1-10 variants for each vanilla skill
-            if (skill.id.startsWith('skl_')) {
-              const baseName = skill.id.replace('skl_', '');
-              for (let i = 1; i <= 10; i++) {
-                const knowsItem = new vscode.CompletionItem(`knows_${baseName}_${i}`, vscode.CompletionItemKind.EnumMember);
-                knowsItem.detail = `${skill.name} Level ${i}`;
-                knowsItem.documentation = new vscode.MarkdownString(`Assigns level ${i} ${skill.name} to a troop.`);
-                result.push(knowsItem);
-              }
-            }
-            return result;
-          });
-
-          // Append custom skills from module_skills.py, skipping vanilla ones already in static list
-          for (const dynItem of idParser.getCompletionItems('skl_')) {
-            if (staticSkillIds.has(dynItem.label)) continue;
-            items.push(dynItem);
-            // Also generate knows_ variants for each custom skill
-            const baseName = dynItem.label.replace('skl_', '');
-            for (let i = 1; i <= 10; i++) {
-              const knowsItem = new vscode.CompletionItem(`knows_${baseName}_${i}`, vscode.CompletionItemKind.EnumMember);
-              knowsItem.detail = `${dynItem.label} Level ${i}`;
-              knowsItem.documentation = new vscode.MarkdownString(`Assigns level ${i} of ${dynItem.label} to a troop.`);
-              items.push(knowsItem);
-            }
-          }
-
-          return items;
+          const staticMatches = cachedSkillItems.filter(item => item.label.startsWith(matchedPrefix));
+          const dynamicMatches = idParser.dynamicSkillItems.filter(item => item.label.startsWith(matchedPrefix));
+          return staticMatches.concat(dynamicMatches);
         }
 
         // Dynamic IDs (itm_, trp_, etc.)
